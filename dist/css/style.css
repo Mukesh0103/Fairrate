@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "open_sansregular";
+  src: url("./dist/font/opensans-regular-webfont.woff2") format("woff2"), url("./dist/font/opensans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "open_sanssemibold";
+  src: url(".dist/font/opensans-semibold-webfont.woff2") format("woff2"), url(".dist/font/opensans-semibold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  width: 100%; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 22px; }
+
+.heading-1 {
+  font-size: 44px;
+  line-height: 1.14; }
+
+.heading-2 {
+  font-size: 32px;
+  line-height: normal; }
