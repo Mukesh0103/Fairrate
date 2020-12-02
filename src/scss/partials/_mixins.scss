@@ -1,0 +1,5 @@
+@mixin inline-block($value) {
+    display: inline-block;
+    vertical-align: $value;
+    margin-right: -4px;
+}

@@ -13,7 +13,7 @@ const jsPaths = [
 ];
 
 const sassPaths = [
-    'src/scss/style.scss'
+    'src/scss/style.scss',
 ]
 
 const imagePaths = [
@@ -43,8 +43,7 @@ function sassToCss() {
         .pipe(rename({ extname: '.min.css' }))
         .pipe(sourceMaps.write())
         .pipe(dest('dist/css'))
-        .pipe(connect.reload())
-
+        .pipe(connect.reload());
 }
 
 function jsMinification() {
@@ -70,11 +69,11 @@ function finalFont(){
 }
 
 function watchFiles() {
-    watch('src/**.html', { delay: 500 }, finalHtml)
-    watch(sassPaths, { delay: 500 }, sassToCss)
-    watch(jsPaths, { delay: 500 }, jsMinification)
-    watch(imagePaths, { delay: 500 }, finalImages)
-    watch(fontPaths, { delay: 500 }, finalFont)
+    watch('src/index.html', { delay: 500 }, finalHtml);
+    watch('src/scss/**', { delay: 500 } , sassToCss);
+    watch(jsPaths, { delay: 500 }, jsMinification);
+    watch(imagePaths, { delay: 500 }, finalImages);
+    watch(fontPaths, { delay: 500 }, finalFont);    
 }
 
 function server() {
