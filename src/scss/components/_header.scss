@@ -5,6 +5,10 @@
     top: 0;
     z-index: 10;
     background: #ebf4fa;
+    &.scroll-shadow {
+        box-shadow: 0 2px 10px #bababa;
+        transition: 0.5s;
+    }
     .nav-bar {
         padding: 30px 0 20px 0;
         border-bottom: 2px solid $light-blue-grey;

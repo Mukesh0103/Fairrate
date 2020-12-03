@@ -8,3 +8,12 @@ function toggleMenu() {
         menuList.style.display = "none";
     }
 }
+
+var onScrollShadow = document.getElementById("header");
+window.onscroll = function () {
+    if (window.scrollY >= 100) {
+        onScrollShadow.classList.add("scroll-shadow");
+    } else {
+        onScrollShadow.classList.remove("scroll-shadow");
+    }
+}
