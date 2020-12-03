@@ -4,17 +4,22 @@
     right: 0;
     top: 0;
     z-index: 10;
+    background: #ebf4fa;
     .nav-bar {
         padding: 30px 0 20px 0;
-        border-bottom: 2px solid #c4cdd5;
+        border-bottom: 2px solid $light-blue-grey;
         .nav-list__container {
-            @include inline-block(unset);
+            @include inline-block(middle);
+            &.big-screen {
+                @include inline-block(middle);
+                width: 60%;
+                color: $dull-blue;
+            }
             &:first-child {
                 width: 40%;
             }
-            &:last-child {
-                width: 60%;
-                color: #69939d;
+            &.mobile {
+                display: none;
             }
             .nav-list {
                 @include inline-block(middle);
@@ -35,8 +40,21 @@
                 .site-contact-number {
                     color: $dark-grey;
                     font-size: 14px;
+                    transition: 0.3s;
+                    &:hover {
+                        color: $primary-blue;
+                    }
+                    .contact-icon {
+                        @include inline-block(middle);
+                        height: 14px;
+                        width: 14px;
+                        margin-right: 8px;
+                    }
                 }
             }
+        }
+        .menu-button {
+            display: none;
         }
     }
 }

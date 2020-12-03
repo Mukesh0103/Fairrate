@@ -5,7 +5,7 @@
     <title>FairRate</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./dist/css/style.min.css">
+    <link rel="stylesheet" href="../dist/css/style.min.css">
 
 </head>
 
@@ -15,19 +15,49 @@
             <div class="container">
                 <nav class="nav-bar">
                     <ul class="nav-list__container">
-                        <li class="nav-list"><a href="javascript:void(0)" class="logo-container">
+                        <li class="nav-list lh-reset"><a href="javascript:void(0)" class="logo-container">
                                 <img src="../dist/images/logo.png" alt="logo" class="site-logo" /></a></li>
-                        <li class="nav-list"><a href="tel: +622025550117" target="_blank"
-                                class="site-contact-number fw-6">+62 202 555
+                        <li class="nav-list contact-big-screen"><a href="tel: +622025550117" target="_blank"
+                                class="site-contact-number fw-6"><svg class="icon contact-icon">
+                                    <use href="./dist/images/sprite.svg#call" /></svg>+62 202 555
                                 0117</a></li>
                     </ul>
-                    <ul class="nav-list__container ta-right">
-                        <li class="nav-list"><a href="javascript:void(0)" class="text-small fw-6">RATES</a></li>
-                        <li class="nav-list"><a href="javascript:void(0)" class="text-small fw-6">ABOUT US</a></li>
-                        <li class="nav-list"><a href="javascript:void(0)" class="text-small fw-6">RESOURCES</a></li>
-                        <li class="nav-list"><a href="javascript:void(0)" class="text-small fw-6">FAQ</a></li>
-                        <li class="nav-list"><a href="javascript:void(0)" class="btn btn-primary btn-sm">Get Started</a>
+                    <ul class="nav-list__container big-screen ta-right">
+                        <li class="nav-list link-hover pos-rel"><a href="javascript:void(0)"
+                                class="text-small fw-6">RATES</a></li>
+                        <li class="nav-list link-hover pos-rel"><a href="javascript:void(0)"
+                                class="text-small fw-6">ABOUT US</a></li>
+                        <li class="nav-list link-hover pos-rel"><a href="javascript:void(0)"
+                                class="text-small fw-6">RESOURCES</a></li>
+                        <li class="nav-list link-hover pos-rel"><a href="javascript:void(0)"
+                                class="text-small fw-6">FAQ</a></li>
+                        <li class="nav-list"><button href="javascript:void(0)" class="btn btn-primary btn-sm fw-6">Get
+                                Started</button>
                         </li>
+                    </ul>
+                    <div class="menu-button pos-rel">
+                        <input type="checkbox" class="menu-button__input" onclick="toggleMenu()" />
+                        <span class="menu-icon__line"></span>
+                        <span class="menu-icon__line"></span>
+                        <span class="menu-icon__line"></span>
+                    </div>
+                    <ul class="nav-list__container mobile mt-2" id="menuList">
+                        <li class="mobile-nav__list mb-1"><a href="javascript:void(0)" class="text-small fw-6">RATES</a>
+                        </li>
+                        <li class="mobile-nav__list mb-1"><a href="javascript:void(0)" class="text-small fw-6">ABOUT
+                                US</a></li>
+                        <li class="mobile-nav__list mb-1"><a href="javascript:void(0)"
+                                class="text-small fw-6">RESOURCES</a></li>
+                        <li class="mobile-nav__list mb-1"><a href="javascript:void(0)" class="text-small fw-6">FAQ</a>
+                        </li>
+                        <li class="mobile-nav__list mb-1"><button href="javascript:void(0)"
+                                class="btn btn-primary btn-sm fw-6">Get
+                                Started</button>
+                        </li>
+                        <li class="nav-list contact-mobile"><a href="tel: +622025550117" target="_blank"
+                                class="site-contact-number fw-6"><svg class="icon contact-icon">
+                                    <use href="./dist/images/sprite.svg#call" /></svg>+62 202 555
+                                0117</a></li>
                     </ul>
                 </nav>
             </div>
@@ -37,9 +67,64 @@
                 <figure class="hero-img__container">
                     <img src="../dist/images/hero-img.png" alt="banner-img" class="hero-img">
                 </figure>
+                <div class="container">
+                    <article class="hero-content">
+                        <h1 class="heading-1 hero-content__heading fw-4 mb-2">Fair Rate lets you find the fairrest rate
+                        </h1>
+                        <p class="text-primary hero-content__caption mb-4">Fusce dapibus, tellus ac cursus commodo,
+                            tortor mauris condimentum nibh, ut fermentum massa
+                            justo sit amet risus. Praesent commodo cursus magna.</p>
+                        <p class="text-small hero-content__info mb-1">There are countless services with different rates
+                            %</p>
+                        <button class="btn btn-lg btn-primary fw-6">FIND THE FAIR RATE</button>
+                    </article>
+                </div>
+            </section>
+            <section class="site-procedures ta-center">
+                <div class="container">
+                    <h2 class="heading-2 fw-4 site-procedures__heading">How FairRate works you ask?</h2>
+                    <hr class="heading-underline mb-5">
+                    <ul class="procedures-list__container mb-9">
+                        <li class="procedures-list pos-rel">
+                            <figure class="procedure-img__container mb-3">
+                                <svg class="icon">
+                                    <use href="./dist/images/sprite.svg#home" /></svg>
+                            </figure>
+                            <h5 class="heading-5 procedures-list__heading fw-6">APPLY WITH YOUR HOME</h5>
+                            <p class="text-primary procedures-list__content fw-6">Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit.</p>
+                        </li>
+                        <li class="procedures-list pos-rel">
+                            <figure class="procedure-img__container mb-3">
+                                <svg class="icon">
+                                    <use href="./dist/images/sprite.svg#work" /></svg>
+                            </figure>
+                            <h5 class="heading-5 procedures-list__heading fw-6">COMPLETE THE FORM</h5>
+                            <p class="text-primary procedures-list__content fw-6">Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit.</p>
+                        </li>
+                        <li class="procedures-list pos-rel">
+                            <figure class="procedure-img__container mb-3">
+                                <svg class="icon">
+                                    <use href="./dist/images/sprite.svg#phone" /></svg>
+                            </figure>
+                            <h5 class="heading-5 procedures-list__heading fw-6">CHOOSE THE FAIR RATE</h5>
+                            <p class="text-primary procedures-list__content fw-6">Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit.</p>
+                        </li>
+                    </ul>
+                    <p class="text-large procedures-caption">“ FairRate is beautiful, elegant and easy to apply. I’ve
+                        been able to apply
+                        for an amazing rate in just a minutes. Thank you very much for creating this impressive service!
+                        ”</p>
+                    <p class="text-primary procedures-footer"><span>Valeria Boltneva</span><br> Director of Adrian
+                        Stefan.Inc</p>
+                </div>
             </section>
         </main>
     </div>
+
+    <script src="../dist/js/final.js"></script>
 </body>
 
 </html>
