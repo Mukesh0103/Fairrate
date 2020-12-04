@@ -6,11 +6,18 @@
 .heading-1 {
     font-size: 44px;
     line-height: 1.14;
+    @media (max-width: 640px) {
+        font-size: 28px;
+        line-height: 1.4;
+    }
 }
 
 .heading-2 {
     font-size: 32px;
     line-height: normal;
+    @media (max-width: 640px) {
+        font-size: 26px;
+    }
 }
 
 .heading-3 {
@@ -26,6 +33,14 @@
 .text-large {
     font-size: 22px;
     line-height: 1.81;
+    @media (max-width: 640px) {
+        font-size: 18px;
+    }
+}
+
+.text-medium {
+    font-size: 18px;
+    line-height: normal;
 }
 
 .text-primary {

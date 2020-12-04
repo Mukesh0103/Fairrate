@@ -26,6 +26,10 @@
         height: 60px;
         width: 207px;
         font-size: 14px;
+        @media (max-width: 640px) {
+            height: 48px;
+            width: 180px;
+        }
     }
     &.btn-sm {
         height: 34px;

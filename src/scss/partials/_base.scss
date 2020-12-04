@@ -11,9 +11,14 @@ body {
 
 .container {
     max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
     padding: 0 22px;
+    @include center-block;
+}
+
+.outer-container {
+    max-width: 1140px;
+    padding: 0 22px;
+    @include center-block;
 }
 
 a {
@@ -23,8 +28,13 @@ a {
 }
 
 ul {
-    list-style-type: none;
-    li {
-        list-style-type: none;
+    &, li {
+        list-style-type: none;  
     }
+}
+
+.heading-underline {
+    width: 65px;
+    border: 1px solid $light-blue-grey;
+    @include center-block;
 }

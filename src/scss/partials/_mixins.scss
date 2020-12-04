@@ -3,3 +3,8 @@
     vertical-align: $value;
     margin-right: -4px;
 }
+
+@mixin center-block {
+    margin-left: auto;
+    margin-right: auto;
+}

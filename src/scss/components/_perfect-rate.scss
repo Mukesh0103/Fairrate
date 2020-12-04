@@ -1,0 +1,22 @@
+.perfect-rate {
+    padding: 60px 0;
+    background: url(/dist/images/perfect-rate-bg.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    @media (max-width: 640px) {
+        background-position: right;
+    }
+    .perfect-rate__heading {
+        color: $white;
+        margin-bottom: 16px;
+    }
+    .pr-content__container {
+        max-width: 420px;
+        margin-left: auto;
+        color: $white;
+        .pr-benefits {
+            line-height: 2.86;
+        }
+    }
+}
