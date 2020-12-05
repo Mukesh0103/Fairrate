@@ -1,8 +1,5 @@
 .header {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
+    @include position(fixed, 0, 0, null, 0);
     z-index: 10;
     background: #ebf4fa;
     &.scroll-shadow {
@@ -10,7 +7,6 @@
         transition: 0.5s;
     }
     .nav-bar {
-        padding: 30px 0 20px 0;
         border-bottom: 2px solid $light-blue-grey;
         .nav-list__container {
             @include inline-block(middle);
@@ -79,23 +75,27 @@
             @include inline-block(middle);
             width: 20%;
             .menu-button__input {
+                @include position(absolute, -7px, 0, null, null);
                 width: 30px;
                 height: 24px;
-                position: absolute;
-                top: -7px;
-                right: 0;
                 cursor: pointer;
                 opacity: 0;
                 z-index: 2;
                 -webkit-touch-callout: none;
+                &:checked {
+                    & ~ .menu-icon__line {
+                        opacity: 1;
+                        transform: rotate(45deg) translate(-2px, -1px);
+                        background: #dc947d;
+                        bottom: 11px;
+                    }
+                }
             }
             .menu-icon__line {
                 display: block;
                 width: 28px;
                 height: 4px;
-                margin-bottom: 5px;
-                margin-left: auto;
-                position: relative;
+                margin: 0 0 5px auto;
                 background: $primary-blue;
                 border-radius: 3px;
                 z-index: 1;
@@ -111,12 +111,6 @@
                 &:last-of-type {
                     margin-bottom: 0;
                 }
-            }
-            .menu-button__input:checked ~ .menu-icon__line {
-                opacity: 1;
-                transform: rotate(45deg) translate(-2px, -1px);
-                background: #dc947d;
-                bottom: 11px;
             }
             .menu-button__input:checked ~ .menu-icon__line:nth-last-of-type(3) {
                 opacity: 0;

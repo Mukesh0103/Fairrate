@@ -9,8 +9,7 @@
         }
     }
     .hero-content {
-        position: absolute;
-        top: 50%;
+        @include position(absolute, 50%, null, null, null);
         transform: translateY(-50%);
         max-width: 430px;
         .hero-content__heading {

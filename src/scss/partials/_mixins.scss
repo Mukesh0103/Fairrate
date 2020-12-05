@@ -4,7 +4,34 @@
     margin-right: -4px;
 }
 
-@mixin center-block {
-    margin-left: auto;
-    margin-right: auto;
+@mixin color-bg($bgColor, $color) {
+    background-color: $bgColor;
+    color: $color;
+}
+
+@mixin position($position, $top, $right, $bottom, $left) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin margin-padding($num) {
+    @if ($num) {
+        @for $i from 1 through 10 {
+            .mb-#{$i} {
+                margin-bottom: #{$num * $i}px;
+            }
+            .mt-#{$i} {
+                margin-top: #{$num * $i}px;
+            }
+            .pb-#{$i} {
+                padding-bottom: #{$num * $i}px;
+            }
+            .pt-#{$i} {
+                padding-top: #{$num * $i}px;
+            }
+        }
+    }
 }

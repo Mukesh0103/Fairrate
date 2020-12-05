@@ -1,10 +1,8 @@
 .customer-support {
-    padding: 90px 0;
     .customer-support__logo {
         height: 42px;
         width: 42px;
-        margin-bottom: 5px;
-        @include center-block;
+        margin: 0 auto 5px auto;
     }
     .customer-support__heading {
         color: $dark-grey;
@@ -13,8 +11,7 @@
     .customer-support__content {
         max-width: 526px;
         color: $dark-grey;
-        margin-bottom: 14px;
-        @include center-block;
+        margin: 0 auto 14px auto;
     }
     .customer-support__email {
         color: $dark-blue;

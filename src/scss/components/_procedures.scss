@@ -1,5 +1,4 @@
 .site-procedures {
-    padding: 116px 0 90px;
     @media (max-width: 767px) { 
         padding: 70px 0 50px;
     }
@@ -10,7 +9,7 @@
     .procedures-list__container {
         font-size: 0;
         max-width: 940px;
-        @include center-block;
+        margin: 0 auto;
         @media (max-width: 767px) { 
             margin-bottom: 60px;
         }
@@ -34,7 +33,7 @@
             .procedure-img__container {
                 height: 122px;
                 width: 109px;
-                @include center-block;
+                margin: 0 auto;
             }
             .procedures-list__heading {
                 color: $dull-black;
@@ -68,7 +67,7 @@
         }
     }
     .procedures-caption {
-        @include center-block;
+        margin: 0 auto;
         max-width: 640px;
         margin-bottom: 35px;
         color: $dark-grey;

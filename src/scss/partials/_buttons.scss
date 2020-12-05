@@ -4,22 +4,18 @@
     outline: none;
     cursor: pointer;
     &.btn-primary {
-        background-color: $primary-blue;
-        color: $white;
+        @include color-bg($primary-blue, $white);
         border: 2px solid $primary-blue;
         transition: 0.3s;
         &:hover {
-            color: $primary-blue;
-            background-color: $white;
+            @include color-bg($white, $primary-blue);
         }
     }
     &.btn-default {
-        background-color: $white;
-        color: $primary-blue;
+        @include color-bg($white, $primary-blue);
         transition: 0.3s;
         &:hover {
-            color: $white;
-            background-color: $primary-blue
+            @include color-bg($primary-blue, $white);
         }
     }
     &.btn-lg {
