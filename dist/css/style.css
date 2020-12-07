@@ -1,32 +1,3 @@
-body {
-  width: 100%;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif; }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
-.container {
-  max-width: 1100px;
-  padding: 0 22px;
-  margin: 0 auto; }
-  .container-outer {
-    max-width: 1140px; }
-
-a {
-  text-decoration: none;
-  display: inline-block;
-  color: inherit; }
-
-ul, ul li {
-  list-style-type: none; }
-
-.heading-underline {
-  width: 65px;
-  border: 1px solid #c4cdd5;
-  margin: 0 auto; }
-
 @font-face {
   font-family: "Open Sans";
   src: url(/dist/font/OpenSans.ttf); }
@@ -79,38 +50,34 @@ ul, ul li {
 .fw-6 {
   font-weight: 600; }
 
-.btn {
-  border-radius: 2px;
-  border: none;
-  outline: none;
-  cursor: pointer; }
-  .btn.btn-primary {
-    background-color: #23c0f5;
-    color: #ffffff;
-    border: 2px solid #23c0f5;
-    transition: 0.3s; }
-    .btn.btn-primary:hover {
-      background-color: #ffffff;
-      color: #23c0f5; }
-  .btn.btn-default {
-    background-color: #ffffff;
-    color: #23c0f5;
-    transition: 0.3s; }
-    .btn.btn-default:hover {
-      background-color: #23c0f5;
-      color: #ffffff; }
-  .btn.btn-lg {
-    height: 60px;
-    width: 207px;
-    font-size: 14px; }
-    @media (max-width: 640px) {
-      .btn.btn-lg {
-        height: 48px;
-        width: 180px; } }
-  .btn.btn-sm {
-    height: 34px;
-    width: 110px;
-    font-size: 13px; }
+body {
+  width: 100%;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.container {
+  max-width: 1100px;
+  padding: 0 22px;
+  margin: 0 auto; }
+  .container-outer {
+    max-width: 1140px; }
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: inherit; }
+
+ul, ul li {
+  list-style-type: none; }
+
+.heading-underline {
+  width: 65px;
+  border: 1px solid #c4cdd5;
+  margin: 0 auto; }
 
 .ta-center {
   text-align: center; }
@@ -273,6 +240,39 @@ ul, ul li {
   .link-hover:hover::after {
     width: 100%;
     left: 0; }
+
+.btn {
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  cursor: pointer; }
+  .btn.btn-primary {
+    background-color: #23c0f5;
+    color: #ffffff;
+    border: 2px solid #23c0f5;
+    transition: 0.3s; }
+    .btn.btn-primary:hover {
+      background-color: #ffffff;
+      color: #23c0f5; }
+  .btn.btn-default {
+    background-color: #ffffff;
+    color: #23c0f5;
+    transition: 0.3s; }
+    .btn.btn-default:hover {
+      background-color: #23c0f5;
+      color: #ffffff; }
+  .btn.btn-lg {
+    height: 60px;
+    width: 207px;
+    font-size: 14px; }
+    @media (max-width: 640px) {
+      .btn.btn-lg {
+        height: 48px;
+        width: 180px; } }
+  .btn.btn-sm {
+    height: 34px;
+    width: 110px;
+    font-size: 13px; }
 
 .header {
   position: fixed;
