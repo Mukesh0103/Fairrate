@@ -1,0 +1,43 @@
+body {
+    width: 100%;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1100px;
+    padding: 0 22px;
+    margin: 0 auto;
+    &-outer {
+        max-width: 1140px;
+    }
+}
+
+// .outer-container {
+//     max-width: 1140px;
+//     padding: 0 22px;
+//     margin: 0 auto;
+// }
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+}
+
+ul {
+    &, li {
+        list-style-type: none;  
+    }
+}
+
+.heading-underline {
+    width: 65px;
+    border: 1px solid $light-blue-grey;
+    margin: 0 auto;
+}

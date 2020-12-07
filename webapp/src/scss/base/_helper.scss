@@ -1,0 +1,52 @@
+.ta {
+    &-center {
+        text-align: center;
+    }
+    &-right {
+        text-align: right;
+    }
+}
+
+.pos-rel {
+    position: relative;
+}
+
+.lh-reset {
+    line-height: 0;
+}
+
+@include margin-padding(10);
+
+.icon {
+    height: 100%;
+    width: 100%;
+}
+
+.contact-icon {
+    @include inline-block(middle);
+    height: 14px;
+    width: 14px;
+    margin-right: 8px;
+}
+
+.link-hover {
+    transition: 0.3s;
+    &:hover {
+        color: $primary-blue;
+    }
+    &::after {
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: $primary-blue;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+    &:hover::after {
+        width: 100%;
+        left: 0;
+    }
+}

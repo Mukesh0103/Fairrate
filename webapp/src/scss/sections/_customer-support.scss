@@ -1,0 +1,19 @@
+.customer-support {
+    .customer-support__logo {
+        height: 42px;
+        width: 42px;
+        margin: 0 auto 5px auto;
+    }
+    .customer-support__heading {
+        color: $dark-grey;
+        margin-bottom: 25px;
+    }
+    .customer-support__content {
+        max-width: 526px;
+        color: $dark-grey;
+        margin: 0 auto 14px auto;
+    }
+    .customer-support__email {
+        color: $dark-blue;
+    }
+}
