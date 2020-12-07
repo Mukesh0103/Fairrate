@@ -1,7 +1,6 @@
 @mixin inline-block($value) {
     display: inline-block;
     vertical-align: $value;
-    margin-right: -4px;
 }
 
 @mixin color-bg($bgColor, $color) {
@@ -17,6 +16,11 @@
     left: $left;
 }
 
+@mixin height-width($height, $width) {
+    height: $height;
+    width: $width;
+}
+
 @mixin margin-padding($num) {
     @if ($num) {
         @for $i from 1 through 10 {
@@ -26,11 +30,23 @@
             .mt-#{$i} {
                 margin-top: #{$num * $i}px;
             }
+            .ml-#{$i} {
+                margin-left: #{$num * $i}px;
+            }
+            .mr-#{$i} {
+                margin-right: #{$num * $i}px;
+            }
             .pb-#{$i} {
                 padding-bottom: #{$num * $i}px;
             }
             .pt-#{$i} {
                 padding-top: #{$num * $i}px;
+            }
+            .pl-#{$i} {
+                padding-left: #{$num * $i}px;
+            }
+            .pr-#{$i} {
+                padding-right: #{$num * $i}px;
             }
         }
     }

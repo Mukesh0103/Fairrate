@@ -15,18 +15,16 @@
     line-height: 0;
 }
 
+.img-circle {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 @include margin-padding(10);
 
 .icon {
     height: 100%;
     width: 100%;
-}
-
-.contact-icon {
-    @include inline-block(middle);
-    height: 14px;
-    width: 14px;
-    margin-right: 8px;
 }
 
 .link-hover {

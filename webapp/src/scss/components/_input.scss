@@ -1,0 +1,11 @@
+input[type="text"] {
+    padding: 13px 17px;
+    line-height: 20px;
+    background: $white;
+    border: 1px solid $light-blue-grey;
+    border-radius: 3px;
+    outline: none;
+    &::placeholder {
+        color: #adadad;
+    }
+}

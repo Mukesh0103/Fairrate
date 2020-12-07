@@ -1,0 +1,15 @@
+.content-centering {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    color: $dark;
+}
+
+.name-details__form {
+    width: 100%;
+    font-size: 0;
+    margin-bottom: 160px;
+    input[type="text"] {
+        width: calc((100% - 20px) / 2);
+    }
+}

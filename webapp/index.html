@@ -1,11 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FairRate</title>
+    <link rel="stylesheet" href="/webapp/dist/css/style.min.css">
 </head>
+
 <body>
-    
+    <div class="fairrate-webapp">
+        <header class="header pb-1 pt-1 pl-3 pr-3">
+            <nav class="navbar">
+                <ul class="nav-list__container lh-reset">
+                    <li class="nav-list mr-4"><a href="javascript:void(0)" class="menu-bar">
+                            <svg class="icon">
+                                <use href="/webapp/dist/images/sprite.svg#menu-bar" /></svg>
+                        </a></li>
+                    <li class="nav-list"><a href="javascript:void(0)" class="app-logo"> <img
+                                src="/webapp/dist/images/logo.png" alt="logo" /></a>
+                    </li>
+                </ul>
+                <ul class="nav-list__container lh-reset">
+                    <li class="nav-list heading-sm mr-4"><a href="javascript:void(0)">Home</a></li>
+                    <li class="nav-list heading-sm mr-4"><a href="javascript:void(0)">Application</a></li>
+                    <li class="nav-list heading-sm mr-7"><a href="javascript:void(0)">Documents</a></li>
+                    <li class="nav-list mr-2"><a href="javascript:void(0)" class=" bell-icon"><svg class="icon">
+                                <use href="/webapp/dist/images/sprite.svg#bell" /></svg></a></li>
+                    <li class="nav-list mr-1"><a href="javascript:void(0)" class="pro-pic"><img class="img-circle"
+                                src="/webapp/dist/images/pro-pic.jpg" alt="profile-picture"></a></li>
+                    <li class="nav-list text-sm"><a href="javascript:void(0)">Adrian Manea<span
+                                class="arrow-down ml-1"></span></a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="screen1 mt-6 ta-center" id="screen1">
+            <div class="container">
+                <div class="content-centering pt-8 pl-2 pr-2">
+                    <h1 class="heading-xl fw-sb mb-5">I'll get you an awesome price in seconds. Ready to go?</h1>
+                    <form action="" class="name-details__form">
+                        <input type="text" class="mr-2 mb-2" placeholder="First name">
+                        <input type="text" class="mb-2" placeholder="Last name">
+                        <button class="btn btn-md btn-primary">NEXT</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="screen2" id="screen2"></section>
+        <section class="screen3" id="screen3"></section>
+        <footer class="footer">
+            <div class="container container-outer">
+                <ul class="footer-list__container mb-5">
+                    <li class="footer-list">
+                        <ul class="footer-sublist__container">
+                            <li class="footer-sublist footer-contact mb-1 text-xs">
+                                Schedule a conversation <a href="mailto: hello@fairrate.com"
+                                    class="contact-mail">hello@fairrate.com</a>
+                            </li>
+                            <li class="footer-sublist text-md contact-number"><a href="tel: +622025550117"
+                                    target="_blank">
+                                    <svg class="icon contact-icon mr-1">
+                                        <use href="/webapp/dist/images/sprite.svg#call" /></svg>+62 202 555 0117</a>
+                            </li>
+                            <li class="footer-sublist">
+                                <ul>
+                                    <li class="social-icons"><a href="javascript:void(0)" target="_blank"><svg
+                                                class="icon">
+                                                <use href="/webapp/dist/images/sprite.svg#twitter" /></svg></a></li>
+                                    <li class="social-icons"><a href="javascript:void(0)" target="_blank"><svg
+                                                class="icon">
+                                                <use href="/webapp/dist/images/sprite.svg#linked-in" /></svg></a></li>
+                                    <li class="social-icons"><a href="javascript:void(0)" target="_blank"><svg
+                                                class="icon">
+                                                <use href="/webapp/dist/images/sprite.svg#facebook" /></svg></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="footer-list">
+                        <p class="footer-list__heading text-xs">COMPANY</p>
+                        <ul class="footer-sublist__container text-sm">
+                            <li class="footer-sublist"><a href="javascript:void(0)"
+                                    class="link-hover pos-rel">Resources</a></li>
+                            <li class="footer-sublist"><a href="javascript:void(0)"
+                                    class="link-hover pos-rel">Careers</a></li>
+                        </ul>
+                    </li>
+                    <li class="footer-list">
+                        <p class="footer-list__heading text-xs">LEGAL</p>
+                        <ul class="footer-sublist__container text-sm">
+                            <li class="footer-sublist"><a href="javascript:void(0)" class="link-hover pos-rel">NMLS
+                                    Consumer Access</a></li>
+                            <li class="footer-sublist"><a href="javascript:void(0)" class="link-hover pos-rel">Privacy
+                                    Policy</a></li>
+                            <li class="footer-sublist"><a href="javascript:void(0)" class="link-hover pos-rel">Terms
+                                    of Use</a></li>
+                            <li class="footer-sublist"><a href="javascript:void(0)"
+                                    class="link-hover pos-rel">Disclosures & Licensing</a></li>
+                        </ul>
+                    </li>
+                    <li class="footer-list">
+                        <ul class="footer-sublist__container">
+                            <li class="footer-sublist lh-reset mb-2"><a href="javascript:void(0)"
+                                    class="logo-container">
+                                    <img src="./dist/images/logo.png" alt="logo" class="site-logo" /></a></li>
+                            <li class="footer-sublist text-sm footer-content">Fusce dapibus, tellus ac cursus
+                                commodo, tortor mauris condimentum nibh, ut
+                                fermentum massa justo sit amet risus. Praesent commodo cursus magna.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="text-xs footer-text">© 2018 Deivas.io, Inc. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
 </body>
+
 </html>
