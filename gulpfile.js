@@ -8,34 +8,56 @@ const sourceMaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
 
-const jsPaths = [
-    'src/js/**.js'
+const webpageJsPaths = [
+    'src/js/**.js',
 ];
 
-const sassPaths = [
+const webpageSassPaths = [
     'src/scss/style.scss',
 ]
 
-const imagePaths = [
+const webpageImagePaths = [
     'src/images/**'
 ];
 
-const fontPaths = [
+const webpageFontPaths = [
     'src/font/**'
 ]
 
+const webappJsPaths = [
+    'webapp/src/js/**.js'
+];
+
+const webappSassPaths = [
+    'webapp/src/scss/style.scss',
+]
+
+const webappImagePaths = [
+    'webapp/src/images/**'
+];
+
+const webappFontPaths = [
+    'webapp/src/font/**'
+]
+
 function clean() {
-    return del('dist/**');
+    return del('dist/**', 'webapp/dist/**');
 }
 
-function finalHtml() {
+function webpageFinalHtml() {
     return src('src/index.html')
         .pipe(dest('./'))
         .pipe(connect.reload());
 }
 
-function sassToCss() {
-    return src(sassPaths)
+function webappFinalHtml() {
+    return src('webapp/src/index.html')
+        .pipe(dest('webapp/'))
+        .pipe(connect.reload());
+}
+
+function webpageSassToCss() {
+    return src(webpageSassPaths)
         .pipe(sass())
         .pipe(dest('dist/css'))
         .pipe(sourceMaps.init())
@@ -46,8 +68,20 @@ function sassToCss() {
         .pipe(connect.reload());
 }
 
-function jsMinification() {
-    return src(jsPaths)
+function webappSassToCss() {
+    return src(webappSassPaths)
+        .pipe(sass())
+        .pipe(dest('webapp/dist/css'))
+        .pipe(sourceMaps.init())
+        .pipe(minifyCSS())
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(sourceMaps.write())
+        .pipe(dest('webapp/dist/css'))
+        .pipe(connect.reload());
+}
+
+function webpageJsMinification() {
+    return src(webpageJsPaths)
         .pipe(sourceMaps.init())
         .pipe(concat('final.js'))
         .pipe(terser())
@@ -56,24 +90,51 @@ function jsMinification() {
         .pipe(connect.reload());
 }
 
-function finalImages() {
-    return src(imagePaths)
+function webappJsMinification() {
+    return src(webappJsPaths)
+        .pipe(sourceMaps.init())
+        .pipe(concat('final.js'))
+        .pipe(terser())
+        .pipe(sourceMaps.write())
+        .pipe(dest('webapp/dist/js'))
+        .pipe(connect.reload());
+}
+
+function webpageFinalImages() {
+    return src(webpageImagePaths)
         .pipe(dest('dist/images'))
         .pipe(connect.reload());
 }
 
-function finalFont(){
-    return src(fontPaths)
-    .pipe(dest('dist/font'))
-    .pipe(connect.reload());
+function webappFinalImages() {
+    return src(webappImagePaths)
+        .pipe(dest('webapp/dist/images'))
+        .pipe(connect.reload());
+}
+
+function webpageFinalFont() {
+    return src(webpageFontPaths)
+        .pipe(dest('dist/font'))
+        .pipe(connect.reload());
+}
+
+function webappFinalFont() {
+    return src(webappFontPaths)
+        .pipe(dest('webapp/dist/font'))
+        .pipe(connect.reload());
 }
 
 function watchFiles() {
-    watch('src/index.html', { delay: 500 }, finalHtml);
-    watch('src/scss/**', { delay: 500 } , sassToCss);
-    watch(jsPaths, { delay: 500 }, jsMinification);
-    watch(imagePaths, { delay: 500 }, finalImages);
-    watch(fontPaths, { delay: 500 }, finalFont);    
+    watch('src/index.html', { delay: 500 }, webpageFinalHtml);
+    watch('webapp/src/index.html', { delay: 500 }, webappFinalHtml);
+    watch('src/scss/**', { delay: 500 }, webpageSassToCss);
+    watch('webapp/src/scss/**', { delay: 500 }, webappSassToCss);
+    watch(webpageJsPaths, { delay: 500 }, webpageJsMinification);
+    watch(webappJsPaths, { delay: 500 }, webappJsMinification);
+    watch(webpageImagePaths, { delay: 500 }, webpageFinalImages);
+    watch(webappImagePaths, { delay: 500 }, webappFinalImages);
+    watch(webpageFontPaths, { delay: 500 }, webpageFinalFont);
+    watch(webappFontPaths, { delay: 500 }, webappFinalFont);
 }
 
 function server() {
@@ -83,4 +144,5 @@ function server() {
     });
 }
 
-exports.default = series(clean, parallel(finalHtml, jsMinification, finalImages, sassToCss, finalFont), parallel(server, watchFiles));
+exports.default = series(clean, parallel(webpageFinalHtml, webpageJsMinification, webpageFinalImages, webpageSassToCss,
+    webpageFinalFont, webappFinalHtml, webappSassToCss, webappJsMinification, webappFinalImages, webappFinalFont), parallel(server, watchFiles));
