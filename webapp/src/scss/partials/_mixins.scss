@@ -21,6 +21,13 @@
     width: $width;
 }
 
+@mixin text-ellipsis($value) {
+    max-width: $value;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 @mixin margin-padding($num) {
     @if ($num) {
         @for $i from 1 through 10 {

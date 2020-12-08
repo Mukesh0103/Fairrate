@@ -9,3 +9,39 @@ input[type="text"] {
         color: #adadad;
     }
 }
+
+input[type="checkbox"] {
+    display: none;
+    cursor: pointer;
+    & + label {
+        display: block;
+        position: relative;
+        padding-left: 40px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        &::before {
+            content: "";
+            @include position(absolute, 0, null, null, 0);
+            @include height-width(30px, 30px);
+            border: 1px solid $light-blue-grey;
+            border-radius: 3px;
+        }
+    }
+    &:checked + label::after {
+        content: "";
+        @include position(absolute, 7px, null, null, 12px);
+        @include height-width(12px, 6px);
+        border: 2px solid $primary-blue;
+        border-left: none;
+        border-top: none;
+        transform: rotate(45deg);
+    }
+    &:checked + label::before {
+        border-color: $primary-blue;
+    }
+    &:checked{
+        border-color: $primary-blue;
+    }
+}

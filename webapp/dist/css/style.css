@@ -92,6 +92,9 @@ ul, ul li {
 .lh-reset {
   line-height: 0; }
 
+.fs-0 {
+  font-size: 0; }
+
 .img-circle {
   border-radius: 50%;
   object-fit: cover; }
@@ -405,6 +408,42 @@ input[type="text"] {
   input[type="text"]::placeholder {
     color: #adadad; }
 
+input[type="checkbox"] {
+  display: none;
+  cursor: pointer; }
+  input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none; }
+    input[type="checkbox"] + label::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 30px;
+      width: 30px;
+      border: 1px solid #c4cdd5;
+      border-radius: 3px; }
+  input[type="checkbox"]:checked + label::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 12px;
+    height: 12px;
+    width: 6px;
+    border: 2px solid #23c0f5;
+    border-left: none;
+    border-top: none;
+    transform: rotate(45deg); }
+  input[type="checkbox"]:checked + label::before {
+    border-color: #23c0f5; }
+  input[type="checkbox"]:checked {
+    border-color: #23c0f5; }
+
 .header {
   background: #ffffff;
   width: 100%;
@@ -415,18 +454,27 @@ input[type="text"] {
   .header .navbar {
     display: flex;
     align-items: center; }
-    .header .navbar .nav-list__container {
-      font-size: 0; }
-      .header .navbar .nav-list__container:first-child {
-        margin-right: auto; }
+    .header .navbar .nav-list__container:first-child {
+      margin-right: auto; }
 
 .nav-list {
   display: inline-block;
   vertical-align: middle;
   color: #919eab;
   transition: 0.3s; }
+  @media (max-width: 1024px) {
+    .nav-list {
+      margin-right: 20px; }
+      .nav-list:last-child {
+        margin-right: 0; } }
   .nav-list:hover {
     color: #212b36; }
+  .nav-list .user-name {
+    max-width: 110px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle; }
   .nav-list .menu-bar {
     height: 24px;
     width: 24px; }
@@ -457,10 +505,48 @@ input[type="text"] {
 
 .name-details__form {
   width: 100%;
-  font-size: 0;
   margin-bottom: 160px; }
   .name-details__form input[type="text"] {
     width: calc((100% - 20px) / 2); }
+
+.screen2 {
+  display: none; }
+
+.pd-content__wrapper {
+  width: calc((100% - 180px) / 2);
+  margin-right: 180px;
+  display: inline-block;
+  vertical-align: top; }
+  .pd-content__wrapper:last-child {
+    margin-right: 0; }
+  .pd-content__wrapper .pd-heading__container {
+    max-width: 300px; }
+    .pd-content__wrapper .pd-heading__container .pd-heading__content {
+      color: #6a7c92; }
+
+.profile-details__form fieldset {
+  outline: none;
+  border: none; }
+  .profile-details__form fieldset .input-label {
+    color: #47495a; }
+  .profile-details__form fieldset input[type="text"] {
+    width: 100%;
+    padding-left: 44px; }
+  .profile-details__form fieldset .input-icon {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 39px;
+    left: 10px; }
+    .profile-details__form fieldset .input-icon.positioning {
+      top: 10px; }
+  .profile-details__form fieldset.checkbox-fieldset {
+    border: 1px solid lightgray;
+    background: #fff;
+    padding: 8px 15px;
+    border-radius: 2px; }
+    .profile-details__form fieldset.checkbox-fieldset .checkbox-label {
+      line-height: 2.15; }
 
 .footer {
   padding: 48px 0 84px;
@@ -468,12 +554,11 @@ input[type="text"] {
   @media (max-width: 640px) {
     .footer {
       padding: 40px 0; } }
-  .footer .footer-list__container {
-    font-size: 0; }
-    @media (max-width: 1024px) {
-      .footer .footer-list__container {
-        max-width: 500px;
-        margin: 0 auto; } }
+  @media (max-width: 1024px) {
+    .footer .footer-list__container {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto; } }
 
 .footer-list {
   display: inline-block;
@@ -545,19 +630,17 @@ input[type="text"] {
     .footer-sublist__container .footer-sublist .logo-container .site-logo {
       width: 100%;
       height: 100%; }
-  .footer-sublist__container .footer-sublist ul {
-    font-size: 0; }
-    .footer-sublist__container .footer-sublist ul .social-icons {
-      display: inline-block;
-      vertical-align: middle;
-      height: 33px;
-      width: 33px;
-      margin-right: 20px; }
-      .footer-sublist__container .footer-sublist ul .social-icons:last-child {
-        margin-right: 0; }
-      .footer-sublist__container .footer-sublist ul .social-icons a {
-        height: 100%;
-        width: 100%; }
+  .footer-sublist__container .footer-sublist .social-icons {
+    display: inline-block;
+    vertical-align: middle;
+    height: 33px;
+    width: 33px;
+    margin-right: 20px; }
+    .footer-sublist__container .footer-sublist .social-icons:last-child {
+      margin-right: 0; }
+    .footer-sublist__container .footer-sublist .social-icons a {
+      height: 100%;
+      width: 100%; }
 
 .footer-text {
   color: #8f9ea6;

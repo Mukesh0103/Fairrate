@@ -1,0 +1,48 @@
+.screen2 {
+    display: none;
+}
+
+.pd-content__wrapper {
+    width: calc((100% - 180px) / 2);
+    margin-right: 180px;
+    @include inline-block(top);
+    &:last-child {
+        margin-right: 0;
+    }
+    .pd-heading__container {
+        max-width: 300px;
+        .pd-heading__content {
+            color: $dark-blue-grey;
+        }
+    }
+}
+
+.profile-details__form {
+    fieldset {
+        outline: none;
+        border: none;
+        .input-label {
+            color: $dull-black;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding-left: 44px;
+        }
+        .input-icon {
+            @include height-width(24px, 24px);
+            @include position(absolute, 39px, null, null, 10px);
+            &.positioning {
+                top: 10px;
+            }
+        }
+        &.checkbox-fieldset {
+            border: 1px solid lightgray;
+            background: #fff;
+            padding: 8px 15px;
+            border-radius: 2px;
+            .checkbox-label {
+                line-height: 2.15;
+            }
+        }
+    }
+}

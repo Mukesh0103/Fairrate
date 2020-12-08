@@ -5,10 +5,10 @@
         padding: 40px 0;
     }
     .footer-list__container {
-        font-size: 0;
         @media (max-width: 1024px) {
             max-width: 500px;
-            margin: 0 auto;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }
@@ -95,20 +95,17 @@
                 height: 100%;
             }
         }
-        ul {
-            font-size: 0;
-            .social-icons {
-                @include inline-block(middle);
-                height: 33px;
-                width: 33px;
-                margin-right: 20px;
-                &:last-child {
-                    margin-right: 0;
-                }
-                a {
-                    height: 100%;
-                    width: 100%;
-                }
+        .social-icons {
+            @include inline-block(middle);
+            height: 33px;
+            width: 33px;
+            margin-right: 20px;
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                height: 100%;
+                width: 100%;
             }
         }
     }
