@@ -75,23 +75,57 @@
                             <svg class="icon input-icon positioning">
                                 <use href="/webapp/dist/images/sprite.svg#mail-outline" /></svg>
                         </fieldset>
-                        <fieldset class="pos-rel mb-1 checkbox-fieldset">
-                            <input type="checkbox" class="mr-1" id="checkbox1">
+                        <fieldset class="mb-1 checkbox-container">
+                            <input type="checkbox" class="mr-1 input-checkbox" id="checkbox1">
                             <label for="checkbox1" class="heading-sm checkbox-label">Condo</label>
                         </fieldset>
-                        <fieldset class="pos-rel mb-1 checkbox-fieldset">
-                            <input type="checkbox" class="mr-1" id="checkbox2" checked>
+                        <fieldset class="mb-1 checkbox-container">
+                            <input type="checkbox" class="mr-1 input-checkbox" id="checkbox2" checked>
                             <label for="checkbox2" class="heading-sm checkbox-label">Co-op</label>
                         </fieldset>
-                        <fieldset class="pos-rel mb-3 checkbox-fieldset">
-                            <input type="checkbox" class="mr-1" id="checkbox3" checked>
+                        <fieldset class="mb-3 checkbox-container">
+                            <input type="checkbox" class="mr-1 input-checkbox" id="checkbox3" checked>
                             <label for="checkbox3" class="heading-sm checkbox-label">House</label>
+                        </fieldset>
+                        <fieldset class="pos-rel select-box">
+                            <button class="select-input" id="select-input" type="button">Select option</button>
+                            <span class="select-arrow"></span>
+                            <div class="dropdown-box pos-rel" id="select-dropdown"> 
+                                <ul class="dropdown" id="dropdown">
+                                    <li class="dropdown-list text-md">This month</li>
+                                    <li class="dropdown-list text-md">Next Month</li>
+                                    <li class="dropdown-list text-md">December 2018</li>
+                                    <li class="dropdown-list text-md">January 2019</li>
+                                    <li class="dropdown-list text-md">I don't know</li>
+                                </ul>
+                            </div>
                         </fieldset>
                     </form>
                 </div>
+                <div class="pd-footer mb-8">
+                    <div class="pd-footer__container checkbox-container mb-6">
+                        <figure class="criminal-img">
+                            <svg class="icon">
+                                <use href="/webapp/dist/images/sprite.svg#criminal" /></svg>
+                        </figure>
+                        <input type="checkbox" class="mr-1 input-checkbox" id="checkbox4" checked>
+                        <label for="checkbox4" class="heading-sm checkbox-label">Burglar Alarm</label>
+                    </div>
+                    <div class="pd-footer__container checkbox-container mb-6">
+                        <figure class="fire-img">
+                            <img src="/webapp/dist/images/fire.png" />
+                        </figure>
+                        <input type="checkbox" class="mr-1 input-checkbox" id="checkbox5">
+                        <label for="checkbox5" class="heading-sm checkbox-label">Burglar Alarm</label>
+                    </div>
+                    <button class="btn btn-grey btn-md mr-7">BACK</button>
+                    <button class="btn btn-primary btn-md">NEXT</button>
+                </div>
             </div>
         </section>
-        <section class="screen3" id="screen3"></section>
+        <section class="screen3" id="screen3">
+
+        </section>
         <footer class="footer">
             <div class="container container-outer">
                 <ul class="footer-list__container mb-5 fs-0">

@@ -11,6 +11,14 @@
             @include color-bg($white, $primary-blue);
         }
     }
+    &.btn-grey {
+        @include color-bg($light-blue-grey, $white);
+        border: 2px solid $light-blue-grey;
+        transition: 0.3s;
+        &:hover {
+            @include color-bg($white, $light-blue-grey);
+        }
+    }
     &.btn-default {
         @include color-bg($white, $primary-blue);
         transition: 0.3s;

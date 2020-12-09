@@ -41,7 +41,76 @@ input[type="checkbox"] {
     &:checked + label::before {
         border-color: $primary-blue;
     }
-    &:checked{
+    &:checked {
         border-color: $primary-blue;
+    }
+}
+
+.select-input {
+    @extend input[type="text"];
+    cursor: pointer;
+    text-align: left;
+}
+
+.dropdown-box {
+    width: 230px;
+    @include position(absolute, 60px, 0, null, null);
+    border-radius: 2px;
+    background: #fff;
+    border: 1px solid $light-blue-grey;
+    box-shadow: 0 0 16px rgba(33, 43, 54, 0.08);
+    &::before {
+        content: "";
+        @include position(absolute, -6px, 15px, null, null);
+        @include height-width(10px, 10px);
+        border: 1px solid $light-blue-grey;
+        background: #fff;
+        transform: rotate(45deg);
+        border-right: none;
+        border-bottom: none;
+        border-radius: 2px;
+    }
+    .dropdown {
+        width: 100%;
+        max-height: 220px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #f8f8f8;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $bluey-grey;
+            border-radius: 5px;
+            width: 14px;
+        }
+        .dropdown-list {
+            line-height: 20px;
+            color: $dark;
+            padding: 10px 16px;
+            cursor: pointer;
+            transition: 0.2s;
+            &:hover {
+                background-color: rgba(223, 227, 232, 0.3);
+            }
+        }
+    }
+}
+
+.select-arrow {
+    &::before {
+        content: "";
+        @include position(absolute, null, 15px, 17px, null);
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid $battleship-grey;
+    }
+    &::after {
+        @extend .select-arrow::before;
+        top: 17px;
+        bottom: unset;
+        border-top: none;
+        border-bottom: 5px solid $battleship-grey;
     }
 }

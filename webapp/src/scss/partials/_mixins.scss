@@ -30,7 +30,7 @@
 
 @mixin margin-padding($num) {
     @if ($num) {
-        @for $i from 1 through 10 {
+        @for $i from 0 through 10 {
             .mb-#{$i} {
                 margin-bottom: #{$num * $i}px;
             }
