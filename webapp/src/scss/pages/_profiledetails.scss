@@ -51,6 +51,9 @@
             }
             .dropdown-box {
                 display: none;
+                &.show {
+                    display: block;
+                }
             }
         }
     }

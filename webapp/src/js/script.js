@@ -9,9 +9,7 @@ nextPage.addEventListener('click', function () {
 var selectDropdown = document.getElementById("select-dropdown");
 var selectInput = document.getElementById("select-input");
 selectInput.addEventListener('click', function () {
-    if (getComputedStyle(selectDropdown).display === "none") {
-        selectDropdown.style.display = "block";
-    }
+    selectDropdown.classList.toggle("show");
 })
 
 var dropdownList = document.getElementsByClassName("dropdown-list");
@@ -19,7 +17,7 @@ for (var i = 0; i < dropdownList.length; i++) {
     var current = dropdownList[i];
     current.addEventListener('click', function () {
         selectInput.innerHTML = event.target.innerHTML;
-        selectDropdown.style.display = "none";
+        selectDropdown.classList.remove("show");
     });
 }
 

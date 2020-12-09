@@ -647,6 +647,8 @@ input[type="checkbox"] {
       padding-left: 14px; }
     .profile-details__form fieldset.select-box .dropdown-box {
       display: none; }
+      .profile-details__form fieldset.select-box .dropdown-box.show {
+        display: block; }
 
 .is-selected .checkbox-container {
   border: 2px solid #23c0f5 !important; }
