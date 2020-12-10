@@ -10,6 +10,10 @@ input[type="text"] {
     }
 }
 
+input[type="number"] {
+    @extend input[type="text"];
+}
+
 input[type="checkbox"] {
     display: none;
     cursor: pointer;

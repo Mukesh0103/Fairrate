@@ -76,12 +76,12 @@
         padding: 20px 26px;
         background: $white;
         border-radius: 3px;
-        .criminal-img {
+        .man-img {
             @include height-width(48px, 46px);
             margin: 16px auto 36px auto;
         }
         .fire-img {
-            @extend .criminal-img;
+            @extend .man-img;
             width: 36px;
             img {
                 height: 100%;

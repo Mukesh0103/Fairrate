@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FairRate</title>
+    <link rel="stylesheet" href="/node_modules/js-datepicker/dist/datepicker.min.css">
     <link rel="stylesheet" href="/webapp/dist/css/style.min.css">
 </head>
 
@@ -22,9 +23,9 @@
                     </li>
                 </ul>
                 <ul class="nav-list__container lh-reset fs-0">
-                    <li class="nav-list heading-sm mr-4"><a href="javascript:void(0)">Home</a></li>
-                    <li class="nav-list heading-sm mr-4"><a href="javascript:void(0)">Application</a></li>
-                    <li class="nav-list heading-sm mr-7"><a href="javascript:void(0)">Documents</a></li>
+                    <li class="nav-list active heading-sm mr-4" id="home"><a href="javascript:void(0)" onclick="changeScreen('screen1')">Home</a></li>
+                    <li class="nav-list heading-sm mr-4" id="application"><a href="javascript:void(0)" onclick="changeScreen('screen2')">Application</a></li>
+                    <li class="nav-list heading-sm mr-7" id="documents"><a href="javascript:void(0)" onclick="changeScreen('screen3')">Documents</a></li>
                     <li class="nav-list mr-2"><a href="javascript:void(0)" class=" bell-icon"><svg class="icon">
                                 <use href="/webapp/dist/images/sprite.svg#bell" /></svg></a></li>
                     <li class="nav-list mr-1"><a href="javascript:void(0)" class="pro-pic"><img class="img-circle"
@@ -41,7 +42,7 @@
                     <form action="" class="name-details__form fs-0">
                         <input type="text" class="mr-2 mb-2" placeholder="First name">
                         <input type="text" class="mb-2" placeholder="Last name">
-                        <button class="btn btn-md btn-primary" id="next-btn" type="button">NEXT</button>
+                        <button class="btn btn-md btn-primary" id="next-btn" type="button" onclick="changeScreen('screen2')">NEXT</button>
                     </form>
                 </div>
             </div>
@@ -57,7 +58,7 @@
                     <form action="" class="profile-details__form">
                         <fieldset class="pos-rel">
                             <label class="text-xs input-label">DATE OF BIRTH</label>
-                            <input type="text" class="mt-1" placeholder="Date of birth">
+                            <input type="text" class="mt-1" placeholder="Date of birth" id="datepicker">
                             <svg class="icon input-icon">
                                 <use href="/webapp/dist/images/sprite.svg#mail-outline" /></svg>
                         </fieldset>
@@ -87,10 +88,10 @@
                             <input type="checkbox" class="mr-1 input-checkbox" id="checkbox3" checked>
                             <label for="checkbox3" class="heading-sm checkbox-label">House</label>
                         </fieldset>
-                        <fieldset class="pos-rel select-box">
+                        <fieldset class="pos-rel select-box" id="select-box">
                             <button class="select-input" id="select-input" type="button">Select option</button>
                             <span class="select-arrow"></span>
-                            <div class="dropdown-box pos-rel" id="select-dropdown"> 
+                            <div class="dropdown-box" id="select-dropdown">
                                 <ul class="dropdown" id="dropdown">
                                     <li class="dropdown-list text-md">This month</li>
                                     <li class="dropdown-list text-md">Next Month</li>
@@ -103,28 +104,32 @@
                     </form>
                 </div>
                 <div class="pd-footer mb-8">
-                    <div class="pd-footer__container checkbox-container mb-6">
-                        <figure class="criminal-img">
+                    <div class="pd-footer__container mb-6">
+                        <figure class="man-img">
                             <svg class="icon">
                                 <use href="/webapp/dist/images/sprite.svg#criminal" /></svg>
                         </figure>
                         <input type="checkbox" class="mr-1 input-checkbox" id="checkbox4" checked>
                         <label for="checkbox4" class="heading-sm checkbox-label">Burglar Alarm</label>
                     </div>
-                    <div class="pd-footer__container checkbox-container mb-6">
+                    <div class="pd-footer__container mb-6">
                         <figure class="fire-img">
                             <img src="/webapp/dist/images/fire.png" />
                         </figure>
                         <input type="checkbox" class="mr-1 input-checkbox" id="checkbox5">
                         <label for="checkbox5" class="heading-sm checkbox-label">Burglar Alarm</label>
                     </div>
-                    <button class="btn btn-grey btn-md mr-7">BACK</button>
-                    <button class="btn btn-primary btn-md">NEXT</button>
+                    <button class="btn btn-grey btn-md mr-7" onclick="changeScreen('screen1')">BACK</button>
+                    <button class="btn btn-primary btn-md" onclick="changeScreen('screen3')">NEXT</button>
                 </div>
             </div>
         </section>
-        <section class="screen3" id="screen3">
+        <section class="screen3 mt-6" id="screen3">
+            <div class="container">
+                <div class="document-content__centering pt-8 pb-8">
 
+                </div>
+            </div>
         </section>
         <footer class="footer">
             <div class="container container-outer">
@@ -194,6 +199,17 @@
     </div>
 
     <script src="/webapp/dist/js/final.js"></script>
+    <script src="/node_modules/js-datepicker/dist/datepicker.min.js"></script>
+    <script>
+        const picker = datepicker('#datepicker', {
+            customDays: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+            position: 'br',
+            formatter: (input, date, instance) => {
+                input.value = date.toLocaleDateString()
+                console.log(input.value)
+            },
+        })
+    </script>
 </body>
 
 </html>

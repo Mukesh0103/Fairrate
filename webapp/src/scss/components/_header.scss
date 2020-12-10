@@ -27,6 +27,9 @@
     &:hover {
         color: $dark;
     }
+    &.active {
+        color: $dark;
+    }
     .user-name {
         @include text-ellipsis(110px);
         vertical-align: middle;
