@@ -19,12 +19,24 @@
     font-size: 0;
 }
 
+.d-fx {
+    display: flex;
+}
+
 .img-circle {
     border-radius: 50%;
     object-fit: cover;
 }
 
 @include margin-padding(10);
+
+.ml-a {
+    margin-left: auto;
+}
+
+.mr-a {
+    margin-right: auto;
+}
 
 .icon {
     height: 100%;

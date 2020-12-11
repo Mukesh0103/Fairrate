@@ -26,13 +26,13 @@ a {
 }
 
 ul {
-    &, li {
-        list-style-type: none;  
+    &,
+    li {
+        list-style-type: none;
     }
 }
 
-.heading-underline {
-    width: 65px;
-    border: 1px solid $light-blue-grey;
-    margin: 0 auto;
+button,
+input {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }

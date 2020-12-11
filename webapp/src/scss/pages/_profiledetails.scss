@@ -32,7 +32,7 @@
             @include height-width(24px, 24px);
             @include position(absolute, 39px, null, null, 10px);
             &.positioning {
-                top: 10px;
+                top: 12px;
             }
         }
         &.checkbox-container {
