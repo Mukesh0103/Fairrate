@@ -1,11 +1,13 @@
 var screen1 = document.getElementById("screen1");
 var screen2 = document.getElementById("screen2");
 var screen3 = document.getElementById("screen3");
+var screen4 = document.getElementById("screen4");
 function changeScreen(screen) {
     if (screen == "screen1") {
         screen1.style.display = "block";
         screen2.style.display = "none";
         screen3.style.display = "none";
+        screen4.style.display = "none";
         document.getElementById("home").classList.add("active");
         document.getElementById("application").classList.remove("active");
         document.getElementById("documents").classList.remove("active");
@@ -13,27 +15,46 @@ function changeScreen(screen) {
         screen1.style.display = "none";
         screen2.style.display = "block";
         screen3.style.display = "none";
+        screen4.style.display = "none";
         document.getElementById("application").classList.add("active");
         document.getElementById("home").classList.remove("active");
         document.getElementById("documents").classList.remove("active");
-    } else {
+    } else if (screen == "screen3") {
         screen1.style.display = "none";
         screen2.style.display = "none";
         screen3.style.display = "block";
+        screen4.style.display = "none";
+        document.getElementById("documents").classList.add("active");
+        document.getElementById("home").classList.remove("active");
+        document.getElementById("application").classList.remove("active");
+    } else {
+        screen1.style.display = "none";
+        screen2.style.display = "none";
+        screen3.style.display = "none";
+        screen4.style.display = "block";
         document.getElementById("documents").classList.add("active");
         document.getElementById("home").classList.remove("active");
         document.getElementById("application").classList.remove("active");
     }
-
 }
 
+var onScrollShadow = document.getElementById("header");
+window.onscroll = function () {
+    if (window.scrollY >= 100) {
+        onScrollShadow.classList.add("scroll-shadow");
+    } else {
+        onScrollShadow.classList.remove("scroll-shadow");
+    }
+}
 
-var selectDropdown = document.getElementById("select-dropdown");
+var selectDropdown = document.getElementById("selectDropdownBox");
+var Dropdown = document.getElementById("dropdownBox");
 var selectBox = document.getElementById("select-box");
 var selectInput = document.getElementById("select-input");
-selectInput.addEventListener('click', function () {
-    selectDropdown.classList.toggle("show");
-})
+
+function openDropdown(value) {
+    value === 'dropdown' ? Dropdown.classList.toggle("show") : selectDropdown.classList.toggle("show");
+}
 
 window.addEventListener('click', function (e) {
     if (!selectBox.contains(e.target)) {
@@ -41,7 +62,7 @@ window.addEventListener('click', function (e) {
     }
 });
 
-var dropdownList = document.getElementsByClassName("dropdown-list");
+var dropdownList = document.getElementsByClassName("select-dropdown__list");
 for (var i = 0; i < dropdownList.length; i++) {
     var current = dropdownList[i];
     current.addEventListener('click', function () {
@@ -61,23 +82,57 @@ tab2.addEventListener('click', function () {
     tab2.classList.add("active");
 });
 
+
+
+
 // drag and drop 
 
 var dropArea = document.getElementById("dropbox");
+var inputFile = document.getElementById("file");
+var fileIcon = document.getElementById("file-icon");
+inputFile.addEventListener('change', fileSelectHandler, false)
+dropArea.addEventListener('dragover', dragOver, false)
+dropArea.addEventListener('dragleave', dragLeave, false)
+dropArea.addEventListener('drop', fileSelectHandler, false)
 
-dropArea.addEventListener('dragover', function (e) {
+function dragOver(e) {
     e.preventDefault();
     dropArea.classList.add("dragover");
-})
-dropArea.addEventListener('dragleave', function () {
+}
+function dragLeave() {
     dropArea.classList.remove("dragover");
-})
-dropArea.addEventListener('drop', function (e) {
+}
+
+function fileSelectHandler(e) {
     e.preventDefault();
-    var file = e.dataTransfer.files[0];
-    var fileName = file.name;
-    var fileType = file.type;
-    var fileSize = file.size;
+
+    var file = e.target.files || e.dataTransfer.files;
+    var fileName = file[0].name;
+    var fileType = file[0].type;
+    var fileSize = file[0].size;
+    console.log(fileName)
+    console.log(fileSize)
+    if (fileSize < 5242880) {
+        var fileSizeConversion = new Array(' B', ' KB', ' MB')
+        i = 0;
+        while (fileSize > 1024) {
+            fileSize /= 1024; i++;
+        }
+        var sizeInNumber = (Math.round(fileSize * 100) / 100);
+        var exactSize = sizeInNumber + fileSizeConversion[i];
+        document.getElementById("file-size").innerHTML = exactSize;
+    } else {
+        document.getElementById("invalid-text").innerHTML = "File is too large to upload!";
+        document.getElementById("invalid-text").style.color = "red";
+        dropArea.classList.add("invalid");
+        return false;
+    }
+
+    if (fileType == "image/png" || fileType == "image/jpg") {
+        fileIcon.innerHTML = '<svg class="icon"><use href="/webapp/dist/images/sprite.svg#img-icon" /></svg>'
+    } else {
+        fileIcon.innerHTML = '<svg class="icon"><use href="/webapp/dist/images/sprite.svg#pdf-icon" /></svg>'
+    }
     dropArea.classList.remove("dragover");
     if (fileType == "image/png" || fileType == "image/jpg" || fileType == "application/pdf") {
         document.getElementById("file-name").innerText = fileName;
@@ -88,15 +143,11 @@ dropArea.addEventListener('drop', function (e) {
         } else if (fileType == "application/pdf") {
             document.getElementById("file-type").innerHTML = "PDF";
         }
-        document.getElementById("file-size").innerHTML = fileSize;
-    } else {
+    }
+    else {
         document.getElementById("invalid-text").innerHTML = "Invalid File Format";
         document.getElementById("invalid-text").style.color = "red";
         dropArea.classList.add("invalid");
         return false;
     }
-})
-
-
-
-
+}

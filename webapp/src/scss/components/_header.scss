@@ -3,9 +3,12 @@
     width: 100%;
     @include position(fixed, 0, null, null, 0);
     z-index: 10;
+    border-bottom: 1px solid $pale-blue;
+    &.scroll-shadow {
+        box-shadow: 0 2px 10px #bababa;
+        transition: 0.5s;
+    }
     .navbar {
-        display: flex;
-        align-items: center;
         .nav-list__container {
             &:first-child {
                 margin-right: auto;

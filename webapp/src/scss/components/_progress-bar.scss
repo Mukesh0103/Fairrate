@@ -1,0 +1,39 @@
+.progress {
+    @include height-width(105px, 105px);
+    &::after {
+        content: "";
+        @include height-width(100%, 100%);
+        @include position(absolute, -6px, null, null, -6px);
+        border-radius: 50%;
+        border: 7px solid #f9fafb;
+    }
+    > span {
+        @include height-width(100%, 50%);
+        @include position(absolute, 0px, null, null, null);
+        overflow: hidden;
+        z-index: 1;
+    }
+    .progress-bar {
+        @include height-width(100%, 100%);
+        @include position(absolute, 0px, null, null, null);
+        border-width: 7px;
+        border-style: solid;
+        border-color: $primary-blue;
+    }
+    .progress-right {
+        right: 0;
+        .progress-bar {
+            left: -100%;
+            border-top-left-radius: (105px/2);
+            border-bottom-left-radius: (105px/2);
+            border-right: 0;
+            -webkit-transform-origin: center right;
+            transform-origin: center right;
+        }
+    }
+    .progress-value {
+        border-radius: 50%;
+        justify-content: center;
+        height: 100%;
+    }
+}

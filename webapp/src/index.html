@@ -11,12 +11,13 @@
 
 <body>
     <div class="fairrate-webapp">
-        <header class="header pb-1 pt-1 pl-3 pr-3">
-            <nav class="navbar">
+        <header class="header pb-1 pt-1 pl-3 pr-3" id="header">
+            <nav class="navbar fx-center">
                 <ul class="nav-list__container lh-reset fs-0">
                     <li class="nav-list mr-4"><a href="javascript:void(0)" class="menu-bar">
                             <svg class="icon">
-                                <use href="/webapp/dist/images/sprite.svg#menu-bar" /></svg>
+                                <use href="/webapp/dist/images/sprite.svg#menu-bar" />
+                            </svg>
                         </a></li>
                     <li class="nav-list"><a href="javascript:void(0)" class="app-logo"> <img
                                 src="/webapp/dist/images/logo.png" alt="logo" /></a>
@@ -29,12 +30,20 @@
                             onclick="changeScreen('screen2')">Application</a></li>
                     <li class="nav-list heading-sm mr-7" id="documents"><a href="javascript:void(0)"
                             onclick="changeScreen('screen3')">Documents</a></li>
-                    <li class="nav-list mr-2"><a href="javascript:void(0)" class=" bell-icon"><svg class="icon">
-                                <use href="/webapp/dist/images/sprite.svg#bell" /></svg></a></li>
+                    <li class="nav-list mr-2"><a href="javascript:void(0)" class="bell-icon"><svg class="icon">
+                                <use href="/webapp/dist/images/sprite.svg#bell" />
+                            </svg></a></li>
                     <li class="nav-list mr-1"><a href="javascript:void(0)" class="pro-pic"><img class="img-circle"
                                 src="/webapp/dist/images/pro-pic.jpg" alt="profile-picture"></a></li>
-                    <li class="nav-list text-sm"><a href="javascript:void(0)" class="user-name">Adrian Manea</a><span
-                            class="arrow-down ml-1"></span></li>
+                    <li class="nav-list text-sm"><a href="javascript:void(0)" class="user-name"
+                            onclick="openDropdown('dropdown')">Adrian Manea</a><span class="arrow-down ml-1"></span>
+                    </li>
+                    <div class="dropdown-box" id="dropdownBox">
+                        <ul class="dropdown">
+                            <li class="dropdown-list text-md">Settings</li>
+                            <li class="dropdown-list text-md">Log out</li>
+                        </ul>
+                    </div>
                 </ul>
             </nav>
         </header>
@@ -64,7 +73,8 @@
                             <label class="text-xs input-label">DATE OF BIRTH</label>
                             <input type="text" class="mt-1" placeholder="Date of birth" id="datepicker">
                             <svg class="icon input-icon">
-                                <use href="/webapp/dist/images/sprite.svg#mail-outline" /></svg>
+                                <use href="/webapp/dist/images/sprite.svg#mail-outline" />
+                            </svg>
                         </fieldset>
                     </form>
                 </div>
@@ -73,12 +83,14 @@
                         <fieldset class="pos-rel mb-3">
                             <input type="text" placeholder="Enter the exact address">
                             <svg class="icon input-icon positioning">
-                                <use href="/webapp/dist/images/sprite.svg#marker" /></svg>
+                                <use href="/webapp/dist/images/sprite.svg#marker" />
+                            </svg>
                         </fieldset>
                         <fieldset class="pos-rel mb-3">
                             <input type="text" placeholder="Email Address">
                             <svg class="icon input-icon positioning">
-                                <use href="/webapp/dist/images/sprite.svg#mail-outline" /></svg>
+                                <use href="/webapp/dist/images/sprite.svg#mail-outline" />
+                            </svg>
                         </fieldset>
                         <fieldset class="mb-1 checkbox-container">
                             <input type="checkbox" class="mr-1 input-checkbox" id="checkbox1">
@@ -93,15 +105,16 @@
                             <label for="checkbox3" class="heading-sm checkbox-label">House</label>
                         </fieldset>
                         <fieldset class="pos-rel select-box" id="select-box">
-                            <button class="select-input" id="select-input" type="button">Select option</button>
+                            <button class="select-input" id="select-input" onclick="openDropdown('selectDropdown')"
+                                type="button">Select option</button>
                             <span class="select-arrow"></span>
-                            <div class="dropdown-box" id="select-dropdown">
-                                <ul class="dropdown" id="dropdown">
-                                    <li class="dropdown-list text-md">This month</li>
-                                    <li class="dropdown-list text-md">Next Month</li>
-                                    <li class="dropdown-list text-md">December 2018</li>
-                                    <li class="dropdown-list text-md">January 2019</li>
-                                    <li class="dropdown-list text-md">I don't know</li>
+                            <div class="select-dropdown__box" id="selectDropdownBox">
+                                <ul class="select-dropdown" id="">
+                                    <li class="select-dropdown__list text-md">This month</li>
+                                    <li class="select-dropdown__list text-md">Next Month</li>
+                                    <li class="select-dropdown__list text-md">December 2018</li>
+                                    <li class="select-dropdown__list text-md">January 2019</li>
+                                    <li class="select-dropdown__list text-md">I don't know</li>
                                 </ul>
                             </div>
                         </fieldset>
@@ -111,7 +124,8 @@
                     <div class="pd-footer__container mb-6">
                         <figure class="man-img">
                             <svg class="icon">
-                                <use href="/webapp/dist/images/sprite.svg#criminal" /></svg>
+                                <use href="/webapp/dist/images/sprite.svg#criminal" />
+                            </svg>
                         </figure>
                         <input type="checkbox" class="mr-1 input-checkbox" id="checkbox4" checked>
                         <label for="checkbox4" class="heading-sm checkbox-label">Burglar Alarm</label>
@@ -123,7 +137,7 @@
                         <input type="checkbox" class="mr-1 input-checkbox" id="checkbox5">
                         <label for="checkbox5" class="heading-sm checkbox-label">Burglar Alarm</label>
                     </div>
-                    <div class="d-fx">
+                    <div class="fx-center">
                         <button class="btn btn-grey btn-md" onclick="changeScreen('screen1')">BACK</button>
                         <button class="btn btn-primary btn-md ml-a" onclick="changeScreen('screen3')">NEXT</button>
                     </div>
@@ -143,12 +157,16 @@
                             <div class="drag-n-drop invalid mr-3" id="dropbox">
                                 <figure class="file-icon__container mt-4 mb-2">
                                     <svg class="icon">
-                                        <use href="/webapp/dist/images/sprite.svg#file" /></svg>
+                                        <use href="/webapp/dist/images/sprite.svg#file" />
+                                    </svg>
                                 </figure>
-                                <p class="text-lg ta-center drag-n-drop__text mb-6" id="invalid-text">Drag files here to upload or
+                                <p class="text-lg ta-center drag-n-drop__text mb-2">Drag files here to
+                                    upload or
                                     <label for="file">select a file</label>
-                                    <input id="file" type="file"/>
-                                    from your device</p>
+                                    <input id="file" type="file" />
+                                    from your device
+                                </p>
+                                <p class="mb-3 text-lg ta-center invalid-text" id="invalid-text"></p>
                                 <p class="text-md drag-n-drop__footer ta-center mb-1">JPG, PNG or PDF only, maximum file
                                     size - 5MB</p>
                             </div>
@@ -169,11 +187,13 @@
                         </div>
                         <table class="uploaded-files pl-2">
                             <tr class="uploaded-files__list">
-                                <td class="file-details pl-2" id="file-name">
-                                    <figure class="file-icon mr-1">
+                                <td class="file-details pl-2">
+                                    <figure class="file-icon mr-1" id="file-icon">
                                         <svg class="icon">
-                                            <use href="/webapp/dist/images/sprite.svg#pdf-icon" /></svg>
-                                    </figure>MY_ID.PDF
+                                            <use href="/webapp/dist/images/sprite.svg#pdf-icon" />
+                                        </svg>
+                                    </figure>
+                                    <p class="file-name" id="file-name">MY_ID.PDF</p>
                                 </td>
                                 <td class="file-details" id="file-type">PDF</td>
                                 <td class="file-details" id="file-size">1 MBs</td>
@@ -181,34 +201,82 @@
                                 <td class="file-details">
                                     <button class="btn del-icon">
                                         <svg class="icon">
-                                            <use href="/webapp/dist/images/sprite.svg#delete" /></svg>
+                                            <use href="/webapp/dist/images/sprite.svg#delete" />
+                                        </svg>
                                     </button>
                                 </td>
                             </tr>
-                            <!-- <tr class="uploaded-files__list">
-                                <td class="file-details pl-2">
-                                    <figure class="file-icon mr-1">
-                                        <svg class="icon">
-                                            <use href="/webapp/dist/images/sprite.svg#img-icon" /></svg>
-                                    </figure>IMG1231.JPG
-                                </td>
-                                <td class="file-details">JPG</td>
-                                <td class="file-details">1 MBs</td>
-                                <td class="file-details">UPLOADED</td>
-                                <td class="file-details">
-                                    <button class="btn del-icon">
-                                        <svg class="icon">
-                                            <use href="/webapp/dist/images/sprite.svg#delete" /></svg>
-                                    </button>
-                                </td>
-                            </tr> -->
                         </table>
                     </div>
-                    <div class="d-fx">
+                    <div class="fx-center">
                         <button class="btn btn-grey btn-md" onclick="changeScreen('screen2')">BACK</button>
                         <button class="btn btn-primary btn-md ml-a" onclick="changeScreen('screen4')">NEXT</button>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="screen4 mt-6 pb-10" id="screen4">
+            <div class="summary-header pt-3 pb-3 mb-10">
+                <div class="container fx-center">
+                    <div class="mr-3 heading-xl">
+                        <div class="progress pos-rel" data-percentage="40">
+                            <span class="progress-right">
+                                <span class="progress-bar"></span>
+                            </span>
+                            <div class="progress-value fx-center">
+                                <div>40%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-header__content">
+                        <h1 class="heading-xl fw-sb">Your Mortgage is 60% Complete</h1>
+                        <p class="text-lg">Great Start Adrian! Please complete remaining steps!</p>
+                    </div>
+                    <div class="ml-a">
+                        <button class="btn text-md fx-center pos-rel arrow-button">
+                            <span class="mr-4">Talk to us</span>
+                            <span class="right-arrow">
+                                <svg class="icon">
+                                    <use href="/webapp/dist/images/sprite.svg#right-arrow" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <ul class="summary-content">
+                    <li class="summary-content__list fx-center mb-2">
+                        <span class="list-number text-lg ta-center fx-center mr-2">1</span>
+                        <span class="heading-md">Personal details</span>
+                        <a href="javascript:void(0)" class="edit text-md mr-1"
+                            onclick="changeScreen('screen1')">Edit</a>
+                        <span class="completed-tick pos-rel"></span>
+                    </li>
+                    <li class="summary-content__list fx-center mb-2">
+                        <span class="list-number text-lg ta-center fx-center mr-2">2</span>
+                        <span class="heading-md">Employment & Income</span>
+                        <a href="javascript:void(0)" class="edit text-md mr-1"
+                            onclick="changeScreen('screen2')">Edit</a>
+                        <span class="completed-tick pos-rel"></span>
+                    </li>
+                    <li class="summary-content__list fx-center mb-2">
+                        <span class="list-number text-lg ta-center fx-center mr-2">3</span>
+                        <span class="heading-md">Adverse events</span>
+                        <button class="btn text-md fx-center pos-rel arrow-button ml-a">
+                            <span class="mr-4">Get Started</span>
+                            <span class="right-arrow">
+                                <svg class="icon">
+                                    <use href="/webapp/dist/images/sprite.svg#right-arrow" />
+                                </svg>
+                            </span>
+                        </button>
+                    </li>
+                    <li class="summary-content__list disabled fx-center">
+                        <span class="list-number text-lg ta-center fx-center mr-2">4</span>
+                        <span class="heading-md">Upload Documents</span>
+                    </li>
+                </ul>
             </div>
         </section>
         <footer class="footer">
@@ -223,19 +291,23 @@
                             <li class="footer-sublist text-md contact-number"><a href="tel: +622025550117"
                                     target="_blank">
                                     <svg class="icon contact-icon mr-1">
-                                        <use href="/webapp/dist/images/sprite.svg#call" /></svg>+62 202 555 0117</a>
+                                        <use href="/webapp/dist/images/sprite.svg#call" />
+                                    </svg>+62 202 555 0117</a>
                             </li>
                             <li class="footer-sublist">
                                 <ul class="fs-0">
                                     <li class="social-icons"><a href="javascript:void(0)" target="_blank"><svg
                                                 class="icon">
-                                                <use href="/webapp/dist/images/sprite.svg#twitter" /></svg></a></li>
+                                                <use href="/webapp/dist/images/sprite.svg#twitter" />
+                                            </svg></a></li>
                                     <li class="social-icons"><a href="javascript:void(0)" target="_blank"><svg
                                                 class="icon">
-                                                <use href="/webapp/dist/images/sprite.svg#linked-in" /></svg></a></li>
+                                                <use href="/webapp/dist/images/sprite.svg#linked-in" />
+                                            </svg></a></li>
                                     <li class="social-icons"><a href="javascript:void(0)" target="_blank"><svg
                                                 class="icon">
-                                                <use href="/webapp/dist/images/sprite.svg#facebook" /></svg></a></li>
+                                                <use href="/webapp/dist/images/sprite.svg#facebook" />
+                                            </svg></a></li>
                                 </ul>
                             </li>
                         </ul>

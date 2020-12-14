@@ -1,0 +1,18 @@
+.dropdown-box {
+    @extend .select-dropdown__box;
+    width: 150px;
+    right: 27px;
+    display: none;
+    &.show {
+        display: block;
+    }
+    &::before {
+        display: none;
+    }
+    .dropdown {
+        @extend .select-dropdown;
+        .dropdown-list {
+            @extend .select-dropdown__list;
+        }
+    }
+}
