@@ -35,6 +35,15 @@
         background: #f9fafb;
         border: 2px dashed $light-blue-grey;
         border-radius: 3px;
+        .invalid-text {
+            visibility: hidden;
+        }
+        &.invalid {
+            .invalid-text {
+                color: red;
+                visibility: visible;
+            }
+        }
         .file-icon__container {
             @include height-width(86px, 105px);
             margin-left: auto;
@@ -58,9 +67,6 @@
             input {
                 display: none;
             }
-        }
-        .invalid-text {
-            height: 30px;
         }
         .drag-n-drop__footer {
             color: $bluey-grey;

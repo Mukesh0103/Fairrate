@@ -19,7 +19,7 @@
                                 <use href="/webapp/dist/images/sprite.svg#menu-bar" />
                             </svg>
                         </a></li>
-                    <li class="nav-list"><a href="javascript:void(0)" class="app-logo"> <img
+                    <li class="nav-list"><a href="../index.html" class="app-logo"> <img
                                 src="/webapp/dist/images/logo.png" alt="logo" /></a>
                     </li>
                 </ul>
@@ -51,7 +51,7 @@
             <div class="container">
                 <div class="content-centering pt-8 pl-2 pr-2">
                     <h1 class="heading-xl fw-sb mb-5">I'll get you an awesome price in seconds. Ready to go?</h1>
-                    <form action="" class="name-details__form fs-0">
+                    <form class="name-details__form fs-0">
                         <input type="text" class="mr-2 mb-2" placeholder="First name">
                         <input type="text" class="mb-2" placeholder="Last name">
                         <button class="btn btn-md btn-primary" id="next-btn" type="button"
@@ -68,7 +68,7 @@
                         <p class="text-md pd-heading__content">Fusce dapibus, tellus ac cursus commodo, tortor mauris
                             condimentum nibh.</p>
                     </div>
-                    <form action="" class="profile-details__form">
+                    <form class="profile-details__form">
                         <fieldset class="pos-rel">
                             <label class="text-xs input-label">DATE OF BIRTH</label>
                             <input type="text" class="mt-1" placeholder="Date of birth" id="datepicker">
@@ -79,7 +79,7 @@
                     </form>
                 </div>
                 <div class="pd-content__wrapper">
-                    <form action="" class="profile-details__form">
+                    <form class="profile-details__form">
                         <fieldset class="pos-rel mb-3">
                             <input type="text" placeholder="Enter the exact address">
                             <svg class="icon input-icon positioning">
@@ -154,7 +154,7 @@
                         <p class="text-lg ta-center mb-2">Upload photo Indentification</p>
                         <hr class="divider-line mb-2">
                         <div class="file-upload__container pl-2 pr-2 mb-5">
-                            <div class="drag-n-drop invalid mr-3" id="dropbox">
+                            <div class="drag-n-drop mr-3" id="dropbox">
                                 <figure class="file-icon__container mt-4 mb-2">
                                     <svg class="icon">
                                         <use href="/webapp/dist/images/sprite.svg#file" />
@@ -163,10 +163,10 @@
                                 <p class="text-lg ta-center drag-n-drop__text mb-2">Drag files here to
                                     upload or
                                     <label for="file">select a file</label>
-                                    <input id="file" type="file" />
+                                    <input id="file" type="file" multiple />
                                     from your device
                                 </p>
-                                <p class="mb-3 text-lg ta-center invalid-text" id="invalid-text"></p>
+                                <p class="mb-3 text-lg ta-center invalid-text" id="invalid-text">Invalid File Format</p>
                                 <p class="text-md drag-n-drop__footer ta-center mb-1">JPG, PNG or PDF only, maximum file
                                     size - 5MB</p>
                             </div>
@@ -185,28 +185,7 @@
                                 <a href="javascript:void(0)" class="text-md">See an example image</a>
                             </div>
                         </div>
-                        <table class="uploaded-files pl-2">
-                            <tr class="uploaded-files__list">
-                                <td class="file-details pl-2">
-                                    <figure class="file-icon mr-1" id="file-icon">
-                                        <svg class="icon">
-                                            <use href="/webapp/dist/images/sprite.svg#pdf-icon" />
-                                        </svg>
-                                    </figure>
-                                    <p class="file-name" id="file-name">MY_ID.PDF</p>
-                                </td>
-                                <td class="file-details" id="file-type">PDF</td>
-                                <td class="file-details" id="file-size">1 MBs</td>
-                                <td class="file-details">UPLOADED</td>
-                                <td class="file-details">
-                                    <button class="btn del-icon">
-                                        <svg class="icon">
-                                            <use href="/webapp/dist/images/sprite.svg#delete" />
-                                        </svg>
-                                    </button>
-                                </td>
-                            </tr>
-                        </table>
+                        <table class="uploaded-files pl-2" id="fileListTable"></table>
                     </div>
                     <div class="fx-center">
                         <button class="btn btn-grey btn-md" onclick="changeScreen('screen2')">BACK</button>
@@ -224,7 +203,7 @@
                                 <span class="progress-bar"></span>
                             </span>
                             <div class="progress-value fx-center">
-                                <div>40%</div>
+                                <div>60%</div>
                             </div>
                         </div>
                     </div>

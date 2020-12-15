@@ -90,6 +90,7 @@ tab2.addEventListener('click', function () {
 var dropArea = document.getElementById("dropbox");
 var inputFile = document.getElementById("file");
 var fileIcon = document.getElementById("file-icon");
+var InputFileList = [];
 inputFile.addEventListener('change', fileSelectHandler, false)
 dropArea.addEventListener('dragover', dragOver, false)
 dropArea.addEventListener('dragleave', dragLeave, false)
@@ -105,49 +106,68 @@ function dragLeave() {
 
 function fileSelectHandler(e) {
     e.preventDefault();
-
-    var file = e.target.files || e.dataTransfer.files;
-    var fileName = file[0].name;
-    var fileType = file[0].type;
-    var fileSize = file[0].size;
-    console.log(fileName)
-    console.log(fileSize)
-    if (fileSize < 5242880) {
-        var fileSizeConversion = new Array(' B', ' KB', ' MB')
-        i = 0;
-        while (fileSize > 1024) {
-            fileSize /= 1024; i++;
+    InputFileList = [];
+    for (var i = 0; i < inputFile.files.length; i++) {
+        InputFileList.push(inputFile.files[i]);
+        var fileName = inputFile.files[i].name;
+        var fileType = inputFile.files[i].type;
+        var fileSize = inputFile.files[i].size;
+        if (fileSize < 5242880) {
+            var fileSizeConversion = new Array(' B', ' KB', ' MB')
+            x = 0;
+            while (fileSize > 1024) {
+                fileSize /= 1024; x++;
+            }
+            var sizeInNumber = (Math.round(fileSize * 100) / 100);
+            var exactSize = sizeInNumber + fileSizeConversion[x];
+            outputFileDetails();
+            document.getElementById("file-size").innerHTML = exactSize;
+        } else {
+            document.getElementById("invalid-text").innerHTML = "File is too large to upload!";
+            document.getElementById("invalid-text").style.color = "red";
+            dropArea.classList.add("invalid");
+            return false;
         }
-        var sizeInNumber = (Math.round(fileSize * 100) / 100);
-        var exactSize = sizeInNumber + fileSizeConversion[i];
-        document.getElementById("file-size").innerHTML = exactSize;
-    } else {
-        document.getElementById("invalid-text").innerHTML = "File is too large to upload!";
-        document.getElementById("invalid-text").style.color = "red";
-        dropArea.classList.add("invalid");
-        return false;
-    }
-
-    if (fileType == "image/png" || fileType == "image/jpg") {
-        fileIcon.innerHTML = '<svg class="icon"><use href="/webapp/dist/images/sprite.svg#img-icon" /></svg>'
-    } else {
-        fileIcon.innerHTML = '<svg class="icon"><use href="/webapp/dist/images/sprite.svg#pdf-icon" /></svg>'
-    }
-    dropArea.classList.remove("dragover");
-    if (fileType == "image/png" || fileType == "image/jpg" || fileType == "application/pdf") {
-        document.getElementById("file-name").innerText = fileName;
-        if (fileType == "image/png") {
-            document.getElementById("file-type").innerHTML = "PNG";
-        } else if (fileType == "image/jpg") {
-            document.getElementById("file-type").innerHTML = "JPG";
-        } else if (fileType == "application/pdf") {
-            document.getElementById("file-type").innerHTML = "PDF";
+        if (fileType == "image/png" || fileType == "image/jpg" || fileType == "application/pdf") {
+            document.getElementById("file-name").innerText = fileName;
+            if (fileType == "image/png") {
+                document.getElementById("file-type").innerHTML = "PNG";
+            } else if (fileType == "image/jpg") {
+                document.getElementById("file-type").innerHTML = "JPG";
+            } else if (fileType == "application/pdf") {
+                document.getElementById("file-type").innerHTML = "PDF";
+            }
         }
+        else {
+            dropArea.classList.add("invalid");
+            return false;
+        }
+        // if (fileType == "image/png" || fileType == "image/jpg") {
+        //     fileIcon.innerHTML = '<svg class="icon"><use href="/webapp/dist/images/sprite.svg#img-icon" /></svg>'
+        // } else {
+        //     fileIcon.innerHTML = '<svg class="icon"><use href="/webapp/dist/images/sprite.svg#pdf-icon" /></svg>'
+        // }
+        dropArea.classList.remove("dragover");
     }
-    else {
-        document.getElementById("invalid-text").innerHTML = "Invalid File Format";
-        document.getElementById("invalid-text").style.color = "red";
-        dropArea.classList.add("invalid");
-        return false;
-    }
+}
+
+function outputFileDetails() {
+    var createFileRow = document.createElement('tr');
+    var createInnerItems = document.createTextNode(`<td class="file-details pl-2">
+    <figure class="file-icon mr-1" id="file-icon">
+    </figure>
+    <p class="file-name" id="file-name"></p>
+    </td>
+    <td class="file-details" id="file-type"></td>
+    <td class="file-details" id="file-size"></td>
+    <td class="file-details">UPLOADED</td>
+    <td class="file-details">
+    <button class="btn del-icon">
+        <svg class="icon">
+            <use href="/webapp/dist/images/sprite.svg#delete" />
+        </svg>
+    </button>
+    </td>`);
+    createFileRow.appendChild(createInnerItems);
+    document.getElementById("fileListTable").appendChild(createFileRow);
 }

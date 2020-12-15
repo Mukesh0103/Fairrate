@@ -742,6 +742,11 @@ input[type="checkbox"] {
     background: #f9fafb;
     border: 2px dashed #c4cdd5;
     border-radius: 3px; }
+    .file-upload__container .drag-n-drop .invalid-text {
+      visibility: hidden; }
+    .file-upload__container .drag-n-drop.invalid .invalid-text {
+      color: red;
+      visibility: visible; }
     .file-upload__container .drag-n-drop .file-icon__container {
       height: 86px;
       width: 105px;
@@ -762,8 +767,6 @@ input[type="checkbox"] {
           color: #69939d; }
       .file-upload__container .drag-n-drop .drag-n-drop__text input {
         display: none; }
-    .file-upload__container .drag-n-drop .invalid-text {
-      height: 30px; }
     .file-upload__container .drag-n-drop .drag-n-drop__footer {
       color: #919eab;
       line-height: normal; }
