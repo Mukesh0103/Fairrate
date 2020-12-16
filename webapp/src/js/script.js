@@ -89,12 +89,10 @@ tab2.addEventListener('click', function () {
 
 var dropArea = document.getElementById("dropbox");
 var inputFile = document.getElementById("file");
-var fileIcon = document.getElementById("file-icon");
-var InputFileList = [];
-inputFile.addEventListener('change', fileSelectHandler, false)
-dropArea.addEventListener('dragover', dragOver, false)
-dropArea.addEventListener('dragleave', dragLeave, false)
-dropArea.addEventListener('drop', fileSelectHandler, false)
+inputFile.addEventListener('change', fileInputHandler)
+dropArea.addEventListener('dragover', dragOver)
+dropArea.addEventListener('dragleave', dragLeave)
+dropArea.addEventListener('drop', fileDropHandler)
 
 function dragOver(e) {
     e.preventDefault();
@@ -104,70 +102,73 @@ function dragLeave() {
     dropArea.classList.remove("dragover");
 }
 
-function fileSelectHandler(e) {
+function fileInputHandler(e) {
+    processFiles(e.target.files);
+}
+
+function fileDropHandler(e) {
     e.preventDefault();
-    InputFileList = [];
-    for (var i = 0; i < inputFile.files.length; i++) {
-        InputFileList.push(inputFile.files[i]);
-        var fileName = inputFile.files[i].name;
-        var fileType = inputFile.files[i].type;
-        var fileSize = inputFile.files[i].size;
+    processFiles(e.dataTransfer.files);
+}
+
+function processFiles(file) {
+    for (var i = 0; i < file.length; i++) {
+        var fileName = file[i].name;
+        var fileType = file[i].type;
+        var fileSize = file[i].size;
         if (fileSize < 5242880) {
-            var fileSizeConversion = new Array(' B', ' KB', ' MB')
+            var fileSizeConversion = new Array(' B', ' KB', ' MB');
             x = 0;
             while (fileSize > 1024) {
                 fileSize /= 1024; x++;
             }
-            var sizeInNumber = (Math.round(fileSize * 100) / 100);
-            var exactSize = sizeInNumber + fileSizeConversion[x];
-            outputFileDetails();
-            document.getElementById("file-size").innerHTML = exactSize;
-        } else {
+            var exactSize = (Math.round(fileSize * 100) / 100) + fileSizeConversion[x];
+            if (fileType == "image/png" || fileType == "image/jpg" || fileType == "application/pdf") {
+                if (fileType == "image/png") {
+                    fileType = "PNG";
+                    fileIcon = '<svg class="icon"><use href="/webapp/dist/images/sprite.svg#img-icon" /></svg>'
+                } else if (fileType == "image/jpg") {
+                    fileType = "JPG";
+                    fileIcon = '<svg class="icon"><use href="/webapp/dist/images/sprite.svg#img-icon" /></svg>'
+                } else if (fileType == "application/pdf") {
+                    fileType = "PDF";
+                    fileIcon = '<svg class="icon"><use href="/webapp/dist/images/sprite.svg#pdf-icon" /></svg>'
+                }
+            }
+            else {
+                dropArea.classList.add("invalid");
+            }
+            outputFileDetails(fileName, exactSize, fileType, fileIcon);
+            dropArea.classList.remove("dragover");
+        }
+        else {
             document.getElementById("invalid-text").innerHTML = "File is too large to upload!";
             document.getElementById("invalid-text").style.color = "red";
             dropArea.classList.add("invalid");
-            return false;
         }
-        if (fileType == "image/png" || fileType == "image/jpg" || fileType == "application/pdf") {
-            document.getElementById("file-name").innerText = fileName;
-            if (fileType == "image/png") {
-                document.getElementById("file-type").innerHTML = "PNG";
-            } else if (fileType == "image/jpg") {
-                document.getElementById("file-type").innerHTML = "JPG";
-            } else if (fileType == "application/pdf") {
-                document.getElementById("file-type").innerHTML = "PDF";
-            }
-        }
-        else {
-            dropArea.classList.add("invalid");
-            return false;
-        }
-        // if (fileType == "image/png" || fileType == "image/jpg") {
-        //     fileIcon.innerHTML = '<svg class="icon"><use href="/webapp/dist/images/sprite.svg#img-icon" /></svg>'
-        // } else {
-        //     fileIcon.innerHTML = '<svg class="icon"><use href="/webapp/dist/images/sprite.svg#pdf-icon" /></svg>'
-        // }
-        dropArea.classList.remove("dragover");
     }
 }
 
-function outputFileDetails() {
+function outputFileDetails(name, size, type, icon) {
     var createFileRow = document.createElement('tr');
-    var createInnerItems = document.createTextNode(`<td class="file-details pl-2">
-    <figure class="file-icon mr-1" id="file-icon">
-    </figure>
-    <p class="file-name" id="file-name"></p>
-    </td>
-    <td class="file-details" id="file-type"></td>
-    <td class="file-details" id="file-size"></td>
-    <td class="file-details">UPLOADED</td>
-    <td class="file-details">
-    <button class="btn del-icon">
-        <svg class="icon">
-            <use href="/webapp/dist/images/sprite.svg#delete" />
-        </svg>
-    </button>
-    </td>`);
-    createFileRow.appendChild(createInnerItems);
+    createFileRow.setAttribute('class', 'uploaded-files__list');
+    createFileRow.setAttribute('id', 'fileRow');
+    createFileRow.innerHTML = '<td class="file-details pl-2">' +
+        '<figure class="file-icon mr-1" id="file-icon">' + icon + '</figure>' +
+        '<p class="file-name" id="file-name">' + name + '</p></td>' +
+        '<td class="file-details" id="file-type">' + type + '</td>' +
+        '<td class="file-details" id="file-size">' + size + '</td>' +
+        '<td class="file-details">UPLOADED</td>' +
+        '<td class="file-details">' +
+        '<button class="btn del-icon" id="del-icon" onclick="deleteItem()">' +
+        '<svg class="icon">' +
+        '<use href="/webapp/dist/images/sprite.svg#delete" />' +
+        '</svg>' +
+        '</button>' +
+        '</td>';
     document.getElementById("fileListTable").appendChild(createFileRow);
+}
+
+function deleteItem() {
+    document.getElementById('fileRow').remove();
 }

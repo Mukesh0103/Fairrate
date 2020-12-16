@@ -122,10 +122,11 @@
             }
             .file-icon {
                 @include height-width(18px, 18px);
-                @include inline-block(bottom);
+                @include inline-block(top);
             }
             .file-name {
-                @include inline-block(bottom);
+                @include inline-block(top);
+                max-width: 150px;
             }
             .del-icon {
                 @include height-width(24px, 24px);

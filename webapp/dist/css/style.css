@@ -813,10 +813,11 @@ input[type="checkbox"] {
         height: 18px;
         width: 18px;
         display: inline-block;
-        vertical-align: bottom; }
+        vertical-align: top; }
       .uploaded-files .uploaded-files__list .file-details .file-name {
         display: inline-block;
-        vertical-align: bottom; }
+        vertical-align: top;
+        max-width: 150px; }
       .uploaded-files .uploaded-files__list .file-details .del-icon {
         height: 24px;
         width: 24px;
