@@ -40,8 +40,7 @@
 }
 
 .icon {
-    height: 100%;
-    width: 100%;
+    @include height-width(100%, 100%);
 }
 
 .link-hover {

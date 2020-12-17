@@ -103,34 +103,38 @@
     }
 }
 
-.uploaded-files {
-    border-top: 1px solid $pale-blue;
-    border-bottom: 1px solid $pale-blue;
-    color: $battleship-grey;
-    width: 100%;
-    background: #fafafa;
-    border-collapse: collapse;
-    .uploaded-files__list {
+.file-list_conatiner {
+    max-height: 250px;
+    overflow: auto;
+    .uploaded-files {
+        border-top: 1px solid $pale-blue;
         border-bottom: 1px solid $pale-blue;
-        .file-details {
-            padding-top: 15px;
-            padding-bottom: 15px;
-            font-size: 11px;
-            &:first-child {
-                font-size: 13px;
-                max-width: 90px;
-            }
-            .file-icon {
-                @include height-width(18px, 18px);
-                @include inline-block(top);
-            }
-            .file-name {
-                @include inline-block(top);
-                max-width: 150px;
-            }
-            .del-icon {
-                @include height-width(24px, 24px);
-                background: none;
+        color: $battleship-grey;
+        width: 100%;
+        background: #fafafa;
+        border-collapse: collapse;
+        .uploaded-files__list {
+            border-bottom: 1px solid $pale-blue;
+            .file-details {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                font-size: 11px;
+                &:first-child {
+                    font-size: 13px;
+                    max-width: 90px;
+                }
+                .file-icon {
+                    @include height-width(18px, 18px);
+                    @include inline-block(top);
+                }
+                .file-name {
+                    @include inline-block(top);
+                    @include text-ellipsis(150px);
+                }
+                .del-icon {
+                    @include height-width(24px, 24px);
+                    background: none;
+                }
             }
         }
     }

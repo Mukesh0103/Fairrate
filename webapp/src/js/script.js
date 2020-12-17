@@ -152,7 +152,6 @@ function processFiles(file) {
 function outputFileDetails(name, size, type, icon) {
     var createFileRow = document.createElement('tr');
     createFileRow.setAttribute('class', 'uploaded-files__list');
-    createFileRow.setAttribute('id', 'fileRow');
     createFileRow.innerHTML = '<td class="file-details pl-2">' +
         '<figure class="file-icon mr-1" id="file-icon">' + icon + '</figure>' +
         '<p class="file-name" id="file-name">' + name + '</p></td>' +
@@ -160,15 +159,15 @@ function outputFileDetails(name, size, type, icon) {
         '<td class="file-details" id="file-size">' + size + '</td>' +
         '<td class="file-details">UPLOADED</td>' +
         '<td class="file-details">' +
-        '<button class="btn del-icon" id="del-icon" onclick="deleteItem()">' +
+        '<button class="btn del-icon tooltip pos-rel" id="del-icon" onclick="deleteItem(this)">' +
         '<svg class="icon">' +
         '<use href="/webapp/dist/images/sprite.svg#delete" />' +
-        '</svg>' +
+        '</svg>' + '<span class="tooltiptext ta-center">Delete</span>' +
         '</button>' +
         '</td>';
     document.getElementById("fileListTable").appendChild(createFileRow);
 }
 
-function deleteItem() {
-    document.getElementById('fileRow').remove();
+function deleteItem(e) {
+    document.getElementById('fileListTable').deleteRow(e.parentNode.parentNode.rowIndex);
 }

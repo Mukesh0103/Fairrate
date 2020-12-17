@@ -109,7 +109,7 @@
                                 type="button">Select option</button>
                             <span class="select-arrow"></span>
                             <div class="select-dropdown__box" id="selectDropdownBox">
-                                <ul class="select-dropdown">
+                                <ul class="select-dropdown scrollbar">
                                     <li class="select-dropdown__list text-md">This month</li>
                                     <li class="select-dropdown__list text-md">Next Month</li>
                                     <li class="select-dropdown__list text-md">December 2018</li>
@@ -185,7 +185,9 @@
                                 <a href="javascript:void(0)" class="text-md">See an example image</a>
                             </div>
                         </div>
-                        <table class="uploaded-files pl-2" id="fileListTable"></table>
+                        <div class="file-list_conatiner scrollbar">
+                            <table class="uploaded-files" id="fileListTable"></table>
+                        </div>
                     </div>
                     <div class="fx-center">
                         <button class="btn btn-grey btn-md" onclick="changeScreen('screen2')">BACK</button>
@@ -197,15 +199,12 @@
         <section class="screen4 mt-6 pb-10" id="screen4">
             <div class="summary-header pt-3 pb-3 mb-10">
                 <div class="container fx-center">
-                    <div class="mr-3 heading-xl">
-                        <div class="progress pos-rel" data-percentage="40">
-                            <span class="progress-right">
-                                <span class="progress-bar"></span>
-                            </span>
-                            <div class="progress-value fx-center">
-                                <div>60%</div>
-                            </div>
-                        </div>
+                    <div class="progress-bar pos-rel mr-3">
+                        <svg class="icon">
+                            <circle cx="47" cy="47" r="47"></circle>
+                            <circle cx="47" cy="47" r="47"></circle>
+                        </svg>
+                        <h2 class="percentage-value fx-center heading-xl fw-n">60%</h2>
                     </div>
                     <div class="summary-header__content">
                         <h1 class="heading-xl fw-sb">Your Mortgage is 60% Complete</h1>

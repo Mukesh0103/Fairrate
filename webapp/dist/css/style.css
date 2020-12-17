@@ -535,14 +535,6 @@ input[type="checkbox"] {
     width: 100%;
     max-height: 220px;
     overflow: auto; }
-    .select-dropdown__box .select-dropdown::-webkit-scrollbar, .qs-datepicker-container .select-dropdown::-webkit-scrollbar, .dropdown-box .select-dropdown::-webkit-scrollbar, .dropdown-box .dropdown::-webkit-scrollbar {
-      width: 8px; }
-    .select-dropdown__box .select-dropdown::-webkit-scrollbar-track, .qs-datepicker-container .select-dropdown::-webkit-scrollbar-track, .dropdown-box .select-dropdown::-webkit-scrollbar-track, .dropdown-box .dropdown::-webkit-scrollbar-track {
-      background: #f8f8f8; }
-    .select-dropdown__box .select-dropdown::-webkit-scrollbar-thumb, .qs-datepicker-container .select-dropdown::-webkit-scrollbar-thumb, .dropdown-box .select-dropdown::-webkit-scrollbar-thumb, .dropdown-box .dropdown::-webkit-scrollbar-thumb {
-      background: #919eab;
-      border-radius: 5px;
-      width: 14px; }
     .select-dropdown__box .select-dropdown .select-dropdown__list, .qs-datepicker-container .select-dropdown .select-dropdown__list, .dropdown-box .select-dropdown .select-dropdown__list, .dropdown-box .dropdown .select-dropdown__list, .dropdown-box .dropdown .dropdown-list {
       line-height: 20px;
       color: #212b36;
@@ -793,35 +785,41 @@ input[type="checkbox"] {
       .file-upload__container .upload-instruction .text-md:hover {
         color: #69939d; }
 
-.uploaded-files {
-  border-top: 1px solid #dfe3e8;
-  border-bottom: 1px solid #dfe3e8;
-  color: #637381;
-  width: 100%;
-  background: #fafafa;
-  border-collapse: collapse; }
-  .uploaded-files .uploaded-files__list {
-    border-bottom: 1px solid #dfe3e8; }
-    .uploaded-files .uploaded-files__list .file-details {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      font-size: 11px; }
-      .uploaded-files .uploaded-files__list .file-details:first-child {
-        font-size: 13px;
-        max-width: 90px; }
-      .uploaded-files .uploaded-files__list .file-details .file-icon {
-        height: 18px;
-        width: 18px;
-        display: inline-block;
-        vertical-align: top; }
-      .uploaded-files .uploaded-files__list .file-details .file-name {
-        display: inline-block;
-        vertical-align: top;
-        max-width: 150px; }
-      .uploaded-files .uploaded-files__list .file-details .del-icon {
-        height: 24px;
-        width: 24px;
-        background: none; }
+.file-list_conatiner {
+  max-height: 250px;
+  overflow: auto; }
+  .file-list_conatiner .uploaded-files {
+    border-top: 1px solid #dfe3e8;
+    border-bottom: 1px solid #dfe3e8;
+    color: #637381;
+    width: 100%;
+    background: #fafafa;
+    border-collapse: collapse; }
+    .file-list_conatiner .uploaded-files .uploaded-files__list {
+      border-bottom: 1px solid #dfe3e8; }
+      .file-list_conatiner .uploaded-files .uploaded-files__list .file-details {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 11px; }
+        .file-list_conatiner .uploaded-files .uploaded-files__list .file-details:first-child {
+          font-size: 13px;
+          max-width: 90px; }
+        .file-list_conatiner .uploaded-files .uploaded-files__list .file-details .file-icon {
+          height: 18px;
+          width: 18px;
+          display: inline-block;
+          vertical-align: top; }
+        .file-list_conatiner .uploaded-files .uploaded-files__list .file-details .file-name {
+          display: inline-block;
+          vertical-align: top;
+          max-width: 150px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden; }
+        .file-list_conatiner .uploaded-files .uploaded-files__list .file-details .del-icon {
+          height: 24px;
+          width: 24px;
+          background: none; }
 
 .screen4 {
   display: none; }
@@ -1075,43 +1073,72 @@ input[type="checkbox"] {
   .dropdown-box::before {
     display: none; }
 
-.progress {
+.progress-bar {
   height: 105px;
   width: 105px; }
-  .progress::after {
-    content: "";
+  .progress-bar .icon {
+    transform: rotate(-90deg); }
+    .progress-bar .icon circle {
+      fill: none;
+      stroke-width: 7;
+      transform: translate(5px, 5px);
+      stroke-dasharray: 295;
+      stroke-dashoffset: 295;
+      stroke-linecap: round; }
+      .progress-bar .icon circle:first-of-type {
+        stroke-dashoffset: 0;
+        stroke: #dbecf8; }
+      .progress-bar .icon circle:last-of-type {
+        stroke-dashoffset: calc(295 - (295 * 60) / 100);
+        stroke: #23c0f5;
+        animation: progress 3s; }
+  .progress-bar .percentage-value {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
-    position: absolute;
-    top: -6px;
-    left: -6px;
-    border-radius: 50%;
-    border: 7px solid #f9fafb; }
-  .progress > span {
-    height: 100%;
-    width: 50%;
-    position: absolute;
-    top: 0px;
-    overflow: hidden;
-    z-index: 1; }
-  .progress .progress-bar {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    border-width: 7px;
-    border-style: solid;
-    border-color: #23c0f5; }
-  .progress .progress-right {
-    right: 0; }
-    .progress .progress-right .progress-bar {
-      left: -100%;
-      border-top-left-radius: 52.5px;
-      border-bottom-left-radius: 52.5px;
-      border-right: 0;
-      -webkit-transform-origin: center right;
-      transform-origin: center right; }
-  .progress .progress-value {
-    border-radius: 50%;
     justify-content: center;
-    height: 100%; }
+    color: #212b36; }
+
+@keyframes progress {
+  from {
+    stroke-dashoffset: 295; } }
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1; }
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 50px;
+  background-color: #555;
+  color: #fff;
+  font-size: 10px;
+  border-radius: 4px;
+  padding: 5px 0;
+  position: absolute;
+  top: -30px;
+  left: -13px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s; }
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 40%;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #555; }
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px; }
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #f8f8f8; }
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #919eab;
+  border-radius: 5px;
+  width: 14px; }
