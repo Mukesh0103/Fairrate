@@ -43,6 +43,10 @@
     @include height-width(100%, 100%);
 }
 
+.active-screen {
+    display: block;
+}
+
 .link-hover {
     transition: 0.3s;
     &:hover {

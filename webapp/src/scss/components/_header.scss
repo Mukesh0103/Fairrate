@@ -52,10 +52,4 @@
     .bell-icon {
         @include height-width(24px, 21px);
     }
-    .arrow-down {
-        @include inline-block(middle);
-        border-left: 4.5px solid transparent;
-        border-right: 4.5px solid transparent;
-        border-top: 4.5px solid $battleship-grey;
-    }
 }

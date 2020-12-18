@@ -36,3 +36,11 @@ button,
 input {
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
+
+.arrow-down::after {
+    content: "";
+    @include position(absolute, 10px, 0, null, null);
+    border-left: 4.5px solid transparent;
+    border-right: 4.5px solid transparent;
+    border-top: 4.5px solid $battleship-grey;
+}

@@ -35,8 +35,8 @@
                             </svg></a></li>
                     <li class="nav-list mr-1"><a href="javascript:void(0)" class="pro-pic"><img class="img-circle"
                                 src="/webapp/dist/images/pro-pic.jpg" alt="profile-picture"></a></li>
-                    <li class="nav-list text-sm"><a href="javascript:void(0)" class="user-name"
-                            onclick="openDropdown('dropdown')">Adrian Manea</a><span class="arrow-down ml-1"></span>
+                    <li class="nav-list text-sm pos-rel pr-2"><a href="javascript:void(0)" class="user-name arrow-down"
+                            onclick="openDropdown('dropdown')">Adrian Manea</a>
                     </li>
                     <div class="dropdown-box" id="dropdownBox">
                         <ul class="dropdown">
@@ -47,7 +47,7 @@
                 </ul>
             </nav>
         </header>
-        <section class="screen1 mt-6 ta-center" id="screen1">
+        <section class="screen1 mt-6 ta-center active-screen" id="screen1">
             <div class="container">
                 <div class="content-centering pt-8 pl-2 pr-2">
                     <h1 class="heading-xl fw-sb mb-5">I'll get you an awesome price in seconds. Ready to go?</h1>
@@ -93,16 +93,16 @@
                             </svg>
                         </fieldset>
                         <fieldset class="mb-1 checkbox-container">
-                            <input type="checkbox" class="mr-1 input-checkbox" id="checkbox1">
-                            <label for="checkbox1" class="heading-sm checkbox-label">Condo</label>
+                            <input type="checkbox" class="mr-1" id="checkbox1">
+                            <label for="checkbox1" class="heading-sm">Condo</label>
                         </fieldset>
                         <fieldset class="mb-1 checkbox-container">
-                            <input type="checkbox" class="mr-1 input-checkbox" id="checkbox2" checked>
-                            <label for="checkbox2" class="heading-sm checkbox-label">Co-op</label>
+                            <input type="checkbox" class="mr-1" id="checkbox2" checked>
+                            <label for="checkbox2" class="heading-sm">Co-op</label>
                         </fieldset>
                         <fieldset class="mb-3 checkbox-container">
-                            <input type="checkbox" class="mr-1 input-checkbox" id="checkbox3" checked>
-                            <label for="checkbox3" class="heading-sm checkbox-label">House</label>
+                            <input type="checkbox" class="mr-1" id="checkbox3" checked>
+                            <label for="checkbox3" class="heading-sm">House</label>
                         </fieldset>
                         <fieldset class="pos-rel select-box" id="select-box">
                             <button class="select-input" id="select-input" onclick="openDropdown('selectDropdown')"
@@ -127,15 +127,15 @@
                                 <use href="/webapp/dist/images/sprite.svg#criminal" />
                             </svg>
                         </figure>
-                        <input type="checkbox" class="mr-1 input-checkbox" id="checkbox4" checked>
-                        <label for="checkbox4" class="heading-sm checkbox-label">Burglar Alarm</label>
+                        <input type="checkbox" class="mr-1" id="checkbox4" checked>
+                        <label for="checkbox4" class="heading-sm">Burglar Alarm</label>
                     </div>
                     <div class="pd-footer__container mb-6">
                         <figure class="fire-img">
                             <img src="/webapp/dist/images/fire.png" />
                         </figure>
-                        <input type="checkbox" class="mr-1 input-checkbox" id="checkbox5">
-                        <label for="checkbox5" class="heading-sm checkbox-label">Burglar Alarm</label>
+                        <input type="checkbox" class="mr-1" id="checkbox5">
+                        <label for="checkbox5" class="heading-sm">Burglar Alarm</label>
                     </div>
                     <div class="fx-center">
                         <button class="btn btn-grey btn-md" onclick="changeScreen('screen1')">BACK</button>
@@ -196,10 +196,130 @@
                 </div>
             </div>
         </section>
-        <section class="screen4 mt-6 pb-10" id="screen4">
+        <section class="screen4 mt-6 fs-0" id="screen4">
+            <div class="container pt-8 pb-10">
+                <h1 class="heading-xl fw-sb mb-6 ta-center">Your fairest results</h1>
+                <div class="result-table__container mr-3">
+                    <div class="result-table__wrapper mb-2 pl-2 pr-2 pos-rel">
+                        <div class="filter dropdown-box" id="filterDropdown">
+                            <ul class="dropdown">
+                                <li class="dropdown-list text-xs">PER YEAR</li>
+                                <li class="dropdown-list text-xs">PER MONTH</li>
+                            </ul>
+                        </div>
+                        <table class="result-table mb-1">
+                            <tr class="result-table__row pos-rel">
+                                <th class="fw-n pt-2 pb-2 text-xs">RATE TYPE</th>
+                                <th class="fw-n pt-2 pb-2 text-xs">FAIR RATE / APR</th>
+                                <th class="fw-n pt-2 pb-2 text-xs ta-center">POINTS/CREDITS</th>
+                                <th class="fw-n pt-2 pb-2 text-xs ta-right"><button class="btn arrow-down pr-2 pos-rel"
+                                        onclick="openDropdown('filterDropdown')">PER MONTH</button></th>
+                            </tr>
+                            <tr class="result-table__row fw-l">
+                                <td class="pt-2 pb-2 text-xs">
+                                    <label class="label green">15 years</label>
+                                    <label class="label grey">Fixed</label>
+                                </td>
+                                <td class="pt-2 pb-2 text-lg">4.250% <span class="denominator">/ 5.125%</span></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">-$1,532 <progress
+                                        class="progress-small green ml-1" value="50" max="100"></progress></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">$3,120 <progress
+                                        class="progress-small green ml-1" value="70" max="100"></progress></td>
+                            </tr>
+                            <tr class="result-table__row fw-l">
+                                <td class="pt-2 pb-2 text-xs">
+                                    <label class="label primary-blue">20 years</label>
+                                    <label class="label grey">Fixed</label>
+                                </td>
+                                <td class="pt-2 pb-2 text-lg">4.650% <span class="denominator">/ 5.125%</span></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">-$625 <progress
+                                        class="progress-small primary-blue ml-1" value="80" max="100"></progress></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">$2,585 <progress
+                                        class="progress-small primary-blue ml-1" value="70" max="100"></progress></td>
+                            </tr>
+                            <tr class="result-table__row fw-l">
+                                <td class="pt-2 pb-2 text-xs">
+                                    <label class="label dark-blue">30 years</label>
+                                    <label class="label grey">Fixed</label>
+                                </td>
+                                <td class="pt-2 pb-2 text-lg">4.875% <span class="denominator">/ 4.875%</span></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">-$1,625 <progress
+                                        class="progress-small dark-blue ml-1" value="30" max="100"></progress></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">$2,585 <progress
+                                        class="progress-small dark-blue ml-1" value="80" max="100"></progress></td>
+                            </tr>
+                            <tr class="result-table__row fw-l">
+                                <td class="pt-2 pb-2 text-xs">
+                                    <label class="label iris">10/1</label>
+                                    <label class="label grey">Adjustable</label>
+                                </td>
+                                <td class="pt-2 pb-2 text-lg">4.750% <span class="denominator">/ 4.875%</span></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">-$154 <progress class="progress-small iris ml-1"
+                                        value="70" max="100"></progress></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">$2,072 <progress class="progress-small iris ml-1"
+                                        value="75" max="100"></progress></td>
+                            </tr>
+                            <tr class="result-table__row fw-l">
+                                <td class="pt-2 pb-2 text-xs">
+                                    <label class="label purple">7/1</label>
+                                    <label class="label grey">Adjustable</label>
+                                </td>
+                                <td class="pt-2 pb-2 text-lg">4.750% <span class="denominator">/ 4.875%</span></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">-$154 <progress
+                                        class="progress-small purple ml-1" value="70" max="100"></progress></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">$2,072 <progress
+                                        class="progress-small purple ml-1" value="75" max="100"></progress></td>
+                            </tr>
+                            <tr class="result-table__row fw-l">
+                                <td class="pt-2 pb-2 text-xs">
+                                    <label class="label pink">5/1</label>
+                                    <label class="label grey">Adjustable</label>
+                                </td>
+                                <td class="pt-2 pb-2 text-lg">4.750% <span class="denominator">/ 4.875%</span></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">-$154 <progress class="progress-small pink ml-1"
+                                        value="70" max="100"></progress></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">$2,072 <progress class="progress-small pink ml-1"
+                                        value="75" max="100"></progress></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="results-footer fx-center pl-2">
+                        <figure class="hint-icon tooltip mr-1 pos-rel">
+                            <svg class="icon">
+                                <use href="/webapp/dist/images/sprite.svg#hint" />
+                            </svg>
+                            <span class="tooltiptext ta-center">Rates and fees</span>
+                        </figure>
+                        <span class="text-md">Rates and fees as of 12:06 PM</span>
+                        <button class="btn btn-primary btn-md ml-a" onclick="changeScreen('screen5')">NEXT</button>
+                    </div>
+                </div>
+                <div class="results-filter__container pt-3 pl-2 pr-2">
+                    <ul class="results-filter__wrapper">
+                        <li>
+                            <input type="checkbox" class="mr-1" id="filter-checkbox1">
+                            <label for="filter-checkbox1" class="text-md grey-checkbox__label">Fixed</label>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class="results-filter__wrapper">
+                        <li>
+                            <input type="checkbox" class="mr-1" id="filter-checkbox2">
+                            <label for="filter-checkbox2" class="text-md grey-checkbox__label">Adjustable</label>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="screen5 mt-6 pb-10" id="screen5">
             <div class="summary-header pt-3 pb-3 mb-10">
                 <div class="container fx-center">
-                    <div class="progress-bar pos-rel mr-3">
+                    <div class="circular-progressbar pos-rel mr-3">
                         <svg class="icon">
                             <circle cx="47" cy="47" r="47"></circle>
                             <circle cx="47" cy="47" r="47"></circle>

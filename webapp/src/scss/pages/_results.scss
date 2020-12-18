@@ -1,0 +1,131 @@
+.screen4 {
+    display: none;
+    .heading-xl {
+        color: $dark;
+    }
+}
+
+%container-design {
+    background: $white;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
+}
+
+.result-table__container {
+    width: 736px;
+    @include inline-block(top);
+    .result-table__wrapper {
+        @extend %container-design;
+    }
+}
+
+.result-table {
+    border-collapse: collapse;
+    width: 100%;
+    color: $dark;
+    .result-table__row {
+        border-bottom: 1px solid $pale-blue;
+        &:first-of-type {
+            border-bottom: 2px solid $pale-blue;
+            text-align: left;
+        }
+        &:last-of-type {
+            border: none;
+        }
+        .arrow-down::after {
+            top: 7px;
+        }
+        td {
+            &:nth-child(3) {
+                text-decoration: underline;
+            }
+            .label {
+                color: $white;
+                padding: 3px 7px;
+                border-radius: 12.5px;
+                &:last-of-type {
+                    color: $dark;
+                }
+            }
+            .denominator {
+                color: $bluey-grey;
+            }
+            .progress-small {
+                @include inline-block(middle);
+            }
+        }
+    }
+}
+
+.results-footer {
+    color: $battleship-grey;
+    .hint-icon {
+        @include height-width(36px, 36px);
+        cursor: pointer;
+        .tooltiptext {
+            width: 100px;
+            @include position(absolute, -30px, null, null, -27px);
+        }
+    }
+}
+
+.filter {
+    &.dropdown-box {
+        width: 110px;
+        right: 10px;
+        top: 45px;
+    }
+}
+.green {
+    background: #00cfc0;
+    &::-webkit-progress-value {
+        @extend .green;
+    }
+}
+.primary-blue {
+    background: $primary-blue;
+    &::-webkit-progress-value {
+        @extend .primary-blue;
+    }
+}
+.dark-blue {
+    background: $dark-blue;
+    &::-webkit-progress-value {
+        @extend .dark-blue;
+    }
+}
+.iris {
+    background: #5c6ac4;
+    &::-webkit-progress-value {
+        @extend .iris;
+    }
+}
+.purple {
+    background: #9c6ade;
+    &::-webkit-progress-value {
+        @extend .purple;
+    }
+}
+.pink {
+    background: #de6a93;
+    &::-webkit-progress-value {
+        @extend .pink;
+    }
+}
+.grey {
+    background: $light-grey;
+}
+
+.results-filter__container {
+    width: 290px;
+    @extend %container-design;
+    height: 100px;
+    @include inline-block(top);
+    .results-filter__wrapper {
+        @include inline-block(top);
+        width: 50%;
+        .grey-checkbox__label {
+            color: $dull-black;
+        }
+    }
+}

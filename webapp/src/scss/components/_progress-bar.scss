@@ -1,4 +1,4 @@
-.progress-bar {
+.circular-progressbar {
     @include height-width(105px, 105px);
     .icon {
         transform: rotate(-90deg);
@@ -31,5 +31,21 @@
 @keyframes progress {
     from {
         stroke-dashoffset: 295;
+    }
+}
+
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    &.progress-small {
+        @include height-width(4px, 62px);
+        background: none;
+        &::-webkit-progress-bar {
+            background: $pale-blue;
+            border-radius: 2.5px;
+        }
+        &::-webkit-progress-value {
+            border-radius: 2.5px;
+        }
     }
 }

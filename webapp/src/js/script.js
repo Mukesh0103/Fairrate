@@ -2,39 +2,47 @@ var screen1 = document.getElementById("screen1");
 var screen2 = document.getElementById("screen2");
 var screen3 = document.getElementById("screen3");
 var screen4 = document.getElementById("screen4");
+var screen5 = document.getElementById("screen5");
 function changeScreen(screen) {
     if (screen == "screen1") {
-        screen1.style.display = "block";
-        screen2.style.display = "none";
-        screen3.style.display = "none";
-        screen4.style.display = "none";
+        screen1.classList.add("active-screen");
+        screen2.classList.remove("active-screen");
+        screen3.classList.remove("active-screen");
+        screen4.classList.remove("active-screen");
+        screen5.classList.remove("active-screen");
         document.getElementById("home").classList.add("active");
         document.getElementById("application").classList.remove("active");
         document.getElementById("documents").classList.remove("active");
     } else if (screen == "screen2") {
-        screen1.style.display = "none";
-        screen2.style.display = "block";
-        screen3.style.display = "none";
-        screen4.style.display = "none";
+        screen1.classList.remove("active-screen");
+        screen2.classList.add("active-screen");
+        screen3.classList.remove("active-screen");
+        screen4.classList.remove("active-screen");
+        screen5.classList.remove("active-screen");
         document.getElementById("application").classList.add("active");
         document.getElementById("home").classList.remove("active");
         document.getElementById("documents").classList.remove("active");
     } else if (screen == "screen3") {
-        screen1.style.display = "none";
-        screen2.style.display = "none";
-        screen3.style.display = "block";
-        screen4.style.display = "none";
+        screen1.classList.remove("active-screen");
+        screen2.classList.remove("active-screen");
+        screen3.classList.add("active-screen");
+        screen4.classList.remove("active-screen");
+        screen5.classList.remove("active-screen");
         document.getElementById("documents").classList.add("active");
         document.getElementById("home").classList.remove("active");
         document.getElementById("application").classList.remove("active");
+    } else if (screen == "screen4") {
+        screen1.classList.remove("active-screen");
+        screen2.classList.remove("active-screen");
+        screen3.classList.remove("active-screen");
+        screen4.classList.add("active-screen");
+        screen5.classList.remove("active-screen");
     } else {
-        screen1.style.display = "none";
-        screen2.style.display = "none";
-        screen3.style.display = "none";
-        screen4.style.display = "block";
-        document.getElementById("documents").classList.add("active");
-        document.getElementById("home").classList.remove("active");
-        document.getElementById("application").classList.remove("active");
+        screen1.classList.remove("active-screen");
+        screen2.classList.remove("active-screen");
+        screen3.classList.remove("active-screen");
+        screen4.classList.remove("active-screen");
+        screen5.classList.add("active-screen");
     }
 }
 
@@ -49,11 +57,18 @@ window.onscroll = function () {
 
 var selectDropdown = document.getElementById("selectDropdownBox");
 var Dropdown = document.getElementById("dropdownBox");
+var filterDropdown = document.getElementById("filterDropdown")
 var selectBox = document.getElementById("select-box");
 var selectInput = document.getElementById("select-input");
 
 function openDropdown(value) {
-    value === 'dropdown' ? Dropdown.classList.toggle("show") : selectDropdown.classList.toggle("show");
+    if (value == 'dropdown') {
+        Dropdown.classList.toggle("show");
+    } else if (value == 'selectDropdown') {
+        selectDropdown.classList.toggle("show")
+    } else {
+        filterDropdown.classList.toggle("show")
+    }
 }
 
 window.addEventListener('click', function (e) {
