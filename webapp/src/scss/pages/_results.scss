@@ -16,6 +16,11 @@
     @include inline-block(top);
     .result-table__wrapper {
         @extend %container-design;
+        max-height: 449px;
+        overflow: auto;
+    }
+    .divider-line {
+        width: 320px;
     }
 }
 
@@ -35,7 +40,12 @@
         .arrow-down::after {
             top: 7px;
         }
+        th {
+            max-width: 100px;
+            word-break: break-all;
+        }
         td {
+            @extend th;
             &:nth-child(3) {
                 text-decoration: underline;
             }
@@ -76,56 +86,29 @@
         top: 45px;
     }
 }
-.green {
-    background: #00cfc0;
-    &::-webkit-progress-value {
-        @extend .green;
-    }
-}
-.primary-blue {
-    background: $primary-blue;
-    &::-webkit-progress-value {
-        @extend .primary-blue;
-    }
-}
-.dark-blue {
-    background: $dark-blue;
-    &::-webkit-progress-value {
-        @extend .dark-blue;
-    }
-}
-.iris {
-    background: #5c6ac4;
-    &::-webkit-progress-value {
-        @extend .iris;
-    }
-}
-.purple {
-    background: #9c6ade;
-    &::-webkit-progress-value {
-        @extend .purple;
-    }
-}
-.pink {
-    background: #de6a93;
-    &::-webkit-progress-value {
-        @extend .pink;
-    }
-}
-.grey {
-    background: $light-grey;
-}
 
 .results-filter__container {
     width: 290px;
     @extend %container-design;
-    height: 100px;
     @include inline-block(top);
     .results-filter__wrapper {
         @include inline-block(top);
         width: 50%;
         .grey-checkbox__label {
             color: $dull-black;
+        }
+        .filter-list {
+            line-height: 20px;
+            color: $battleship-grey;
+            word-break: break-all;
+        }
+    }
+    .range-slider__container {
+        color: $battleship-grey;
+        .range-value__textbox {
+            @include height-width(36px, 75px);
+            padding: 10px;
+            color: $dark;
         }
     }
 }

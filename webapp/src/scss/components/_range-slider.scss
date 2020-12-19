@@ -1,0 +1,22 @@
+.range-slider {
+    @include height-width(4px, 100%);
+    background: $light-blue-grey;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    outline: 0;
+    cursor: pointer;
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        @include height-width(17px, 17px);
+        background: $white;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 1px solid rgba(35, 69, 97, 0.26);
+    }
+    &::-moz-range-progress {
+        -webkit-appearance: none;
+        height: 4px;
+        border-radius: 3px;
+        background: $primary-blue;
+    }
+}

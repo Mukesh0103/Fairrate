@@ -21,6 +21,7 @@ input[type="checkbox"] {
         display: block;
         position: relative;
         padding-left: 40px;
+        padding-top: 1px;
         cursor: pointer;
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -29,6 +30,12 @@ input[type="checkbox"] {
             &::before {
                 @include height-width(24px, 24px);
                 border-width: 2px;
+            }
+        }
+        &.mini-checkbox__label {
+            padding-left: 28px;
+            &::before {
+                @include height-width(16px, 16px);
             }
         }
         &::before {
@@ -54,6 +61,16 @@ input[type="checkbox"] {
             left: 10px;
         }
     }
+    &:checked + label {
+        &.mini-checkbox__label::after {
+            top: 3px;
+            left: 7px;
+            height: 8px;
+            width: 4px;
+            border-width: 1px;
+            border-color: $white;
+        }
+    }
     &:checked + label::before {
         border-color: $primary-blue;
     }
@@ -62,9 +79,6 @@ input[type="checkbox"] {
         &.grey-checkbox__label::before {
             border-color: $light-blue-grey;
         }
-    }
-    &:checked {
-        border-color: $primary-blue;
     }
 }
 
