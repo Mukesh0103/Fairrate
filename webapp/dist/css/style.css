@@ -83,7 +83,7 @@ button,
 input {
   font-family: "Open Sans", Arial, Helvetica, sans-serif; }
 
-.arrow-down::after {
+.arrow-down::after, .arrow-updown::before, .arrow-updown::after {
   content: "";
   position: absolute;
   top: 10px;
@@ -91,6 +91,16 @@ input {
   border-left: 4.5px solid transparent;
   border-right: 4.5px solid transparent;
   border-top: 4.5px solid #637381; }
+
+.arrow-updown::before {
+  right: 15px;
+  top: 13px;
+  border-bottom: 4.5px solid #637381;
+  border-top: none; }
+
+.arrow-updown::after {
+  right: 15px;
+  top: 21px; }
 
 .btn {
   border-radius: 2px;
@@ -262,21 +272,6 @@ input[type="checkbox"] {
       .select-dropdown__box .select-dropdown .select-dropdown__list:hover, .dropdown-box .select-dropdown .select-dropdown__list:hover, .qs-datepicker-container .select-dropdown .select-dropdown__list:hover, .dropdown-box .dropdown .select-dropdown__list:hover, .dropdown-box .dropdown .dropdown-list:hover {
         background-color: rgba(223, 227, 232, 0.3); }
 
-.select-arrow::before, .select-arrow::after {
-  content: "";
-  position: absolute;
-  right: 15px;
-  bottom: 17px;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #637381; }
-
-.select-arrow::after {
-  top: 17px;
-  bottom: unset;
-  border-top: none;
-  border-bottom: 5px solid #637381; }
-
 .header {
   background: #ffffff;
   width: 100%;
@@ -382,6 +377,10 @@ input[type="checkbox"] {
       line-height: 2.15; }
   .profile-details__form fieldset.select-box {
     margin-bottom: 280px; }
+    .profile-details__form fieldset.select-box .arrow-updown::before {
+      top: 17px; }
+    .profile-details__form fieldset.select-box .arrow-updown::after {
+      top: 26px; }
     .profile-details__form fieldset.select-box input[type="text"], .profile-details__form fieldset.select-box input[type="number"], .profile-details__form fieldset.select-box .select-input {
       padding-left: 14px; }
     .profile-details__form fieldset.select-box .select-dropdown__box, .profile-details__form fieldset.select-box .dropdown-box, .profile-details__form fieldset.select-box .qs-datepicker-container {
@@ -547,61 +546,101 @@ input[type="checkbox"] {
 
 .screen4 {
   display: none; }
-  .screen4 .heading-xl {
+  .screen4 .res1-container .heading-xl {
+    color: #212b36; }
+  .screen4 .res1-container .text-lg {
+    color: #637381; }
+    .screen4 .res1-container .text-lg span {
+      color: #454f5b; }
+
+.res1-header {
+  margin-bottom: 26px; }
+  .res1-header button {
+    height: 40px;
+    width: 210px;
+    padding: 10px 14px;
+    line-height: 20px;
+    color: #212b36; }
+    .res1-header button:last-of-type {
+      width: 160px; }
+    .res1-header button.btn {
+      height: 40px;
+      width: 120px;
+      background-color: #47c1bf;
+      color: #ffffff;
+      transition: 0.3s; }
+      .res1-header button.btn:hover {
+        background-color: #2e9b99; }
+    .res1-header button span {
+      color: #919eab; }
+
+.res1-table__container {
+  width: 100%; }
+  .res1-table__container .res1-table {
+    width: 100%;
+    border-collapse: collapse; }
+    .res1-table__container .res1-table thead {
+      background-color: #ecedf0; }
+      .res1-table__container .res1-table thead th, .res1-table__container .res1-table thead .res2-table .res2-table__row td, .res2-table .res2-table__row .res1-table__container .res1-table thead td {
+        padding: 10px; }
+
+.screen5 {
+  display: none; }
+  .screen5 .heading-xl {
     color: #212b36; }
 
-.result-table__container .result-table__wrapper, .results-filter__container {
+.res2-table__container .res2-table__wrapper, .res2-filter__container {
   background: #ffffff;
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.12);
   border-radius: 3px; }
 
-.result-table__container {
+.res2-table__container {
   width: 736px;
   display: inline-block;
   vertical-align: top; }
-  .result-table__container .result-table__wrapper {
+  .res2-table__container .res2-table__wrapper {
     max-height: 449px;
     overflow: auto; }
-  .result-table__container .divider-line {
+  .res2-table__container .divider-line {
     width: 320px; }
 
-.result-table {
+.res2-table {
   border-collapse: collapse;
   width: 100%;
   color: #212b36; }
-  .result-table .result-table__row {
+  .res2-table .res2-table__row {
     border-bottom: 1px solid #dfe3e8; }
-    .result-table .result-table__row:first-of-type {
+    .res2-table .res2-table__row:first-of-type {
       border-bottom: 2px solid #dfe3e8;
       text-align: left; }
-    .result-table .result-table__row:last-of-type {
+    .res2-table .res2-table__row:last-of-type {
       border: none; }
-    .result-table .result-table__row .arrow-down::after {
+    .res2-table .res2-table__row .arrow-down::after, .res2-table .res2-table__row .arrow-updown::before, .res2-table .res2-table__row .arrow-updown::after {
       top: 7px; }
-    .result-table .result-table__row th, .result-table .result-table__row td {
+    .res2-table .res2-table__row th, .res2-table .res2-table__row td {
       max-width: 100px;
       word-break: break-all; }
-    .result-table .result-table__row td:nth-child(3) {
+    .res2-table .res2-table__row td:nth-child(3) {
       text-decoration: underline; }
-    .result-table .result-table__row td .label {
+    .res2-table .res2-table__row td .label {
       color: #ffffff;
       padding: 3px 7px;
       border-radius: 12.5px; }
-      .result-table .result-table__row td .label:last-of-type {
+      .res2-table .res2-table__row td .label:last-of-type {
         color: #212b36; }
-    .result-table .result-table__row td .denominator {
+    .res2-table .res2-table__row td .denominator {
       color: #919eab; }
-    .result-table .result-table__row td .progress-small {
+    .res2-table .res2-table__row td .progress-small {
       display: inline-block;
       vertical-align: middle; }
 
-.results-footer {
+.res2-footer {
   color: #637381; }
-  .results-footer .hint-icon {
+  .res2-footer .hint-icon {
     height: 36px;
     width: 36px;
     cursor: pointer; }
-    .results-footer .hint-icon .tooltiptext {
+    .res2-footer .hint-icon .tooltiptext {
       width: 100px;
       position: absolute;
       top: -30px;
@@ -612,29 +651,29 @@ input[type="checkbox"] {
   right: 10px;
   top: 45px; }
 
-.results-filter__container {
+.res2-filter__container {
   width: 290px;
   display: inline-block;
   vertical-align: top; }
-  .results-filter__container .results-filter__wrapper {
+  .res2-filter__container .res2-filter__wrapper {
     display: inline-block;
     vertical-align: top;
     width: 50%; }
-    .results-filter__container .results-filter__wrapper .grey-checkbox__label {
+    .res2-filter__container .res2-filter__wrapper .grey-checkbox__label {
       color: #47495a; }
-    .results-filter__container .results-filter__wrapper .filter-list {
+    .res2-filter__container .res2-filter__wrapper .filter-list {
       line-height: 20px;
       color: #637381;
       word-break: break-all; }
-  .results-filter__container .range-slider__container {
+  .res2-filter__container .range-slider__container {
     color: #637381; }
-    .results-filter__container .range-slider__container .range-value__textbox {
+    .res2-filter__container .range-slider__container .range-value__textbox {
       height: 36px;
       width: 75px;
       padding: 10px;
       color: #212b36; }
 
-.screen5 {
+.screen6 {
   display: none; }
 
 .summary-header {
@@ -924,11 +963,13 @@ progress[value] {
 
 .range-slider {
   height: 4px;
-  width: 100%;
-  background: #c4cdd5;
+  width: 150px;
+  position: relative;
+  background: transparent;
   -webkit-appearance: none;
   border-radius: 3px;
   outline: 0;
+  z-index: 2;
   cursor: pointer; }
   .range-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -938,11 +979,22 @@ progress[value] {
     border-radius: 50%;
     cursor: pointer;
     border: 1px solid rgba(35, 69, 97, 0.26); }
-  .range-slider::-moz-range-progress {
-    -webkit-appearance: none;
+
+.bar {
+  height: 4px;
+  width: 150px;
+  position: absolute;
+  top: 16px;
+  left: 0;
+  z-index: 1;
+  border-radius: 3px;
+  background: #c4cdd5;
+  overflow: hidden; }
+  .bar .fill {
+    display: block;
     height: 4px;
-    border-radius: 3px;
-    background: #23c0f5; }
+    width: 0;
+    background-color: #23c0f5; }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
@@ -981,6 +1033,9 @@ progress[value] {
   background: #919eab;
   border-radius: 5px;
   width: 14px; }
+
+.ta-left {
+  text-align: left; }
 
 .ta-center {
   text-align: center; }

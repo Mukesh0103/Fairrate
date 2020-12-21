@@ -1,4 +1,4 @@
-.screen4 {
+.screen5 {
     display: none;
     .heading-xl {
         color: $dark;
@@ -11,10 +11,10 @@
     border-radius: 3px;
 }
 
-.result-table__container {
+.res2-table__container {
     width: 736px;
     @include inline-block(top);
-    .result-table__wrapper {
+    .res2-table__wrapper {
         @extend %container-design;
         max-height: 449px;
         overflow: auto;
@@ -24,11 +24,11 @@
     }
 }
 
-.result-table {
+.res2-table {
     border-collapse: collapse;
     width: 100%;
     color: $dark;
-    .result-table__row {
+    .res2-table__row {
         border-bottom: 1px solid $pale-blue;
         &:first-of-type {
             border-bottom: 2px solid $pale-blue;
@@ -67,7 +67,7 @@
     }
 }
 
-.results-footer {
+.res2-footer {
     color: $battleship-grey;
     .hint-icon {
         @include height-width(36px, 36px);
@@ -87,11 +87,11 @@
     }
 }
 
-.results-filter__container {
+.res2-filter__container {
     width: 290px;
     @extend %container-design;
     @include inline-block(top);
-    .results-filter__wrapper {
+    .res2-filter__wrapper {
         @include inline-block(top);
         width: 50%;
         .grey-checkbox__label {

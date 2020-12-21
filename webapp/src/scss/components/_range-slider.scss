@@ -1,9 +1,11 @@
 .range-slider {
-    @include height-width(4px, 100%);
-    background: $light-blue-grey;
+    @include height-width(4px, 150px);
+    position: relative;
+    background: transparent;
     -webkit-appearance: none;
     border-radius: 3px;
     outline: 0;
+    z-index: 2;
     cursor: pointer;
     &::-webkit-slider-thumb {
         -webkit-appearance: none;
@@ -13,10 +15,18 @@
         cursor: pointer;
         border: 1px solid rgba(35, 69, 97, 0.26);
     }
-    &::-moz-range-progress {
-        -webkit-appearance: none;
-        height: 4px;
-        border-radius: 3px;
-        background: $primary-blue;
+}
+
+.bar {
+    @include height-width(4px, 150px);
+    @include position(absolute, 16px, null, null, 0);
+    z-index: 1;
+    border-radius: 3px;
+    background: $light-blue-grey;
+    overflow: hidden;
+    .fill {
+        display: block;
+        @include height-width(4px, 0);
+        background-color: $primary-blue;
     }
 }

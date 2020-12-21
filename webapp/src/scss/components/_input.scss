@@ -122,20 +122,3 @@ input[type="checkbox"] {
         }
     }
 }
-
-.select-arrow {
-    &::before {
-        content: "";
-        @include position(absolute, null, 15px, 17px, null);
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 5px solid $battleship-grey;
-    }
-    &::after {
-        @extend .select-arrow::before;
-        top: 17px;
-        bottom: unset;
-        border-top: none;
-        border-bottom: 5px solid $battleship-grey;
-    }
-}

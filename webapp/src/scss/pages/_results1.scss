@@ -1,0 +1,53 @@
+.screen4 {
+    display: none;
+    .res1-container {
+        .heading-xl {
+            color: $dark;
+        }
+        .text-lg {
+            color: $battleship-grey;
+            span {
+                color: $dark-grey;
+            }
+        }
+    }
+}
+
+.res1-header {
+    margin-bottom: 26px;
+    button {
+        @include height-width(40px, 210px);
+        padding: 10px 14px;
+        line-height: 20px;
+        color: $dark;
+        &:last-of-type {
+            width: 160px;
+        }
+        &.btn {
+            @include height-width(40px, 120px);
+            background-color: #47c1bf;
+            color: $white;
+            transition: 0.3s;
+            &:hover {
+                background-color: #2e9b99;
+            }
+        }
+        span {
+            color: $bluey-grey;
+        }
+    }
+}
+
+.res1-table__container {
+    width: 100%;
+    .res1-table {
+        width: 100%;
+        border-collapse: collapse;
+        thead {
+            background-color: #ecedf0;
+            th {
+                padding: 10px;
+            }
+        }
+    }
+}

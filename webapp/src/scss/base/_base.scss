@@ -44,3 +44,18 @@ input {
     border-right: 4.5px solid transparent;
     border-top: 4.5px solid $battleship-grey;
 }
+
+.arrow-updown {
+    &::before {
+        @extend .arrow-down::after;
+        right: 15px;
+        top: 13px;
+        border-bottom: 4.5px solid $battleship-grey;
+        border-top: none;
+    }
+    &::after {
+        @extend .arrow-down::after;
+        right: 15px;
+        top: 21px;
+    }
+}

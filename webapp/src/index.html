@@ -105,9 +105,8 @@
                             <label for="checkbox3" class="heading-sm">House</label>
                         </fieldset>
                         <fieldset class="pos-rel select-box" id="select-box">
-                            <button class="select-input" id="select-input" onclick="openDropdown('selectDropdown')"
-                                type="button">Select option</button>
-                            <span class="select-arrow"></span>
+                            <button class="select-input pos-rel arrow-updown" id="select-input"
+                                onclick="openDropdown('selectDropdown')" type="button">Select option</button>
                             <div class="select-dropdown__box" id="selectDropdownBox">
                                 <ul class="select-dropdown scrollbar">
                                     <li class="select-dropdown__list text-md">This month</li>
@@ -196,26 +195,56 @@
                 </div>
             </div>
         </section>
-        <section class="screen4 mt-6 fs-0" id="screen4">
+        <section class="screen4 mt-6" id="screen4">
+            <div class="container res1-container pt-8 pb-10">
+                <h1 class="heading-xl fw-sb mb-1 ta-center">Your fairest results</h1>
+                <p class="text-lg ta-center mb-6">16 Results for <span>30</span> years xied in <span>64117</span></p>
+                <div class="fx-center res1-header">
+                    <button class="select-input text-md mr-2 arrow-updown pos-rel" type="button">15 years</button>
+                    <button class="select-input text-md mr-2 arrow-updown pos-rel" type="button">Fixed price</button>
+                    <button class="btn text-md">Filter Results</button>
+                    <button class="select-input text-md arrow-updown pos-rel ml-a" type="button"><span>Sort
+                            by:</span> Fairest</button>
+                </div>
+                <div class="res1-table__container">
+                    <table class="res1-table">
+                        <thead>
+                            <tr class="ta-left">
+                                <th>Lender</th>
+                                <th>APR</th>
+                                <th>APR</th>
+                                <th>Est. Payment/Fees</th>
+                                <th>Questions?</th>
+                                <th class="ta-right">Apply Now</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="screen5 mt-6 fs-0" id="screen5">
             <div class="container pt-8 pb-10">
                 <h1 class="heading-xl fw-sb mb-6 ta-center">Your fairest results</h1>
-                <div class="result-table__container mr-3">
-                    <div class="result-table__wrapper mb-2 pl-2 pr-2 pos-rel scrollbar">
+                <div class="res2-table__container mr-3">
+                    <div class="res2-table__wrapper mb-2 pl-2 pr-2 pos-rel scrollbar">
                         <div class="filter dropdown-box" id="filterDropdown">
                             <ul class="dropdown">
                                 <li class="dropdown-list text-xs">PER YEAR</li>
                                 <li class="dropdown-list text-xs">PER MONTH</li>
                             </ul>
                         </div>
-                        <table class="result-table">
-                            <tr class="result-table__row pos-rel">
+                        <table class="res2-table">
+                            <tr class="res2-table__row pos-rel">
                                 <th class="fw-n pt-2 pb-2 pr-1 text-xs">RATE TYPE</th>
                                 <th class="fw-n pt-2 pb-2 pr-1 text-xs">FAIR RATE / APR</th>
                                 <th class="fw-n pt-2 pb-2 pr-1 text-xs ta-center">POINTS/CREDITS</th>
                                 <th class="fw-n pt-2 pb-2 text-xs ta-right"><button class="btn arrow-down pr-2 pos-rel"
                                         onclick="openDropdown('filterDropdown')">PER MONTH</button></th>
                             </tr>
-                            <tr class="result-table__row fw-l">
+                            <tr class="res2-table__row fw-l">
                                 <td class="pt-2 pb-2 pr-1 text-xs">
                                     <label class="label green">15 years</label>
                                     <label class="label grey">Fixed</label>
@@ -226,7 +255,7 @@
                                 <td class="pt-2 pb-2 text-lg ta-right">$3,120 <progress
                                         class="progress-small green ml-1" value="70" max="100"></progress></td>
                             </tr>
-                            <tr class="result-table__row fw-l">
+                            <tr class="res2-table__row fw-l">
                                 <td class="pt-2 pb-2 pr-1 text-xs">
                                     <label class="label primary-blue">20 years</label>
                                     <label class="label grey">Fixed</label>
@@ -237,7 +266,7 @@
                                 <td class="pt-2 pb-2 text-lg ta-right">$2,585 <progress
                                         class="progress-small primary-blue ml-1" value="70" max="100"></progress></td>
                             </tr>
-                            <tr class="result-table__row fw-l">
+                            <tr class="res2-table__row fw-l">
                                 <td class="pt-2 pb-2 pr-1 text-xs">
                                     <label class="label dark-blue">30 years</label>
                                     <label class="label grey">Fixed</label>
@@ -248,18 +277,18 @@
                                 <td class="pt-2 pb-2 text-lg ta-right">$2,585 <progress
                                         class="progress-small dark-blue ml-1" value="80" max="100"></progress></td>
                             </tr>
-                            <tr class="result-table__row fw-l">
+                            <tr class="res2-table__row fw-l">
                                 <td class="pt-2 pb-2 pr-1 text-xs">
                                     <label class="label iris">10/1</label>
                                     <label class="label grey">Adjustable</label>
                                 </td>
                                 <td class="pt-2 pb-2 pr-1 text-lg">4.750% <span class="denominator">/ 4.875%</span></td>
-                                <td class="pt-2 pb-2 pr-1 text-lg ta-right">-$154 <progress class="progress-small iris ml-1"
-                                        value="70" max="100"></progress></td>
+                                <td class="pt-2 pb-2 pr-1 text-lg ta-right">-$154 <progress
+                                        class="progress-small iris ml-1" value="70" max="100"></progress></td>
                                 <td class="pt-2 pb-2 text-lg ta-right">$2,072 <progress class="progress-small iris ml-1"
                                         value="75" max="100"></progress></td>
                             </tr>
-                            <tr class="result-table__row fw-l">
+                            <tr class="res2-table__row fw-l">
                                 <td class="pt-2 pb-2 pr-1 text-xs">
                                     <label class="label purple">7/1</label>
                                     <label class="label grey">Adjustable</label>
@@ -270,20 +299,20 @@
                                 <td class="pt-2 pb-2 text-lg ta-right">$2,072 <progress
                                         class="progress-small purple ml-1" value="75" max="100"></progress></td>
                             </tr>
-                            <tr class="result-table__row fw-l">
+                            <tr class="res2-table__row fw-l">
                                 <td class="pt-2 pb-2 pr-1 text-xs">
                                     <label class="label pink">5/1</label>
                                     <label class="label grey">Adjustable</label>
                                 </td>
                                 <td class="pt-2 pb-2 pr-1 text-lg">4.750% <span class="denominator">/ 4.875%</span></td>
-                                <td class="pt-2 pb-2 pr-1 text-lg ta-right">-$154 <progress class="progress-small pink ml-1"
-                                        value="70" max="100"></progress></td>
+                                <td class="pt-2 pb-2 pr-1 text-lg ta-right">-$154 <progress
+                                        class="progress-small pink ml-1" value="70" max="100"></progress></td>
                                 <td class="pt-2 pb-2 text-lg ta-right">$2,072 <progress class="progress-small pink ml-1"
                                         value="75" max="100"></progress></td>
                             </tr>
                         </table>
                     </div>
-                    <div class="results-footer fx-center pl-2">
+                    <div class="res2-footer fx-center pl-2">
                         <figure class="hint-icon tooltip mr-1 pos-rel">
                             <svg class="icon">
                                 <use href="/webapp/dist/images/sprite.svg#hint" />
@@ -291,12 +320,12 @@
                             <span class="tooltiptext ta-center">Rates and fees</span>
                         </figure>
                         <span class="text-md">Rates and fees as of 12:06 PM</span>
-                        <button class="btn btn-primary btn-md ml-a" onclick="changeScreen('screen5')">NEXT</button>
+                        <button class="btn btn-primary btn-md ml-a" onclick="changeScreen('screen6')">NEXT</button>
                     </div>
                     <hr class="divider-line">
                 </div>
-                <div class="results-filter__container pt-3 pl-2 pr-2 pb-10">
-                    <ul class="results-filter__wrapper mb-3">
+                <div class="res2-filter__container pt-3 pl-2 pr-2 pb-10">
+                    <ul class="res2-filter__wrapper mb-3">
                         <li class="mb-3">
                             <input type="checkbox" class="mr-1" id="filter-checkbox1" checked>
                             <label for="filter-checkbox1" class="text-md grey-checkbox__label">Fixed</label>
@@ -314,7 +343,7 @@
                             <label for="mini-checkbox3" class="text-xs mini-checkbox__label">30 years</label>
                         </li>
                     </ul>
-                    <ul class="results-filter__wrapper mb-3">
+                    <ul class="res2-filter__wrapper mb-3">
                         <li class="mb-3">
                             <input type="checkbox" class="mr-1" id="filter-checkbox2" checked>
                             <label for="filter-checkbox2" class="text-md grey-checkbox__label">Adjustable</label>
@@ -335,22 +364,30 @@
                     <hr class="divider-line mb-2">
                     <div class="range-slider__container mb-2">
                         <label class="text-md">Max per month</label>
-                        <div class="fx-center">
-                            <input type="range" min="0" max="100" value="0" class="range-slider mr-1">
-                            <input type="text" placeholder="value" class="range-value__textbox text-md ta-center">
+                        <div class="fx-center pos-rel">
+                            <span class="bar"><span class="fill" id="fill-1"></span></span>
+                            <input type="range" min="0" max="7000" value="0" class="range-slider"
+                                onmousemove="maxPerMonth(this.value)" oninput="maxPerMonth(this.value)"
+                                onchange="maxPerMonth(this.value)">
+                            <input type="text" value="$0" placeholder="value"
+                                class="range-value__textbox text-md ta-center ml-a" id="maxPerMonthValue">
                         </div>
                     </div>
                     <div class="range-slider__container">
                         <label class="text-md">Max per month</label>
-                        <div class="fx-center">
-                            <input type="range" min="0" max="100" value="0" class="range-slider mr-1">
-                            <input type="text" placeholder="value" class="range-value__textbox text-md ta-center">
+                        <div class="fx-center pos-rel">
+                            <span class="bar"><span class="fill" id="fill-2"></span></span>
+                            <input type="range" min="0" max="7000" value="0" class="range-slider"
+                                onmousemove="maxPointsCredits(this.value)" oninput="maxPointsCredits(this.value)"
+                                onchange="maxPointsCredits(this.value)">
+                            <input type="text" value="$0" placeholder="value" id="maxPointsCreditsValue"
+                                class="range-value__textbox text-md ta-center ml-a">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="screen5 mt-6 pb-10" id="screen5">
+        <section class="screen6 mt-6 pb-10" id="screen6">
             <div class="summary-header pt-3 pb-3 mb-10">
                 <div class="container fx-center">
                     <div class="circular-progressbar pos-rel mr-3">

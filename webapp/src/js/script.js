@@ -3,6 +3,7 @@ var screen2 = document.getElementById("screen2");
 var screen3 = document.getElementById("screen3");
 var screen4 = document.getElementById("screen4");
 var screen5 = document.getElementById("screen5");
+var screen6 = document.getElementById("screen6");
 function changeScreen(screen) {
     if (screen == "screen1") {
         screen1.classList.add("active-screen");
@@ -10,6 +11,7 @@ function changeScreen(screen) {
         screen3.classList.remove("active-screen");
         screen4.classList.remove("active-screen");
         screen5.classList.remove("active-screen");
+        screen6.classList.remove("active-screen");
         document.getElementById("home").classList.add("active");
         document.getElementById("application").classList.remove("active");
         document.getElementById("documents").classList.remove("active");
@@ -19,6 +21,7 @@ function changeScreen(screen) {
         screen3.classList.remove("active-screen");
         screen4.classList.remove("active-screen");
         screen5.classList.remove("active-screen");
+        screen6.classList.remove("active-screen");
         document.getElementById("application").classList.add("active");
         document.getElementById("home").classList.remove("active");
         document.getElementById("documents").classList.remove("active");
@@ -28,6 +31,7 @@ function changeScreen(screen) {
         screen3.classList.add("active-screen");
         screen4.classList.remove("active-screen");
         screen5.classList.remove("active-screen");
+        screen6.classList.remove("active-screen");
         document.getElementById("documents").classList.add("active");
         document.getElementById("home").classList.remove("active");
         document.getElementById("application").classList.remove("active");
@@ -37,12 +41,21 @@ function changeScreen(screen) {
         screen3.classList.remove("active-screen");
         screen4.classList.add("active-screen");
         screen5.classList.remove("active-screen");
-    } else {
+        screen6.classList.remove("active-screen");
+    } else if (screen == "screen5") {
         screen1.classList.remove("active-screen");
         screen2.classList.remove("active-screen");
         screen3.classList.remove("active-screen");
         screen4.classList.remove("active-screen");
         screen5.classList.add("active-screen");
+        screen6.classList.remove("active-screen");
+    } else {
+        screen1.classList.remove("active-screen");
+        screen2.classList.remove("active-screen");
+        screen3.classList.remove("active-screen");
+        screen4.classList.remove("active-screen");
+        screen5.classList.remove("active-screen");
+        screen6.classList.add("active-screen");
     }
 }
 
@@ -185,4 +198,13 @@ function outputFileDetails(name, size, type, icon) {
 
 function deleteItem(e) {
     document.getElementById('fileListTable').deleteRow(e.parentNode.parentNode.rowIndex);
+}
+
+function maxPerMonth(valueOccupied) {
+    document.getElementById("maxPerMonthValue").value = '$' + valueOccupied;
+    document.getElementById("fill-1").style.width = valueOccupied / 46.6666666667 + 'px';
+}
+function maxPointsCredits(valueOccupied) {
+    document.getElementById("maxPointsCreditsValue").value = '$' + valueOccupied;
+    document.getElementById("fill-2").style.width = valueOccupied / 46.6666666667 + 'px';
 }

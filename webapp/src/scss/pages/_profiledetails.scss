@@ -46,6 +46,14 @@
         }
         &.select-box {
             margin-bottom: 280px;
+            .arrow-updown {
+                &::before {
+                    top: 17px;
+                }
+                &::after {
+                    top: 26px;
+                }
+            }
             input[type="text"] {
                 padding-left: 14px;
             }
