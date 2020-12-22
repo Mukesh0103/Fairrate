@@ -578,11 +578,106 @@ input[type="checkbox"] {
   width: 100%; }
   .res1-table__container .res1-table {
     width: 100%;
-    border-collapse: collapse; }
-    .res1-table__container .res1-table thead {
-      background-color: #ecedf0; }
-      .res1-table__container .res1-table thead th, .res1-table__container .res1-table thead .res2-table .res2-table__row td, .res2-table .res2-table__row .res1-table__container .res1-table thead td {
-        padding: 10px; }
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-radius: 3px;
+    box-shadow: 0 6px 8px rgba(164, 164, 164, 0.21); }
+    .res1-table__container .res1-table .table-header {
+      background-color: #ecedf0;
+      color: #212b36; }
+      .res1-table__container .res1-table .table-header th, .res1-table__container .res1-table .table-header .res2-table .res2-table__row td, .res2-table .res2-table__row .res1-table__container .res1-table .table-header td {
+        max-width: 150px;
+        word-break: break-all; }
+        .res1-table__container .res1-table .table-header th.arrow-updown::before, .res1-table__container .res1-table .table-header .res2-table .res2-table__row td.arrow-updown::before, .res2-table .res2-table__row .res1-table__container .res1-table .table-header td.arrow-updown::before {
+          left: 10px;
+          right: unset; }
+        .res1-table__container .res1-table .table-header th.arrow-updown::after, .res1-table__container .res1-table .table-header .res2-table .res2-table__row td.arrow-updown::after, .res2-table .res2-table__row .res1-table__container .res1-table .table-header td.arrow-updown::after {
+          left: 10px;
+          right: unset; }
+        .res1-table__container .res1-table .table-header th .icon, .res1-table__container .res1-table .table-header .res2-table .res2-table__row td .icon, .res2-table .res2-table__row .res1-table__container .res1-table .table-header td .icon {
+          height: 18px;
+          width: 18px;
+          display: inline-block;
+          vertical-align: bottom; }
+
+.table-body__row {
+  vertical-align: top;
+  border-bottom: 1px solid #dfe3e8; }
+  .table-body__row td figure {
+    height: 92px;
+    width: 152px;
+    justify-content: center; }
+    .table-body__row td figure img {
+      object-fit: contain; }
+      .table-body__row td figure img.loan-lock {
+        height: 42px;
+        width: 110px; }
+      .table-body__row td figure img.merix {
+        height: 79px;
+        width: 116px; }
+      .table-body__row td figure img.cmls-financial {
+        height: 50px;
+        width: 150px; }
+      .table-body__row td figure img.b2b {
+        height: 59px;
+        width: 152px; }
+      .table-body__row td figure img.rmg-mortgages {
+        height: 71px;
+        width: 104px; }
+      .table-body__row td figure img.equitable-bank {
+        height: 52px;
+        width: 152px; }
+      .table-body__row td figure img.wealthline {
+        height: 37px;
+        width: 150px; }
+      .table-body__row td figure img.nat-bank {
+        height: 58px;
+        width: 143px; }
+  .table-body__row td .bigger-value {
+    font-size: 26px;
+    color: #007ace; }
+  .table-body__row td .smaller-value {
+    font-size: 16px;
+    color: #212b36; }
+  .table-body__row td span {
+    color: #919eab; }
+  .table-body__row td .btn.btn-primary {
+    background-color: #637381;
+    height: 40px;
+    width: 92px;
+    border: none; }
+    .table-body__row td .btn.btn-primary:hover {
+      border: none;
+      background-color: #454f5b;
+      color: #ffffff; }
+  .table-body__row .footer-btn button {
+    height: 36px;
+    width: 144px;
+    border-radius: 3px;
+    background-image: linear-gradient(#ffffff, #f9fafb);
+    border: 1px solid #c4cdd5;
+    outline: none;
+    cursor: pointer;
+    padding-top: 3px; }
+    .table-body__row .footer-btn button:first-child {
+      margin-right: -3px;
+      border-right: 0; }
+    .table-body__row .footer-btn button .icon {
+      height: 20px;
+      width: 20px;
+      fill: #637381; }
+      .table-body__row .footer-btn button .icon.left-arrow {
+        transform: rotateY(180deg); }
+    .table-body__row .footer-btn button.disabled {
+      background-color: #f9fafb;
+      border-color: #dfe3e8;
+      background-image: none;
+      cursor: not-allowed; }
+      .table-body__row .footer-btn button.disabled .icon {
+        fill: #c4cdd5; }
+    .table-body__row .footer-btn button:hover {
+      background-color: #f4f6f8;
+      background-image: none; }
 
 .screen5 {
   display: none; }

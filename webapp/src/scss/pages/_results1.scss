@@ -42,11 +42,126 @@
     width: 100%;
     .res1-table {
         width: 100%;
+        background-color: $white;
         border-collapse: collapse;
-        thead {
+        border-radius: 3px;
+        box-shadow: 0 6px 8px rgba(164, 164, 164, 0.21);
+        .table-header {
             background-color: #ecedf0;
+            color: $dark;
             th {
-                padding: 10px;
+                max-width: 150px;
+                word-break: break-all;
+                &.arrow-updown {
+                    &::before {
+                        left: 10px;
+                        right: unset;
+                    }
+                    &::after {
+                        left: 10px;
+                        right: unset;
+                    }
+                }
+                .icon {
+                    @include height-width(18px, 18px);
+                    @include inline-block(bottom);
+                }
+            }
+        }
+    }
+}
+
+.table-body__row {
+    vertical-align: top;
+    border-bottom: 1px solid $pale-blue;
+    td {
+        figure {
+            @include height-width(92px, 152px);
+            justify-content: center;
+            img {
+                object-fit: contain;
+                &.loan-lock {
+                    @include height-width(42px, 110px);
+                }
+                &.merix {
+                    @include height-width(79px, 116px);
+                }
+                &.cmls-financial {
+                    @include height-width(50px, 150px);
+                }
+                &.b2b {
+                    @include height-width(59px, 152px);
+                }
+                &.rmg-mortgages {
+                    @include height-width(71px, 104px);
+                }
+                &.equitable-bank {
+                    @include height-width(52px, 152px);
+                }
+                &.wealthline {
+                    @include height-width(37px, 150px);
+                }
+                &.nat-bank {
+                    @include height-width(58px, 143px);
+                }
+            }
+        }
+        .bigger-value {
+            font-size: 26px;
+            color: $dark-blue;
+        }
+        .smaller-value {
+            font-size: 16px;
+            color: $dark;
+        }
+        span {
+            color: $bluey-grey;
+        }
+        .btn {
+            &.btn-primary {
+                background-color: $battleship-grey;
+                @include height-width(40px, 92px);
+                border: none;
+                &:hover {
+                    border: none;
+                    background-color: $dark-grey;
+                    color: $white;
+                }
+            }
+        }
+    }
+    .footer-btn {
+        button {
+            @include height-width(36px, 144px);
+            border-radius: 3px;
+            background-image: linear-gradient($white, $light-grey-two);
+            border: 1px solid $light-blue-grey;
+            outline: none;
+            cursor: pointer;
+            padding-top: 3px;
+            &:first-child {
+                margin-right: -3px;
+                border-right: 0;
+            }
+            .icon {
+                @include height-width(20px, 20px);
+                fill: $battleship-grey;
+                &.left-arrow {
+                    transform: rotateY(180deg);
+                }
+            }
+            &.disabled {
+                background-color: $light-grey-two;
+                border-color: $pale-blue;
+                background-image: none;
+                cursor: not-allowed;
+                .icon {
+                    fill: $light-blue-grey;
+                }
+            }
+            &:hover {
+                background-color: $light-grey;
+                background-image: none;
             }
         }
     }
