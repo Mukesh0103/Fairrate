@@ -102,6 +102,9 @@ input {
   right: 15px;
   top: 21px; }
 
+.screens {
+  display: none; }
+
 .btn {
   border-radius: 2px;
   border: none;
@@ -237,7 +240,7 @@ input[type="checkbox"] {
   cursor: pointer;
   text-align: left; }
 
-.select-dropdown__box, .dropdown-box, .qs-datepicker-container {
+.select-dropdown__box.dropdown-box, .dropdown-box {
   width: 230px;
   position: absolute;
   top: 60px;
@@ -246,7 +249,7 @@ input[type="checkbox"] {
   background: #fff;
   border: 1px solid #c4cdd5;
   box-shadow: 0 0 16px rgba(33, 43, 54, 0.08); }
-  .select-dropdown__box::before, .dropdown-box::before, .qs-datepicker-container::before {
+  .select-dropdown__box.dropdown-box::before, .dropdown-box::before {
     content: "";
     position: absolute;
     top: -6px;
@@ -259,17 +262,17 @@ input[type="checkbox"] {
     border-right: none;
     border-bottom: none;
     border-radius: 2px; }
-  .select-dropdown__box .select-dropdown, .dropdown-box .select-dropdown, .qs-datepicker-container .select-dropdown, .dropdown-box .dropdown {
+  .select-dropdown__box.dropdown-box .select-dropdown, .dropdown-box .select-dropdown, .dropdown-box.qs-datepicker-container .select-dropdown, .select-dropdown__box.dropdown-box .dropdown, .dropdown-box .dropdown {
     width: 100%;
     max-height: 220px;
     overflow: auto; }
-    .select-dropdown__box .select-dropdown .select-dropdown__list, .dropdown-box .select-dropdown .select-dropdown__list, .qs-datepicker-container .select-dropdown .select-dropdown__list, .dropdown-box .dropdown .select-dropdown__list, .dropdown-box .dropdown .dropdown-list {
+    .select-dropdown__box.dropdown-box .select-dropdown .select-dropdown__list, .dropdown-box .select-dropdown .select-dropdown__list, .dropdown-box.qs-datepicker-container .select-dropdown .select-dropdown__list, .select-dropdown__box.dropdown-box .dropdown .select-dropdown__list, .dropdown-box .dropdown .select-dropdown__list, .dropdown-box.qs-datepicker-container .dropdown .select-dropdown__list, .dropdown-box .select-dropdown .dropdown .dropdown-list, .dropdown-box .dropdown .select-dropdown .dropdown-list, .select-dropdown__box.dropdown-box .dropdown .dropdown-list, .dropdown-box .dropdown .dropdown-list {
       line-height: 20px;
       color: #212b36;
       padding: 10px 16px;
       cursor: pointer;
       transition: 0.2s; }
-      .select-dropdown__box .select-dropdown .select-dropdown__list:hover, .dropdown-box .select-dropdown .select-dropdown__list:hover, .qs-datepicker-container .select-dropdown .select-dropdown__list:hover, .dropdown-box .dropdown .select-dropdown__list:hover, .dropdown-box .dropdown .dropdown-list:hover {
+      .select-dropdown__box.dropdown-box .select-dropdown .select-dropdown__list:hover, .dropdown-box .select-dropdown .select-dropdown__list:hover, .dropdown-box.qs-datepicker-container .select-dropdown .select-dropdown__list:hover, .select-dropdown__box.dropdown-box .dropdown .select-dropdown__list:hover, .dropdown-box .dropdown .select-dropdown__list:hover, .dropdown-box.qs-datepicker-container .dropdown .select-dropdown__list:hover, .dropdown-box .select-dropdown .dropdown .dropdown-list:hover, .dropdown-box .dropdown .select-dropdown .dropdown-list:hover, .select-dropdown__box.dropdown-box .dropdown .dropdown-list:hover, .dropdown-box .dropdown .dropdown-list:hover {
         background-color: rgba(223, 227, 232, 0.3); }
 
 .header {
@@ -305,7 +308,10 @@ input[type="checkbox"] {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    display: inline-block;
     vertical-align: middle; }
+    .nav-list .user-name.arrow-down::after, .nav-list .user-name.arrow-updown::before, .nav-list .user-name.arrow-updown::after {
+      top: 17px; }
   .nav-list .menu-bar {
     height: 24px;
     width: 24px; }
@@ -314,16 +320,15 @@ input[type="checkbox"] {
     width: 186px; }
   .nav-list .pro-pic {
     height: 36px;
-    width: 36px; }
+    width: 36px;
+    display: inline-block;
+    vertical-align: middle; }
   .nav-list img {
     height: 100%;
     width: 100%; }
   .nav-list .bell-icon {
     height: 24px;
     width: 21px; }
-
-.screen1 {
-  display: none; }
 
 .content-centering, .document-content__centering {
   max-width: 540px;
@@ -336,9 +341,6 @@ input[type="checkbox"] {
   margin-bottom: 160px; }
   .name-details__form input[type="text"], .name-details__form input[type="number"], .name-details__form .select-input {
     width: calc((100% - 20px) / 2); }
-
-.screen2 {
-  display: none; }
 
 .pd-content__wrapper {
   width: calc((100% - 180px) / 2);
@@ -423,9 +425,6 @@ input[type="checkbox"] {
     display: block; }
   .dropdown-box::before {
     display: none; }
-
-.screen3 {
-  display: none; }
 
 .document-content__centering {
   max-width: 630px;
@@ -544,14 +543,13 @@ input[type="checkbox"] {
           width: 24px;
           background: none; }
 
-.screen4 {
-  display: none; }
-  .screen4 .res1-container .heading-xl {
-    color: #212b36; }
-  .screen4 .res1-container .text-lg {
-    color: #637381; }
-    .screen4 .res1-container .text-lg span {
-      color: #454f5b; }
+.res1-container .heading-xl {
+  color: #212b36; }
+
+.res1-container .text-lg {
+  color: #637381; }
+  .res1-container .text-lg span {
+    color: #454f5b; }
 
 .res1-header {
   margin-bottom: 26px; }
@@ -641,12 +639,13 @@ input[type="checkbox"] {
     color: #212b36; }
   .table-body__row td span {
     color: #919eab; }
-  .table-body__row td .btn.btn-primary {
+  .table-body__row td .btn.btn-md {
     background-color: #637381;
     height: 40px;
     width: 92px;
-    border: none; }
-    .table-body__row td .btn.btn-primary:hover {
+    border: none;
+    color: #ffffff; }
+    .table-body__row td .btn.btn-md:hover {
       border: none;
       background-color: #454f5b;
       color: #ffffff; }
@@ -679,10 +678,8 @@ input[type="checkbox"] {
       background-color: #f4f6f8;
       background-image: none; }
 
-.screen5 {
-  display: none; }
-  .screen5 .heading-xl {
-    color: #212b36; }
+.res2-head {
+  color: #212b36; }
 
 .res2-table__container .res2-table__wrapper, .res2-filter__container {
   background: #ffffff;
@@ -767,9 +764,6 @@ input[type="checkbox"] {
       width: 75px;
       padding: 10px;
       color: #212b36; }
-
-.screen6 {
-  display: none; }
 
 .summary-header {
   background: #ffffff;

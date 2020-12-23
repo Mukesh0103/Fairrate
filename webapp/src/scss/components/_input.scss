@@ -89,35 +89,37 @@ input[type="checkbox"] {
 }
 
 .select-dropdown__box {
-    width: 230px;
-    @include position(absolute, 60px, 0, null, null);
-    border-radius: 2px;
-    background: #fff;
-    border: 1px solid $light-blue-grey;
-    box-shadow: 0 0 16px rgba(33, 43, 54, 0.08);
-    &::before {
-        content: "";
-        @include position(absolute, -6px, 15px, null, null);
-        @include height-width(10px, 10px);
-        border: 1px solid $light-blue-grey;
-        background: #fff;
-        transform: rotate(45deg);
-        border-right: none;
-        border-bottom: none;
+    &.dropdown-box {
+        width: 230px;
+        @include position(absolute, 60px, 0, null, null);
         border-radius: 2px;
-    }
-    .select-dropdown {
-        width: 100%;
-        max-height: 220px;
-        overflow: auto;
-        .select-dropdown__list {
-            line-height: 20px;
-            color: $dark;
-            padding: 10px 16px;
-            cursor: pointer;
-            transition: 0.2s;
-            &:hover {
-                background-color: rgba(223, 227, 232, 0.3);
+        background: #fff;
+        border: 1px solid $light-blue-grey;
+        box-shadow: 0 0 16px rgba(33, 43, 54, 0.08);
+        &::before {
+            content: "";
+            @include position(absolute, -6px, 15px, null, null);
+            @include height-width(10px, 10px);
+            border: 1px solid $light-blue-grey;
+            background: #fff;
+            transform: rotate(45deg);
+            border-right: none;
+            border-bottom: none;
+            border-radius: 2px;
+        }
+        .select-dropdown {
+            width: 100%;
+            max-height: 220px;
+            overflow: auto;
+            .select-dropdown__list {
+                line-height: 20px;
+                color: $dark;
+                padding: 10px 16px;
+                cursor: pointer;
+                transition: 0.2s;
+                &:hover {
+                    background-color: rgba(223, 227, 232, 0.3);
+                }
             }
         }
     }

@@ -1,14 +1,11 @@
-.screen4 {
-    display: none;
-    .res1-container {
-        .heading-xl {
-            color: $dark;
-        }
-        .text-lg {
-            color: $battleship-grey;
-            span {
-                color: $dark-grey;
-            }
+.res1-container {
+    .heading-xl {
+        color: $dark;
+    }
+    .text-lg {
+        color: $battleship-grey;
+        span {
+            color: $dark-grey;
         }
     }
 }
@@ -118,10 +115,11 @@
             color: $bluey-grey;
         }
         .btn {
-            &.btn-primary {
+            &.btn-md {
                 background-color: $battleship-grey;
                 @include height-width(40px, 92px);
                 border: none;
+                color: $white;
                 &:hover {
                     border: none;
                     background-color: $dark-grey;

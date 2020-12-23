@@ -35,7 +35,10 @@
     }
     .user-name {
         @include text-ellipsis(110px);
-        vertical-align: middle;
+        @include inline-block(middle);
+        &.arrow-down::after {
+            top: 17px;
+        }
     }
     .menu-bar {
         @include height-width(24px, 24px);
@@ -45,6 +48,7 @@
     }
     .pro-pic {
         @include height-width(36px, 36px);
+        @include inline-block(middle);
     }
     img {
         @include height-width(100%, 100%);

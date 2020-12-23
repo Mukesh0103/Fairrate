@@ -24,21 +24,20 @@
                     </li>
                 </ul>
                 <ul class="nav-list__container lh-reset fs-0">
-                    <li class="nav-list active heading-sm mr-4" id="home"><a href="javascript:void(0)"
-                            onclick="changeScreen('screen1')">Home</a></li>
-                    <li class="nav-list heading-sm mr-4" id="application"><a href="javascript:void(0)"
-                            onclick="changeScreen('screen2')">Application</a></li>
-                    <li class="nav-list heading-sm mr-7" id="documents"><a href="javascript:void(0)"
-                            onclick="changeScreen('screen3')">Documents</a></li>
+                    <li class="nav-list active heading-sm mr-4" id="home"><a href="javascript:void(0)">Home</a></li>
+                    <li class="nav-list heading-sm mr-4" id="application"><a href="javascript:void(0)">Application</a>
+                    </li>
+                    <li class="nav-list heading-sm mr-7" id="documents"><a href="javascript:void(0)">Documents</a></li>
                     <li class="nav-list mr-2"><a href="javascript:void(0)" class="bell-icon"><svg class="icon">
                                 <use href="/webapp/dist/images/sprite.svg#bell" />
                             </svg></a></li>
-                    <li class="nav-list mr-1"><a href="javascript:void(0)" class="pro-pic"><img class="img-circle"
-                                src="/webapp/dist/images/pro-pic.jpg" alt="profile-picture"></a></li>
-                    <li class="nav-list text-sm pos-rel pr-2"><a href="javascript:void(0)" class="user-name arrow-down"
-                            onclick="openDropdown('dropdown')">Adrian Manea</a>
-                    </li>
-                    <div class="dropdown-box" id="dropdownBox">
+                    <li class="nav-list text-sm pr-2 pos-rel dropdown-container"><a href="javascript:void(0)"
+                            class="dropdown-button">
+                            <figure class="pro-pic mr-1"><img class="img-circle" src="/webapp/dist/images/pro-pic.jpg"
+                                    alt="profile-picture"></figure><span class="user-name arrow-down">Adrian
+                                Manea</span>
+                        </a></li>
+                    <div class="dropdown-box">
                         <ul class="dropdown">
                             <li class="dropdown-list text-md">Settings</li>
                             <li class="dropdown-list text-md">Log out</li>
@@ -47,20 +46,19 @@
                 </ul>
             </nav>
         </header>
-        <section class="screen1 mt-6 ta-center active-screen" id="screen1">
+        <section class="mt-6 ta-center active-screen screens">
             <div class="container">
                 <div class="content-centering pt-8 pl-2 pr-2">
                     <h1 class="heading-xl fw-sb mb-5">I'll get you an awesome price in seconds. Ready to go?</h1>
                     <form class="name-details__form fs-0">
                         <input type="text" class="mr-2 mb-2" placeholder="First name">
                         <input type="text" class="mb-2" placeholder="Last name">
-                        <button class="btn btn-md btn-primary" id="next-btn" type="button"
-                            onclick="changeScreen('screen2')">NEXT</button>
+                        <button class="btn btn-md btn-primary next-btn" type="button">NEXT</button>
                     </form>
                 </div>
             </div>
         </section>
-        <section class="screen2 mt-6" id="screen2">
+        <section class="mt-6 screens">
             <div class="container pt-8 fs-0 pb-8">
                 <div class="pd-content__wrapper">
                     <div class="pd-heading__container mb-6">
@@ -104,10 +102,10 @@
                             <input type="checkbox" class="mr-1" id="checkbox3" checked>
                             <label for="checkbox3" class="heading-sm">House</label>
                         </fieldset>
-                        <fieldset class="pos-rel select-box" id="select-box">
-                            <button class="select-input pos-rel arrow-updown" id="select-input"
-                                onclick="openDropdown('selectDropdown')" type="button">Select option</button>
-                            <div class="select-dropdown__box" id="selectDropdownBox">
+                        <fieldset class="pos-rel select-box dropdown-container">
+                            <button class="select-input pos-rel arrow-updown dropdown-button" id="select-input"
+                                type="button">Select option</button>
+                            <div class="select-dropdown__box dropdown-box">
                                 <ul class="select-dropdown scrollbar">
                                     <li class="select-dropdown__list text-md">This month</li>
                                     <li class="select-dropdown__list text-md">Next Month</li>
@@ -137,18 +135,18 @@
                         <label for="checkbox5" class="heading-sm">Burglar Alarm</label>
                     </div>
                     <div class="fx-center">
-                        <button class="btn btn-grey btn-md" onclick="changeScreen('screen1')">BACK</button>
-                        <button class="btn btn-primary btn-md ml-a" onclick="changeScreen('screen3')">NEXT</button>
+                        <button class="btn btn-grey btn-md">BACK</button>
+                        <button class="btn btn-primary btn-md ml-a next-btn">NEXT</button>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="screen3 mt-6" id="screen3">
+        <section class="mt-6 screens">
             <div class="container">
                 <div class="document-content__centering pt-8 pb-8">
                     <h1 class="heading-xl fw-sb mb-5 ta-center">Few more step ahead upload your ID Document 👆</h1>
-                    <button class="tab active text-sm mb-3" id="tab-1">Photo Indentification</button>
-                    <button class="tab text-sm mb-3" id="tab-2">Proof of Address</button>
+                    <button class="tab text-sm mb-3 active">Photo Indentification</button>
+                    <button class="tab text-sm mb-3">Proof of Address</button>
                     <div class="document-upload__wrapper pt-2 pb-3 mb-3">
                         <p class="text-lg ta-center mb-2">Upload photo Indentification</p>
                         <hr class="divider-line mb-2">
@@ -189,13 +187,13 @@
                         </div>
                     </div>
                     <div class="fx-center">
-                        <button class="btn btn-grey btn-md" onclick="changeScreen('screen2')">BACK</button>
-                        <button class="btn btn-primary btn-md ml-a" onclick="changeScreen('screen4')">NEXT</button>
+                        <button class="btn btn-grey btn-md">BACK</button>
+                        <button class="btn btn-primary btn-md ml-a next-btn">NEXT</button>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="screen4 mt-6" id="screen4">
+        <section class="mt-6 screens">
             <div class="container res1-container pt-8 pb-10">
                 <h1 class="heading-xl fw-sb mb-1 ta-center">Your fairest results</h1>
                 <p class="text-lg ta-center mb-6">16 Results for <span>30</span> years xied in <span>64117</span></p>
@@ -211,12 +209,13 @@
                         <tr class="table-header text-sm ta-left">
                             <th class="pl-2 pt-1 pr-1 pb-1">Lender</th>
                             <th class="pl-3 pt-1 pr-1 pb-1 pos-rel arrow-updown">APR<svg class="icon ml-1">
-                                <use href="/webapp/dist/images/sprite.svg#hint2" />
-                            </svg></th>
+                                    <use href="/webapp/dist/images/sprite.svg#hint2" />
+                                </svg></th>
                             <th class="pl-3 pt-1 pr-1 pb-1 pos-rel arrow-updown">Rate</th>
-                            <th class="pl-3 pt-1 pr-1 pb-1 pos-rel arrow-updown">Est. Payment/Fees<svg class="icon ml-1">
-                                <use href="/webapp/dist/images/sprite.svg#hint2" />
-                            </svg></th>
+                            <th class="pl-3 pt-1 pr-1 pb-1 pos-rel arrow-updown">Est. Payment/Fees<svg
+                                    class="icon ml-1">
+                                    <use href="/webapp/dist/images/sprite.svg#hint2" />
+                                </svg></th>
                             <th class="pl-1 pt-1 pr-1 pb-1">Questions?</th>
                             <th class="ta-right pl-1 pt-1 pr-2 pb-1">Apply Now</th>
                         </tr>
@@ -305,7 +304,7 @@
                                 <span class="text-md">Toll-free, no obligations</span>
                             </td>
                             <td class="ta-right pr-2 pl-1 pb-1 pt-2">
-                                <button class="btn btn-primary btn-md ml-a">NEXT</button>
+                                <button class="btn btn-md ml-a">NEXT</button>
                             </td>
                         </tr>
                         <tr class="table-body__row">
@@ -334,7 +333,7 @@
                                 <span class="text-md">Toll-free, no obligations</span>
                             </td>
                             <td class="ta-right pr-2 pl-1 pb-1 pt-2">
-                                <button class="btn btn-primary btn-md ml-a">NEXT</button>
+                                <button class="btn btn-md ml-a">NEXT</button>
                             </td>
                         </tr>
                         <tr class="table-body__row">
@@ -364,7 +363,7 @@
                                 <span class="text-md">Toll-free, no obligations</span>
                             </td>
                             <td class="ta-right pr-2 pl-1 pb-1 pt-2">
-                                <button class="btn btn-primary btn-md ml-a">NEXT</button>
+                                <button class="btn btn-md ml-a">NEXT</button>
                             </td>
                         </tr>
                         <tr class="table-body__row">
@@ -394,7 +393,7 @@
                                 <span class="text-md">Toll-free, no obligations</span>
                             </td>
                             <td class="ta-right pr-2 pl-1 pb-1 pt-2">
-                                <button class="btn btn-primary btn-md ml-a">NEXT</button>
+                                <button class="btn btn-md ml-a">NEXT</button>
                             </td>
                         </tr>
                         <tr class="table-body__row">
@@ -423,7 +422,7 @@
                                 <span class="text-md">Toll-free, no obligations</span>
                             </td>
                             <td class="ta-right pr-2 pl-1 pb-1 pt-2">
-                                <button class="btn btn-primary btn-md ml-a">NEXT</button>
+                                <button class="btn btn-md ml-a">NEXT</button>
                             </td>
                         </tr>
                         <tr class="table-body__row">
@@ -452,7 +451,7 @@
                                 <span class="text-md">Toll-free, no obligations</span>
                             </td>
                             <td class="ta-right pr-2 pl-1 pb-1 pt-2">
-                                <button class="btn btn-primary btn-md ml-a">NEXT</button>
+                                <button class="btn btn-md ml-a">NEXT</button>
                             </td>
                         </tr>
                         <tr class="table-body__row fs-0">
@@ -462,7 +461,7 @@
                                         <use href="/webapp/dist/images/sprite.svg#right-arrow" />
                                     </svg>
                                 </button>
-                                <button onclick="changeScreen('screen5')">
+                                <button class="next-btn">
                                     <svg class="icon">
                                         <use href="/webapp/dist/images/sprite.svg#right-arrow" />
                                     </svg>
@@ -473,12 +472,12 @@
                 </div>
             </div>
         </section>
-        <section class="screen5 mt-6 fs-0" id="screen5">
+        <section class="mt-6 fs-0 screens">
             <div class="container pt-8 pb-10">
-                <h1 class="heading-xl fw-sb mb-6 ta-center">Your fairest results</h1>
+                <h1 class="res2-head heading-xl fw-sb mb-6 ta-center">Your fairest results</h1>
                 <div class="res2-table__container mr-3">
                     <div class="res2-table__wrapper mb-2 pl-2 pr-2 pos-rel scrollbar">
-                        <div class="filter dropdown-box" id="filterDropdown">
+                        <div class="filter dropdown-box">
                             <ul class="dropdown">
                                 <li class="dropdown-list text-xs">PER YEAR</li>
                                 <li class="dropdown-list text-xs">PER MONTH</li>
@@ -489,8 +488,8 @@
                                 <th class="fw-n pt-2 pb-2 pr-1 text-xs">RATE TYPE</th>
                                 <th class="fw-n pt-2 pb-2 pr-1 text-xs">FAIR RATE / APR</th>
                                 <th class="fw-n pt-2 pb-2 pr-1 text-xs ta-center">POINTS/CREDITS</th>
-                                <th class="fw-n pt-2 pb-2 text-xs ta-right"><button class="btn arrow-down pr-2 pos-rel"
-                                        onclick="openDropdown('filterDropdown')">PER MONTH</button></th>
+                                <th class="fw-n pt-2 pb-2 text-xs ta-right dropdown-container"><button
+                                        class="btn arrow-down pr-2 pos-rel dropdown-button">PER MONTH</button></th>
                             </tr>
                             <tr class="res2-table__row fw-l">
                                 <td class="pt-2 pb-2 pr-1 text-xs">
@@ -568,7 +567,7 @@
                             <span class="tooltiptext ta-center">Rates and fees</span>
                         </figure>
                         <span class="text-md">Rates and fees as of 12:06 PM</span>
-                        <button class="btn btn-primary btn-md ml-a" onclick="changeScreen('screen6')">NEXT</button>
+                        <button class="btn btn-primary btn-md ml-a next-btn">NEXT</button>
                     </div>
                     <hr class="divider-line">
                 </div>
@@ -614,28 +613,24 @@
                         <label class="text-md">Max per month</label>
                         <div class="fx-center pos-rel">
                             <span class="bar"><span class="fill" id="fill-1"></span></span>
-                            <input type="range" min="0" max="7000" value="0" class="range-slider"
-                                onmousemove="maxPerMonth(this.value)" oninput="maxPerMonth(this.value)"
-                                onchange="maxPerMonth(this.value)">
+                            <input type="range" min="0" max="7000" value="0" class="range-slider">
                             <input type="text" value="$0" placeholder="value"
-                                class="range-value__textbox text-md ta-center ml-a" id="maxPerMonthValue">
+                                class="range-value__textbox text-md ta-center ml-a">
                         </div>
                     </div>
                     <div class="range-slider__container">
                         <label class="text-md">Max per month</label>
                         <div class="fx-center pos-rel">
                             <span class="bar"><span class="fill" id="fill-2"></span></span>
-                            <input type="range" min="0" max="7000" value="0" class="range-slider"
-                                onmousemove="maxPointsCredits(this.value)" oninput="maxPointsCredits(this.value)"
-                                onchange="maxPointsCredits(this.value)">
-                            <input type="text" value="$0" placeholder="value" id="maxPointsCreditsValue"
+                            <input type="range" min="0" max="7000" value="0" class="range-slider">
+                            <input type="text" value="$0" placeholder="value"
                                 class="range-value__textbox text-md ta-center ml-a">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="screen6 mt-6 pb-10" id="screen6">
+        <section class="mt-6 pb-10 screens">
             <div class="summary-header pt-3 pb-3 mb-10">
                 <div class="container fx-center">
                     <div class="circular-progressbar pos-rel mr-3">
@@ -666,15 +661,13 @@
                     <li class="summary-content__list fx-center mb-2">
                         <span class="list-number text-lg ta-center fx-center mr-2">1</span>
                         <span class="heading-md">Personal details</span>
-                        <a href="javascript:void(0)" class="edit text-md mr-1"
-                            onclick="changeScreen('screen1')">Edit</a>
+                        <a href="javascript:void(0)" class="edit text-md mr-1">Edit</a>
                         <span class="completed-tick pos-rel"></span>
                     </li>
                     <li class="summary-content__list fx-center mb-2">
                         <span class="list-number text-lg ta-center fx-center mr-2">2</span>
                         <span class="heading-md">Employment & Income</span>
-                        <a href="javascript:void(0)" class="edit text-md mr-1"
-                            onclick="changeScreen('screen2')">Edit</a>
+                        <a href="javascript:void(0)" class="edit text-md mr-1">Edit</a>
                         <span class="completed-tick pos-rel"></span>
                     </li>
                     <li class="summary-content__list fx-center mb-2">
