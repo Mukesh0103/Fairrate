@@ -1,0 +1,111 @@
+.res2-head {
+    color: $dark;
+}
+
+%container-design {
+    background: $white;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
+}
+
+.res2-table__container {
+    width: 736px;
+    @include inline-block(top);
+    .res2-table__wrapper {
+        @extend %container-design;
+        max-height: 449px;
+        overflow: auto;
+    }
+    .divider-line {
+        width: 320px;
+    }
+}
+
+.res2-table {
+    border-collapse: collapse;
+    width: 100%;
+    color: $dark;
+    .res2-table__row {
+        border-bottom: 1px solid $pale-blue;
+        &:first-of-type {
+            border-bottom: 2px solid $pale-blue;
+            text-align: left;
+        }
+        &:last-of-type {
+            border: none;
+        }
+        .arrow-down::after {
+            top: 7px;
+        }
+        th {
+            max-width: 100px;
+            word-break: break-all;
+        }
+        td {
+            @extend th;
+            &:nth-child(3) {
+                text-decoration: underline;
+            }
+            .label {
+                color: $white;
+                padding: 3px 7px;
+                border-radius: 12.5px;
+                &:last-of-type {
+                    color: $dark;
+                }
+            }
+            .denominator {
+                color: $bluey-grey;
+            }
+            .progress-small {
+                @include inline-block(middle);
+            }
+        }
+    }
+}
+
+.res2-footer {
+    color: $battleship-grey;
+    .hint-icon {
+        @include height-width(36px, 36px);
+        cursor: pointer;
+        .tooltiptext {
+            width: 100px;
+            @include position(absolute, -30px, null, null, -27px);
+        }
+    }
+}
+
+.filter {
+    &.dropdown-box {
+        width: 110px;
+        right: 10px;
+        top: 45px;
+    }
+}
+
+.res2-filter__container {
+    width: 290px;
+    @extend %container-design;
+    @include inline-block(top);
+    .res2-filter__wrapper {
+        @include inline-block(top);
+        width: 50%;
+        .grey-checkbox__label {
+            color: $dull-black;
+        }
+        .filter-list {
+            line-height: 20px;
+            color: $battleship-grey;
+            word-break: break-all;
+        }
+    }
+    .range-slider__container {
+        color: $battleship-grey;
+        .range-value__textbox {
+            @include height-width(36px, 75px);
+            padding: 10px;
+            color: $dark;
+        }
+    }
+}

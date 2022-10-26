@@ -1,6 +1,7 @@
 body {
     width: 100%;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    background: $light-grey-two;
 }
 
 * {
@@ -18,12 +19,6 @@ body {
     }
 }
 
-// .outer-container {
-//     max-width: 1140px;
-//     padding: 0 22px;
-//     margin: 0 auto;
-// }
-
 a {
     text-decoration: none;
     display: inline-block;
@@ -31,13 +26,39 @@ a {
 }
 
 ul {
-    &, li {
-        list-style-type: none;  
+    &,
+    li {
+        list-style-type: none;
     }
 }
 
-.heading-underline {
-    width: 65px;
-    border: 1px solid $light-blue-grey;
-    margin: 0 auto;
+button,
+input {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+.arrow-down::after {
+    content: "";
+    @include position(absolute, 10px, 0, null, null);
+    border-left: 4.5px solid transparent;
+    border-right: 4.5px solid transparent;
+    border-top: 4.5px solid $battleship-grey;
+}
+
+.arrow-updown {
+    &::before {
+        @extend .arrow-down::after;
+        right: 15px;
+        top: 13px;
+        border-bottom: 4.5px solid $battleship-grey;
+        border-top: none;
+    }
+    &::after {
+        @extend .arrow-down::after;
+        right: 15px;
+        top: 21px;
+    }
+}
+.screens {
+    display: none;
 }

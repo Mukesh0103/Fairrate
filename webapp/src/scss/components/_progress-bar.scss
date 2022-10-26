@@ -1,0 +1,51 @@
+.circular-progressbar {
+    @include height-width(105px, 105px);
+    .icon {
+        transform: rotate(-90deg);
+        circle {
+            fill: none;
+            stroke-width: 7;
+            transform: translate(5px, 5px);
+            stroke-dasharray: 295;
+            stroke-dashoffset: 295;
+            stroke-linecap: round;
+            &:first-of-type {
+                stroke-dashoffset: 0;
+                stroke: #dbecf8;
+            }
+            &:last-of-type {
+                stroke-dashoffset: calc(295 - (295 * 60) / 100);
+                stroke: $primary-blue;
+                animation: progress 3s;
+            }
+        }
+    }
+    .percentage-value {
+        @include position(absolute, 0, null, null, 0);
+        @include height-width(100%, 100%);
+        justify-content: center;
+        color: $dark;
+    }
+}
+
+@keyframes progress {
+    from {
+        stroke-dashoffset: 295;
+    }
+}
+
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    &.progress-small {
+        @include height-width(4px, 62px);
+        background: none;
+        &::-webkit-progress-bar {
+            background: $pale-blue;
+            border-radius: 2.5px;
+        }
+        &::-webkit-progress-value {
+            border-radius: 2.5px;
+        }
+    }
+}

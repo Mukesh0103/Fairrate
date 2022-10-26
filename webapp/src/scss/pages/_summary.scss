@@ -1,0 +1,91 @@
+.summary-header {
+    background: $white;
+    border-bottom: 2px solid $pale-blue;
+    .summary-header__content {
+        .text-lg {
+            color: $battleship-grey;
+        }
+    }
+}
+
+.arrow-button {
+    border: 2px solid $light-blue-grey;
+    border-radius: 3px;
+    padding: 12px 10px;
+    line-height: normal;
+    background: $white;
+    color: $dark;
+    .right-arrow {
+        @include height-width(18px, 16px);
+        fill: $light-blue-grey;
+        &::before {
+            content: "";
+            @include position(absolute, 6px, 35px, null, null);
+            border-left: 1px solid $light-blue-grey;
+            height: 30px;
+        }
+    }
+}
+
+.summary-content {
+    max-width: 505px;
+    margin: auto;
+    .summary-content__list {
+        width: 100%;
+        border: 2px solid $pale-blue;
+        background: $white;
+        padding: 20px;
+        border-radius: 3px;
+        color: $dark;
+        .list-number {
+            @include height-width(24px, 24px);
+            border-radius: 50%;
+            border: 2px solid $dark-grey;
+            justify-content: center;
+        }
+        .edit {
+            color: #ed6347;
+            margin-left: auto;
+            line-height: normal;
+        }
+        .completed-tick {
+            @include height-width(34px, 34px);
+            background: #3cb865;
+            border-radius: 50%;
+            &::before {
+                content: "";
+                @include position(absolute, 18px, null, null, 7px);
+                border-bottom: 4px solid #fff;
+                width: 10px;
+                transform: rotate(45deg);
+            }
+            &::after {
+                content: "";
+                @include position(absolute, 16px, 5px, null, null);
+                border-bottom: 4px solid #fff;
+                width: 18px;
+                transform: rotate(-45deg);
+            }
+        }
+        .arrow-button {
+            background: $primary-blue;
+            color: $white;
+            border-color: $primary-blue;
+            .right-arrow {
+                fill: $white;
+                &::before {
+                    border-color: $white;
+                }
+            }
+        }
+        &.disabled {
+            background: #f3f3f3;
+            color: #cbcbcb;
+            cursor: not-allowed;
+            user-select: none;
+            .list-number {
+                border-color: #cbcbcb;
+            }
+        }
+    }
+}

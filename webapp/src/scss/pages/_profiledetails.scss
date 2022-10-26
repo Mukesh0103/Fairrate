@@ -1,0 +1,100 @@
+.pd-content__wrapper {
+    width: calc((100% - 180px) / 2);
+    margin-right: 180px;
+    @include inline-block(top);
+    &:nth-child(2) {
+        margin-right: 0;
+    }
+    .pd-heading__container {
+        max-width: 300px;
+        .pd-heading__content {
+            color: $dark-blue-grey;
+        }
+    }
+}
+
+.profile-details__form {
+    fieldset {
+        outline: none;
+        border: none;
+        .input-label {
+            color: $dull-black;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding-left: 44px;
+        }
+        .input-icon {
+            @include height-width(24px, 24px);
+            @include position(absolute, 39px, null, null, 10px);
+            &.positioning {
+                top: 12px;
+            }
+        }
+        &.checkbox-container {
+            border: 1px solid lightgray;
+            background: #fff;
+            padding: 8px 15px;
+            border-radius: 3px;
+            .heading-sm {
+                line-height: 2.15;
+            }
+        }
+        &.select-box {
+            margin-bottom: 280px;
+            .arrow-updown {
+                &::before {
+                    top: 17px;
+                }
+                &::after {
+                    top: 26px;
+                }
+            }
+            input[type="text"] {
+                padding-left: 14px;
+            }
+            .select-dropdown__box {
+                display: none;
+                &.show {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.is-selected {
+    .checkbox-container {
+        border: 2px solid $primary-blue !important;
+    }
+}
+
+.pd-footer {
+    width: 430px;
+    margin-left: auto;
+    .pd-footer__container {
+        display: inline-block;
+        width: calc((100% - 40px) / 2);
+        margin-right: 40px;
+        border: 1px solid $light-blue-grey;
+        padding: 20px 26px;
+        background: $white;
+        border-radius: 3px;
+        .man-img {
+            @include height-width(48px, 46px);
+            margin: 16px auto 36px auto;
+        }
+        .fire-img {
+            @extend .man-img;
+            width: 36px;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+        &:nth-child(2) {
+            margin-right: 0;
+        }
+    }
+}

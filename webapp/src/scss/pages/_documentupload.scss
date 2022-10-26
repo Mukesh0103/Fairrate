@@ -1,0 +1,137 @@
+.document-content__centering {
+    @extend .content-centering;
+    max-width: 630px;
+    font-size: 0;
+    .heading-xl {
+        max-width: 485px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.document-upload__wrapper {
+    width: 100%;
+    background: $white;
+    color: $dark;
+    border: 1px solid $pale-blue;
+    border-radius: 3px;
+    box-shadow: 0 6px 8px rgba(164, 164, 164, 0.21);
+    .divider-line {
+        background: $pale-blue;
+        @include height-width(1px, 100%);
+        border: none;
+    }
+}
+
+.file-upload__container {
+    font-size: 0;
+    .drag-n-drop {
+        @include inline-block(top);
+        width: 330px;
+        background: #f9fafb;
+        border: 2px dashed $light-blue-grey;
+        border-radius: 3px;
+        .invalid-text {
+            visibility: hidden;
+        }
+        &.invalid {
+            .invalid-text {
+                color: red;
+                visibility: visible;
+            }
+        }
+        .file-icon__container {
+            @include height-width(86px, 105px);
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .drag-n-drop__text {
+            color: $dark;
+            max-width: 240px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 25px;
+            label {
+                color: $primary-blue;
+                text-decoration: underline;
+                transition: 0.3s;
+                cursor: pointer;
+                &:hover {
+                    color: $dull-blue;
+                }
+            }
+            input {
+                display: none;
+            }
+        }
+        .drag-n-drop__footer {
+            color: $bluey-grey;
+            line-height: normal;
+        }
+        &.dragover {
+            background-color: #e8e9ea;
+            border: 2px dashed #989898;
+        }
+    }
+    .upload-instruction {
+        max-width: 230px;
+        @include inline-block(top);
+        .text-sm {
+            color: $dark;
+        }
+        .instruction-list__container {
+            color: $dark-grey;
+            .instruction-sublist {
+                font-size: 16px;
+                line-height: 28px;
+            }
+        }
+        .text-md {
+            line-height: normal;
+            color: $primary-blue;
+            text-decoration: underline;
+            transition: 0.3s;
+            cursor: pointer;
+            &:hover {
+                color: $dull-blue;
+            }
+        }
+    }
+}
+
+.file-list_conatiner {
+    max-height: 250px;
+    overflow: auto;
+    .uploaded-files {
+        border-top: 1px solid $pale-blue;
+        border-bottom: 1px solid $pale-blue;
+        color: $battleship-grey;
+        width: 100%;
+        background: #fafafa;
+        border-collapse: collapse;
+        .uploaded-files__list {
+            border-bottom: 1px solid $pale-blue;
+            .file-details {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                font-size: 11px;
+                &:first-child {
+                    font-size: 13px;
+                    max-width: 90px;
+                }
+                .file-icon {
+                    @include height-width(18px, 18px);
+                    @include inline-block(top);
+                }
+                .file-name {
+                    @include inline-block(top);
+                    @include text-ellipsis(150px);
+                }
+                .del-icon {
+                    @include height-width(24px, 24px);
+                    background: none;
+                }
+            }
+        }
+    }
+}

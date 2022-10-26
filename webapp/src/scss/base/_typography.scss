@@ -4,46 +4,50 @@
 }
 
 .heading {
-    &-lg {
-        font-size: 44px;
-        line-height: 1.14;
-        @media (max-width: 640px) {
-            font-size: 28px;
-            line-height: 1.4;
-        }
+    font-size: 44px;
+    line-height: 1.14;
+    @media (max-width: 640px) {
+        font-size: 28px;
+        line-height: 1.4;
     }
-    &-md {
+    &-xl {
+        font-size: 36px;
+        line-height: normal;
+    }
+    &-lg {
         font-size: 32px;
         line-height: normal;
         @media (max-width: 640px) {
             font-size: 26px;
         }
     }
-    &-sm {
+    &-md {
         font-size: 24px;
         line-height: normal;
     }
-    &-xs {
+    &-sm {
         font-size: 15px;
         line-height: 2.33;
     }
 }
 
 .text {
-    &-lg {
-        font-size: 22px;
-        line-height: 1.81;
-        @media (max-width: 640px) {
-            font-size: 18px;
-        }
+    font-size: 22px;
+    line-height: 1.81;
+    @media (max-width: 640px) {
+        font-size: 18px;
     }
-    &-md {
+    &-lg {
         font-size: 18px;
         line-height: normal;
     }
-    &-sm {
+    &-md {
         font-size: 14px;
         line-height: 1.71;
+    }
+    &-sm {
+        font-size: 13px;
+        line-height: normal;
     }
     &-xs {
         font-size: 12px;
@@ -52,10 +56,13 @@
 }
 
 .fw {
-    &-4 {
+    &-l {
+        font-weight: 300;
+    }
+    &-n {
         font-weight: 400;
     }
-    &-6 {
+    &-sb {
         font-weight: 600;
     }
 }

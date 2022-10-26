@@ -1,125 +1,59 @@
 .header {
-    @include position(fixed, 0, 0, null, 0);
+    background: $white;
+    width: 100%;
+    @include position(fixed, 0, null, null, 0);
     z-index: 10;
-    background: #ebf4fa;
+    border-bottom: 1px solid $pale-blue;
     &.scroll-shadow {
         box-shadow: 0 2px 10px #bababa;
         transition: 0.5s;
     }
-    .nav-bar {
-        border-bottom: 2px solid $light-blue-grey;
+    .navbar {
         .nav-list__container {
-            @include inline-block(middle);
-            &.big-screen {
-                @include inline-block(middle);
-                width: 60%;
-                color: $dull-blue;
-                @media (max-width: 991px) {
-                    display: none;
-                }
-            }
             &:first-child {
-                width: 40%;
-                @media (max-width: 991px) {
-                    width: 80%;
-                }
-            }
-            &.mobile {
-                display: none;
-                @media (max-width: 991px) {
-                    display: none;
-                    color: $dull-blue;
-                    .contact-mobile {
-                        display: none;
-                        @media (max-width: 767px) {
-                            display: block;
-                        }
-                    }
-                }
-            }
-        }
-        .nav-list {
-            @include inline-block(middle);
-            margin-right: 26px;
-            &:last-child {
-                margin-right: 0;
-            }
-            @media (max-width: 767px) {
-                &.contact-big-screen {
-                    display: none;
-                }
-            }
-            .logo-container {
-                width: 186px;
-                height: 40px;
-                margin-right: 20px;
-                .site-logo {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
-                }
-            }
-            .site-contact-number {
-                color: $dark-grey;
-                font-size: 14px;
-                transition: 0.3s;
-                &:hover {
-                    color: $primary-blue;
-                }
+                margin-right: auto;
             }
         }
     }
-    .menu-button {
-        display: none;
-        @media (max-width: 991px) {
-            @include inline-block(middle);
-            width: 20%;
-            .menu-button__input {
-                @include position(absolute, -7px, 0, null, null);
-                width: 30px;
-                height: 24px;
-                cursor: pointer;
-                opacity: 0;
-                z-index: 2;
-                -webkit-touch-callout: none;
-                &:checked {
-                    & ~ .menu-icon__line {
-                        opacity: 1;
-                        transform: rotate(45deg) translate(-2px, -1px);
-                        background: #dc947d;
-                        bottom: 11px;
-                    }
-                }
-            }
-            .menu-icon__line {
-                display: block;
-                width: 28px;
-                height: 4px;
-                margin: 0 0 5px auto;
-                background: $primary-blue;
-                border-radius: 3px;
-                z-index: 1;
-                transform-origin: 4px 0px;
-                transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-                    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-                &:first-of-type {
-                    transform-origin: 0% 0%;
-                }
-                &:nth-last-of-type(2) {
-                    transform-origin: 0% 100%;
-                }
-                &:last-of-type {
-                    margin-bottom: 0;
-                }
-            }
-            .menu-button__input:checked ~ .menu-icon__line:nth-last-of-type(3) {
-                opacity: 0;
-                transform: rotate(0deg) scale(0.2, 0.2);
-            }
-            .menu-button__input:checked ~ .menu-icon__line:nth-last-of-type(2) {
-                transform: rotate(-45deg) translate(0, -1px);
-                top: 12px;
-            }
+}
+
+.nav-list {
+    @include inline-block(middle);
+    color: $bluey-grey;
+    transition: 0.3s;
+    @media (max-width: 1024px) {
+        margin-right: 20px;
+        &:last-child {
+            margin-right: 0;
         }
+    }
+    &:hover {
+        color: $dark;
+    }
+    &.active {
+        color: $dark;
+    }
+    .user-name {
+        @include text-ellipsis(110px);
+        @include inline-block(middle);
+        &.arrow-down::after {
+            top: 17px;
+        }
+    }
+    .menu-bar {
+        @include height-width(24px, 24px);
+    }
+    .app-logo {
+        @include height-width(40px, 186px);
+    }
+    .pro-pic {
+        @include height-width(36px, 36px);
+        @include inline-block(middle);
+    }
+    img {
+        @include height-width(100%, 100%);
+    }
+    .bell-icon {
+        @include height-width(24px, 21px);
     }
 }

@@ -1,0 +1,25 @@
+.tab {
+    width: 50%;
+    background: #fff;
+    border: 1px solid $pale-blue;
+    padding: 14px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+    color: $dark;
+    text-transform: uppercase;
+    &:first-of-type {
+        border-radius: 3px 0 0 3px;
+        border-right: none;
+    }
+    &:last-of-type {
+        border-radius: 0 3px 3px 0;
+    }
+    &.active {
+        background: $battleship-grey;
+        color: $white;
+    }
+    &:hover {
+        @extend .active;
+    }
+}

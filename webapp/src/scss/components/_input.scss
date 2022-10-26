@@ -1,0 +1,126 @@
+input[type="text"] {
+    padding: 13px 17px;
+    line-height: 20px;
+    background: $white;
+    border: 1px solid $light-blue-grey;
+    border-radius: 3px;
+    outline: none;
+    &::placeholder {
+        color: #adadad;
+    }
+}
+
+input[type="number"] {
+    @extend input[type="text"];
+}
+
+input[type="checkbox"] {
+    display: none;
+    cursor: pointer;
+    & + label {
+        display: block;
+        position: relative;
+        padding-left: 40px;
+        padding-top: 1px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        &.grey-checkbox__label {
+            &::before {
+                @include height-width(24px, 24px);
+                border-width: 2px;
+            }
+        }
+        &.mini-checkbox__label {
+            padding-left: 28px;
+            &::before {
+                @include height-width(16px, 16px);
+            }
+        }
+        &::before {
+            content: "";
+            @include position(absolute, 0, null, null, 0);
+            @include height-width(30px, 30px);
+            border: 1px solid $light-blue-grey;
+            border-radius: 3px;
+        }
+    }
+    &:checked + label::after {
+        content: "";
+        @include position(absolute, 7px, null, null, 12px);
+        @include height-width(12px, 6px);
+        border: 2px solid $primary-blue;
+        border-left: none;
+        border-top: none;
+        transform: rotate(45deg);
+    }
+    &:checked + label {
+        &.grey-checkbox__label::after {
+            top: 5px;
+            left: 10px;
+        }
+    }
+    &:checked + label {
+        &.mini-checkbox__label::after {
+            top: 3px;
+            left: 7px;
+            height: 8px;
+            width: 4px;
+            border-width: 1px;
+            border-color: $white;
+        }
+    }
+    &:checked + label::before {
+        border-color: $primary-blue;
+    }
+
+    &:checked + label {
+        &.grey-checkbox__label::before {
+            border-color: $light-blue-grey;
+        }
+    }
+}
+
+.select-input {
+    @extend input[type="text"];
+    cursor: pointer;
+    text-align: left;
+}
+
+.select-dropdown__box {
+    &.dropdown-box {
+        width: 230px;
+        @include position(absolute, 60px, 0, null, null);
+        border-radius: 2px;
+        background: #fff;
+        border: 1px solid $light-blue-grey;
+        box-shadow: 0 0 16px rgba(33, 43, 54, 0.08);
+        &::before {
+            content: "";
+            @include position(absolute, -6px, 15px, null, null);
+            @include height-width(10px, 10px);
+            border: 1px solid $light-blue-grey;
+            background: #fff;
+            transform: rotate(45deg);
+            border-right: none;
+            border-bottom: none;
+            border-radius: 2px;
+        }
+        .select-dropdown {
+            width: 100%;
+            max-height: 220px;
+            overflow: auto;
+            .select-dropdown__list {
+                line-height: 20px;
+                color: $dark;
+                padding: 10px 16px;
+                cursor: pointer;
+                transition: 0.2s;
+                &:hover {
+                    background-color: rgba(223, 227, 232, 0.3);
+                }
+            }
+        }
+    }
+}

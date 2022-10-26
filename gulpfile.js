@@ -58,9 +58,9 @@ function webappFinalHtml() {
 
 function webpageSassToCss() {
     return src(webpageSassPaths)
+        .pipe(sourceMaps.init())
         .pipe(sass())
         .pipe(dest('dist/css'))
-        .pipe(sourceMaps.init())
         .pipe(minifyCSS())
         .pipe(rename({ extname: '.min.css' }))
         .pipe(sourceMaps.write())
@@ -70,9 +70,9 @@ function webpageSassToCss() {
 
 function webappSassToCss() {
     return src(webappSassPaths)
+        .pipe(sourceMaps.init())
         .pipe(sass())
         .pipe(dest('webapp/dist/css'))
-        .pipe(sourceMaps.init())
         .pipe(minifyCSS())
         .pipe(rename({ extname: '.min.css' }))
         .pipe(sourceMaps.write())

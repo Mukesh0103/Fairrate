@@ -1,11 +1,777 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FairRate</title>
+    <link rel="stylesheet" href="/node_modules/js-datepicker/dist/datepicker.min.css">
+    <link rel="stylesheet" href="/webapp/dist/css/style.min.css">
 </head>
+
 <body>
-    
+    <div class="fairrate-webapp">
+        <header class="header pb-1 pt-1 pl-3 pr-3" id="header">
+            <nav class="navbar fx-center">
+                <ul class="nav-list__container lh-reset fs-0">
+                    <li class="nav-list mr-4"><a href="javascript:void(0)" class="menu-bar">
+                            <svg class="icon">
+                                <use href="/webapp/dist/images/sprite.svg#menu-bar" />
+                            </svg>
+                        </a></li>
+                    <li class="nav-list"><a href="../index.html" class="app-logo"> <img
+                                src="/webapp/dist/images/logo.png" alt="logo" /></a>
+                    </li>
+                </ul>
+                <ul class="nav-list__container lh-reset fs-0">
+                    <li class="nav-list active heading-sm mr-4" id="home"><a href="javascript:void(0)">Home</a></li>
+                    <li class="nav-list heading-sm mr-4" id="application"><a href="javascript:void(0)">Application</a>
+                    </li>
+                    <li class="nav-list heading-sm mr-7" id="documents"><a href="javascript:void(0)">Documents</a></li>
+                    <li class="nav-list mr-2"><a href="javascript:void(0)" class="bell-icon"><svg class="icon">
+                                <use href="/webapp/dist/images/sprite.svg#bell" />
+                            </svg></a></li>
+                    <li class="nav-list text-sm pr-2 pos-rel dropdown-container"><a href="javascript:void(0)"
+                            class="dropdown-button">
+                            <figure class="pro-pic mr-1"><img class="img-circle" src="/webapp/dist/images/pro-pic.jpg"
+                                    alt="profile-picture"></figure><span class="user-name arrow-down">Adrian
+                                Manea</span>
+                        </a></li>
+                    <div class="dropdown-box">
+                        <ul class="dropdown">
+                            <li class="dropdown-list text-md">Settings</li>
+                            <li class="dropdown-list text-md">Log out</li>
+                        </ul>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+        <section class="mt-6 ta-center active-screen screens">
+            <div class="container">
+                <div class="content-centering pt-8 pl-2 pr-2">
+                    <h1 class="heading-xl fw-sb mb-5">I'll get you an awesome price in seconds. Ready to go?</h1>
+                    <form class="name-details__form fs-0">
+                        <input type="text" class="mr-2 mb-2" placeholder="First name">
+                        <input type="text" class="mb-2" placeholder="Last name">
+                        <button class="btn btn-md btn-primary next-btn" type="button">NEXT</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="mt-6 screens">
+            <div class="container pt-8 fs-0 pb-8">
+                <div class="pd-content__wrapper">
+                    <div class="pd-heading__container mb-6">
+                        <h1 class="heading-xl fw-sb mb-1">Fill the form on the right</h1>
+                        <p class="text-md pd-heading__content">Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                            condimentum nibh.</p>
+                    </div>
+                    <form class="profile-details__form">
+                        <fieldset class="pos-rel">
+                            <label class="text-xs input-label">DATE OF BIRTH</label>
+                            <input type="text" class="mt-1" placeholder="Date of birth" id="datepicker">
+                            <svg class="icon input-icon">
+                                <use href="/webapp/dist/images/sprite.svg#mail-outline" />
+                            </svg>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="pd-content__wrapper">
+                    <form class="profile-details__form">
+                        <fieldset class="pos-rel mb-3">
+                            <input type="text" placeholder="Enter the exact address">
+                            <svg class="icon input-icon positioning">
+                                <use href="/webapp/dist/images/sprite.svg#marker" />
+                            </svg>
+                        </fieldset>
+                        <fieldset class="pos-rel mb-3">
+                            <input type="text" placeholder="Email Address">
+                            <svg class="icon input-icon positioning">
+                                <use href="/webapp/dist/images/sprite.svg#mail-outline" />
+                            </svg>
+                        </fieldset>
+                        <fieldset class="mb-1 checkbox-container">
+                            <input type="checkbox" class="mr-1" id="checkbox1">
+                            <label for="checkbox1" class="heading-sm">Condo</label>
+                        </fieldset>
+                        <fieldset class="mb-1 checkbox-container">
+                            <input type="checkbox" class="mr-1" id="checkbox2" checked>
+                            <label for="checkbox2" class="heading-sm">Co-op</label>
+                        </fieldset>
+                        <fieldset class="mb-3 checkbox-container">
+                            <input type="checkbox" class="mr-1" id="checkbox3" checked>
+                            <label for="checkbox3" class="heading-sm">House</label>
+                        </fieldset>
+                        <fieldset class="pos-rel select-box dropdown-container">
+                            <button class="select-input pos-rel arrow-updown dropdown-button" id="select-input"
+                                type="button">Select option</button>
+                            <div class="select-dropdown__box dropdown-box">
+                                <ul class="select-dropdown scrollbar">
+                                    <li class="select-dropdown__list text-md">This month</li>
+                                    <li class="select-dropdown__list text-md">Next Month</li>
+                                    <li class="select-dropdown__list text-md">December 2018</li>
+                                    <li class="select-dropdown__list text-md">January 2019</li>
+                                    <li class="select-dropdown__list text-md">I don't know</li>
+                                </ul>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="pd-footer">
+                    <div class="pd-footer__container mb-6">
+                        <figure class="man-img">
+                            <svg class="icon">
+                                <use href="/webapp/dist/images/sprite.svg#criminal" />
+                            </svg>
+                        </figure>
+                        <input type="checkbox" class="mr-1" id="checkbox4" checked>
+                        <label for="checkbox4" class="heading-sm">Burglar Alarm</label>
+                    </div>
+                    <div class="pd-footer__container mb-6">
+                        <figure class="fire-img">
+                            <img src="/webapp/dist/images/fire.png" />
+                        </figure>
+                        <input type="checkbox" class="mr-1" id="checkbox5">
+                        <label for="checkbox5" class="heading-sm">Burglar Alarm</label>
+                    </div>
+                    <div class="fx-center">
+                        <button class="btn btn-grey btn-md">BACK</button>
+                        <button class="btn btn-primary btn-md ml-a next-btn">NEXT</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mt-6 screens">
+            <div class="container">
+                <div class="document-content__centering pt-8 pb-8">
+                    <h1 class="heading-xl fw-sb mb-5 ta-center">Few more step ahead upload your ID Document 👆</h1>
+                    <button class="tab text-sm mb-3 active">Photo Indentification</button>
+                    <button class="tab text-sm mb-3">Proof of Address</button>
+                    <div class="document-upload__wrapper pt-2 pb-3 mb-3">
+                        <p class="text-lg ta-center mb-2">Upload photo Indentification</p>
+                        <hr class="divider-line mb-2">
+                        <div class="file-upload__container pl-2 pr-2 mb-5">
+                            <div class="drag-n-drop mr-3" id="dropbox">
+                                <figure class="file-icon__container mt-4 mb-2">
+                                    <svg class="icon">
+                                        <use href="/webapp/dist/images/sprite.svg#file" />
+                                    </svg>
+                                </figure>
+                                <p class="text-lg ta-center drag-n-drop__text mb-2">Drag files here to
+                                    upload or
+                                    <label for="file">select a file</label>
+                                    <input id="file" type="file" multiple />
+                                    from your device
+                                </p>
+                                <p class="mb-3 text-lg ta-center invalid-text" id="invalid-text">Invalid File Format</p>
+                                <p class="text-md drag-n-drop__footer ta-center mb-1">JPG, PNG or PDF only, maximum file
+                                    size - 5MB</p>
+                            </div>
+                            <div class="upload-instruction pt-2">
+                                <p class="text-sm mb-2">YOUR DOCUMENT MUST BE:</p>
+                                <ul class="instruction-list__container ml-1 mb-6">
+                                    <li class="text-lg">•&nbsp;&nbsp;&nbsp; A Governent issued
+                                        <ul class="ml-4 mt-1 mb-1">
+                                            <li class="instruction-sublist">•&nbsp;&nbsp;&nbsp;Passport</li>
+                                            <li class="instruction-sublist">•&nbsp;&nbsp;&nbsp;Driver License</li>
+                                            <li class="instruction-sublist">•&nbsp;&nbsp;&nbsp;National ID Card</li>
+                                        </ul>
+                                    </li>
+                                    <li class="text-lg">•&nbsp;&nbsp;&nbsp; Within it’s expiry date</li>
+                                </ul>
+                                <a href="javascript:void(0)" class="text-md">See an example image</a>
+                            </div>
+                        </div>
+                        <div class="file-list_conatiner scrollbar">
+                            <table class="uploaded-files" id="fileListTable"></table>
+                        </div>
+                    </div>
+                    <div class="fx-center">
+                        <button class="btn btn-grey btn-md">BACK</button>
+                        <button class="btn btn-primary btn-md ml-a next-btn">NEXT</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mt-6 screens">
+            <div class="container res1-container pt-8 pb-10">
+                <h1 class="heading-xl fw-sb mb-1 ta-center">Your fairest results</h1>
+                <p class="text-lg ta-center mb-6">16 Results for <span>30</span> years xied in <span>64117</span></p>
+                <div class="fx-center res1-header">
+                    <button class="select-input text-md mr-2 arrow-updown pos-rel" type="button">15 years</button>
+                    <button class="select-input text-md mr-2 arrow-updown pos-rel" type="button">Fixed price</button>
+                    <button class="btn text-md">Filter Results</button>
+                    <button class="select-input text-md arrow-updown pos-rel ml-a" type="button"><span>Sort
+                            by:</span> Fairest</button>
+                </div>
+                <div class="res1-table__container">
+                    <table class="res1-table">
+                        <tr class="table-header text-sm ta-left">
+                            <th class="pl-2 pt-1 pr-1 pb-1">Lender</th>
+                            <th class="pl-3 pt-1 pr-1 pb-1 pos-rel arrow-updown">APR<svg class="icon ml-1">
+                                    <use href="/webapp/dist/images/sprite.svg#hint2" />
+                                </svg></th>
+                            <th class="pl-3 pt-1 pr-1 pb-1 pos-rel arrow-updown">Rate</th>
+                            <th class="pl-3 pt-1 pr-1 pb-1 pos-rel arrow-updown">Est. Payment/Fees<svg
+                                    class="icon ml-1">
+                                    <use href="/webapp/dist/images/sprite.svg#hint2" />
+                                </svg></th>
+                            <th class="pl-1 pt-1 pr-1 pb-1">Questions?</th>
+                            <th class="ta-right pl-1 pt-1 pr-2 pb-1">Apply Now</th>
+                        </tr>
+                        <tr class="table-body__row">
+                            <td class="pl-2 pr-1 pb-1">
+                                <figure class="fx-center">
+                                    <img src="/webapp/dist/images/bank-logo-1.png" class="loan-lock" alt="loan-lock">
+                                </figure>
+                                <span class="text-md pl-3">NMLS ID: 7707</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">3.6% APR</p>
+                                <span class="text-md">Mar 10</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">3.500% Rate</p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">$898.09<span class="text-md">/mo</span></p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">(887) 407 - 37123</p>
+                                <span class="text-md">Toll-free, no obligations</span>
+                            </td>
+                            <td class="ta-right pr-2 pl-1 pb-1 pt-2">
+                                <button class="btn btn-primary btn-md ml-a">NEXT</button>
+                            </td>
+                        </tr>
+                        <tr class="table-body__row">
+                            <td class="pl-2 pr-1 pb-1">
+                                <figure class="fx-center">
+                                    <img src="/webapp/dist/images/bank-logo-2.png" class="merix" alt="merix">
+                                </figure>
+                                <span class="text-md pl-3">NMLS ID: 7707</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">3.6% APR</p>
+                                <span class="text-md">Mar 10</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">3.500% Rate</p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">$898.09<span class="text-md">/mo</span></p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">(887) 407 - 37123</p>
+                                <span class="text-md">Toll-free, no obligations</span>
+                            </td>
+                            <td class="ta-right pr-2 pl-1 pb-1 pt-2">
+                                <button class="btn btn-primary btn-md ml-a">NEXT</button>
+                            </td>
+                        </tr>
+                        <tr class="table-body__row">
+                            <td class="pl-2 pr-1 pb-1">
+                                <figure class="fx-center">
+                                    <img src="/webapp/dist/images/bank-logo-3.png" class="cmls-financial"
+                                        alt="cmls-financial">
+                                </figure>
+                                <span class="text-md pl-3">NMLS ID: 7707</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">3.6% APR</p>
+                                <span class="text-md">Mar 10</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">3.500% Rate</p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">$898.09<span class="text-md">/mo</span></p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">(887) 407 - 37123</p>
+                                <span class="text-md">Toll-free, no obligations</span>
+                            </td>
+                            <td class="ta-right pr-2 pl-1 pb-1 pt-2">
+                                <button class="btn btn-md ml-a">NEXT</button>
+                            </td>
+                        </tr>
+                        <tr class="table-body__row">
+                            <td class="pl-2 pr-1 pb-1">
+                                <figure class="fx-center">
+                                    <img src="/webapp/dist/images/bank-logo-4.png" class="b2b" alt="b2b">
+                                </figure>
+                                <span class="text-md pl-3">NMLS ID: 7707</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">3.6% APR</p>
+                                <span class="text-md">Mar 10</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">3.500% Rate</p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">$898.09<span class="text-md">/mo</span></p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">(887) 407 - 37123</p>
+                                <span class="text-md">Toll-free, no obligations</span>
+                            </td>
+                            <td class="ta-right pr-2 pl-1 pb-1 pt-2">
+                                <button class="btn btn-md ml-a">NEXT</button>
+                            </td>
+                        </tr>
+                        <tr class="table-body__row">
+                            <td class="pl-2 pr-1 pb-1">
+                                <figure class="fx-center">
+                                    <img src="/webapp/dist/images/bank-logo-5.png" class="rmg-mortgages"
+                                        alt="rmg-mortgages">
+                                </figure>
+                                <span class="text-md pl-3">NMLS ID: 7707</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">3.6% APR</p>
+                                <span class="text-md">Mar 10</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">3.500% Rate</p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">$898.09<span class="text-md">/mo</span></p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">(887) 407 - 37123</p>
+                                <span class="text-md">Toll-free, no obligations</span>
+                            </td>
+                            <td class="ta-right pr-2 pl-1 pb-1 pt-2">
+                                <button class="btn btn-md ml-a">NEXT</button>
+                            </td>
+                        </tr>
+                        <tr class="table-body__row">
+                            <td class="pl-2 pr-1 pb-1">
+                                <figure class="fx-center">
+                                    <img src="/webapp/dist/images/bank-logo-6.png" class="equitable-bank"
+                                        alt="equitable-bank">
+                                </figure>
+                                <span class="text-md pl-3">NMLS ID: 7707</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">3.6% APR</p>
+                                <span class="text-md">Mar 10</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">3.500% Rate</p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">$898.09<span class="text-md">/mo</span></p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">(887) 407 - 37123</p>
+                                <span class="text-md">Toll-free, no obligations</span>
+                            </td>
+                            <td class="ta-right pr-2 pl-1 pb-1 pt-2">
+                                <button class="btn btn-md ml-a">NEXT</button>
+                            </td>
+                        </tr>
+                        <tr class="table-body__row">
+                            <td class="pl-2 pr-1 pb-1">
+                                <figure class="fx-center">
+                                    <img src="/webapp/dist/images/bank-logo-7.png" class="wealthline" alt="wealthline">
+                                </figure>
+                                <span class="text-md pl-3">NMLS ID: 7707</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">3.6% APR</p>
+                                <span class="text-md">Mar 10</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">3.500% Rate</p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">$898.09<span class="text-md">/mo</span></p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">(887) 407 - 37123</p>
+                                <span class="text-md">Toll-free, no obligations</span>
+                            </td>
+                            <td class="ta-right pr-2 pl-1 pb-1 pt-2">
+                                <button class="btn btn-md ml-a">NEXT</button>
+                            </td>
+                        </tr>
+                        <tr class="table-body__row">
+                            <td class="pl-2 pr-1 pb-1">
+                                <figure class="fx-center">
+                                    <img src="/webapp/dist/images/bank-logo-8.png" class="nat-bank" alt="nat-bank">
+                                </figure>
+                                <span class="text-md pl-3">NMLS ID: 7707</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">3.6% APR</p>
+                                <span class="text-md">Mar 10</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">3.500% Rate</p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="bigger-value">$898.09<span class="text-md">/mo</span></p>
+                                <span class="text-md">1 Point</span> <br>
+                                <span class="text-md">30 Rate Lock</span>
+                            </td>
+                            <td class="pl-1 pr-1 pb-1 pt-2">
+                                <p class="smaller-value">(887) 407 - 37123</p>
+                                <span class="text-md">Toll-free, no obligations</span>
+                            </td>
+                            <td class="ta-right pr-2 pl-1 pb-1 pt-2">
+                                <button class="btn btn-md ml-a">NEXT</button>
+                            </td>
+                        </tr>
+                        <tr class="table-body__row fs-0">
+                            <td colspan="6" class="pt-2 pb-2 footer-btn ta-center">
+                                <button class="disabled">
+                                    <svg class="icon left-arrow">
+                                        <use href="/webapp/dist/images/sprite.svg#right-arrow" />
+                                    </svg>
+                                </button>
+                                <button class="next-btn">
+                                    <svg class="icon">
+                                        <use href="/webapp/dist/images/sprite.svg#right-arrow" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="mt-6 fs-0 screens">
+            <div class="container pt-8 pb-10">
+                <h1 class="res2-head heading-xl fw-sb mb-6 ta-center">Your fairest results</h1>
+                <div class="res2-table__container mr-3">
+                    <div class="res2-table__wrapper mb-2 pl-2 pr-2 pos-rel scrollbar">
+                        <div class="filter dropdown-box">
+                            <ul class="dropdown">
+                                <li class="dropdown-list text-xs">PER YEAR</li>
+                                <li class="dropdown-list text-xs">PER MONTH</li>
+                            </ul>
+                        </div>
+                        <table class="res2-table">
+                            <tr class="res2-table__row pos-rel">
+                                <th class="fw-n pt-2 pb-2 pr-1 text-xs">RATE TYPE</th>
+                                <th class="fw-n pt-2 pb-2 pr-1 text-xs">FAIR RATE / APR</th>
+                                <th class="fw-n pt-2 pb-2 pr-1 text-xs ta-center">POINTS/CREDITS</th>
+                                <th class="fw-n pt-2 pb-2 text-xs ta-right dropdown-container"><button
+                                        class="btn arrow-down pr-2 pos-rel dropdown-button">PER MONTH</button></th>
+                            </tr>
+                            <tr class="res2-table__row fw-l">
+                                <td class="pt-2 pb-2 pr-1 text-xs">
+                                    <label class="label green">15 years</label>
+                                    <label class="label grey">Fixed</label>
+                                </td>
+                                <td class="pt-2 pb-2 pr-1 text-lg">4.250% <span class="denominator">/ 5.125%</span></td>
+                                <td class="pt-2 pb-2 pr-1 text-lg ta-right">-$1,532 <progress
+                                        class="progress-small green ml-1" value="50" max="100"></progress></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">$3,120 <progress
+                                        class="progress-small green ml-1" value="70" max="100"></progress></td>
+                            </tr>
+                            <tr class="res2-table__row fw-l">
+                                <td class="pt-2 pb-2 pr-1 text-xs">
+                                    <label class="label primary-blue">20 years</label>
+                                    <label class="label grey">Fixed</label>
+                                </td>
+                                <td class="pt-2 pb-2 pr-1 text-lg">4.650% <span class="denominator">/ 5.125%</span></td>
+                                <td class="pt-2 pb-2 pr-1 text-lg ta-right">-$625 <progress
+                                        class="progress-small primary-blue ml-1" value="80" max="100"></progress></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">$2,585 <progress
+                                        class="progress-small primary-blue ml-1" value="70" max="100"></progress></td>
+                            </tr>
+                            <tr class="res2-table__row fw-l">
+                                <td class="pt-2 pb-2 pr-1 text-xs">
+                                    <label class="label dark-blue">30 years</label>
+                                    <label class="label grey">Fixed</label>
+                                </td>
+                                <td class="pt-2 pb-2 pr-1 text-lg">4.875% <span class="denominator">/ 4.875%</span></td>
+                                <td class="pt-2 pb-2 pr-1 text-lg ta-right">-$1,625 <progress
+                                        class="progress-small dark-blue ml-1" value="30" max="100"></progress></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">$2,585 <progress
+                                        class="progress-small dark-blue ml-1" value="80" max="100"></progress></td>
+                            </tr>
+                            <tr class="res2-table__row fw-l">
+                                <td class="pt-2 pb-2 pr-1 text-xs">
+                                    <label class="label iris">10/1</label>
+                                    <label class="label grey">Adjustable</label>
+                                </td>
+                                <td class="pt-2 pb-2 pr-1 text-lg">4.750% <span class="denominator">/ 4.875%</span></td>
+                                <td class="pt-2 pb-2 pr-1 text-lg ta-right">-$154 <progress
+                                        class="progress-small iris ml-1" value="70" max="100"></progress></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">$2,072 <progress class="progress-small iris ml-1"
+                                        value="75" max="100"></progress></td>
+                            </tr>
+                            <tr class="res2-table__row fw-l">
+                                <td class="pt-2 pb-2 pr-1 text-xs">
+                                    <label class="label purple">7/1</label>
+                                    <label class="label grey">Adjustable</label>
+                                </td>
+                                <td class="pt-2 pb-2 pr-1 text-lg">4.750% <span class="denominator">/ 4.875%</span></td>
+                                <td class="pt-2 pb-2 pr-1 text-lg ta-right">-$154 <progress
+                                        class="progress-small purple ml-1" value="70" max="100"></progress></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">$2,072 <progress
+                                        class="progress-small purple ml-1" value="75" max="100"></progress></td>
+                            </tr>
+                            <tr class="res2-table__row fw-l">
+                                <td class="pt-2 pb-2 pr-1 text-xs">
+                                    <label class="label pink">5/1</label>
+                                    <label class="label grey">Adjustable</label>
+                                </td>
+                                <td class="pt-2 pb-2 pr-1 text-lg">4.750% <span class="denominator">/ 4.875%</span></td>
+                                <td class="pt-2 pb-2 pr-1 text-lg ta-right">-$154 <progress
+                                        class="progress-small pink ml-1" value="70" max="100"></progress></td>
+                                <td class="pt-2 pb-2 text-lg ta-right">$2,072 <progress class="progress-small pink ml-1"
+                                        value="75" max="100"></progress></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="res2-footer fx-center pl-2">
+                        <figure class="hint-icon tooltip mr-1 pos-rel">
+                            <svg class="icon">
+                                <use href="/webapp/dist/images/sprite.svg#hint" />
+                            </svg>
+                            <span class="tooltiptext ta-center">Rates and fees</span>
+                        </figure>
+                        <span class="text-md">Rates and fees as of 12:06 PM</span>
+                        <button class="btn btn-primary btn-md ml-a next-btn">NEXT</button>
+                    </div>
+                    <hr class="divider-line">
+                </div>
+                <div class="res2-filter__container pt-3 pl-2 pr-2 pb-10">
+                    <ul class="res2-filter__wrapper mb-3">
+                        <li class="mb-3">
+                            <input type="checkbox" class="mr-1" id="filter-checkbox1" checked>
+                            <label for="filter-checkbox1" class="text-md grey-checkbox__label">Fixed</label>
+                        </li>
+                        <li class="filter-list pr-1 mb-1">
+                            <input type="checkbox" class="mr-1 green" id="mini-checkbox1" checked>
+                            <label for="mini-checkbox1" class="text-xs mini-checkbox__label">15 years</label>
+                        </li>
+                        <li class="filter-list pr-1 mb-1">
+                            <input type="checkbox" class="mr-1 primary-blue" id="mini-checkbox2" checked>
+                            <label for="mini-checkbox2" class="text-xs mini-checkbox__label">20 years</label>
+                        </li>
+                        <li class="filter-list pr-1">
+                            <input type="checkbox" class="mr-1 dark-blue" id="mini-checkbox3" checked>
+                            <label for="mini-checkbox3" class="text-xs mini-checkbox__label">30 years</label>
+                        </li>
+                    </ul>
+                    <ul class="res2-filter__wrapper mb-3">
+                        <li class="mb-3">
+                            <input type="checkbox" class="mr-1" id="filter-checkbox2" checked>
+                            <label for="filter-checkbox2" class="text-md grey-checkbox__label">Adjustable</label>
+                        </li>
+                        <li class="filter-list pr-1 mb-1">
+                            <input type="checkbox" class="mr-1 iris" id="mini-checkbox4" checked>
+                            <label for="mini-checkbox4" class="text-xs mini-checkbox__label">10/1</label>
+                        </li>
+                        <li class="filter-list pr-1 mb-1">
+                            <input type="checkbox" class="mr-1 purple" id="mini-checkbox5" checked>
+                            <label for="mini-checkbox5" class="text-xs mini-checkbox__label">7/1</label>
+                        </li>
+                        <li class="filter-list pr-1">
+                            <input type="checkbox" class="mr-1 pink" id="mini-checkbox6" checked>
+                            <label for="mini-checkbox6" class="text-xs mini-checkbox__label">5/1</label>
+                        </li>
+                    </ul>
+                    <hr class="divider-line mb-2">
+                    <div class="range-slider__container mb-2">
+                        <label class="text-md">Max per month</label>
+                        <div class="fx-center pos-rel">
+                            <span class="bar"><span class="fill" id="fill-1"></span></span>
+                            <input type="range" min="0" max="7000" value="0" class="range-slider">
+                            <input type="text" value="$0" placeholder="value"
+                                class="range-value__textbox text-md ta-center ml-a">
+                        </div>
+                    </div>
+                    <div class="range-slider__container">
+                        <label class="text-md">Max per month</label>
+                        <div class="fx-center pos-rel">
+                            <span class="bar"><span class="fill" id="fill-2"></span></span>
+                            <input type="range" min="0" max="7000" value="0" class="range-slider">
+                            <input type="text" value="$0" placeholder="value"
+                                class="range-value__textbox text-md ta-center ml-a">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mt-6 pb-10 screens">
+            <div class="summary-header pt-3 pb-3 mb-10">
+                <div class="container fx-center">
+                    <div class="circular-progressbar pos-rel mr-3">
+                        <svg class="icon">
+                            <circle cx="47" cy="47" r="47"></circle>
+                            <circle cx="47" cy="47" r="47"></circle>
+                        </svg>
+                        <h2 class="percentage-value fx-center heading-xl fw-n">60%</h2>
+                    </div>
+                    <div class="summary-header__content">
+                        <h1 class="heading-xl fw-sb">Your Mortgage is 60% Complete</h1>
+                        <p class="text-lg">Great Start Adrian! Please complete remaining steps!</p>
+                    </div>
+                    <div class="ml-a">
+                        <button class="btn text-md fx-center pos-rel arrow-button">
+                            <span class="mr-4">Talk to us</span>
+                            <span class="right-arrow">
+                                <svg class="icon">
+                                    <use href="/webapp/dist/images/sprite.svg#right-arrow" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <ul class="summary-content">
+                    <li class="summary-content__list fx-center mb-2">
+                        <span class="list-number text-lg ta-center fx-center mr-2">1</span>
+                        <span class="heading-md">Personal details</span>
+                        <a href="javascript:void(0)" class="edit text-md mr-1">Edit</a>
+                        <span class="completed-tick pos-rel"></span>
+                    </li>
+                    <li class="summary-content__list fx-center mb-2">
+                        <span class="list-number text-lg ta-center fx-center mr-2">2</span>
+                        <span class="heading-md">Employment & Income</span>
+                        <a href="javascript:void(0)" class="edit text-md mr-1">Edit</a>
+                        <span class="completed-tick pos-rel"></span>
+                    </li>
+                    <li class="summary-content__list fx-center mb-2">
+                        <span class="list-number text-lg ta-center fx-center mr-2">3</span>
+                        <span class="heading-md">Adverse events</span>
+                        <button class="btn text-md fx-center pos-rel arrow-button ml-a">
+                            <span class="mr-4">Get Started</span>
+                            <span class="right-arrow">
+                                <svg class="icon">
+                                    <use href="/webapp/dist/images/sprite.svg#right-arrow" />
+                                </svg>
+                            </span>
+                        </button>
+                    </li>
+                    <li class="summary-content__list disabled fx-center">
+                        <span class="list-number text-lg ta-center fx-center mr-2">4</span>
+                        <span class="heading-md">Upload Documents</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="container container-outer">
+                <ul class="footer-list__container mb-5 fs-0">
+                    <li class="footer-list">
+                        <ul class="footer-sublist__container">
+                            <li class="footer-sublist footer-contact mb-1 text-xs">
+                                Schedule a conversation <a href="mailto: hello@fairrate.com"
+                                    class="contact-mail">hello@fairrate.com</a>
+                            </li>
+                            <li class="footer-sublist text-md contact-number"><a href="tel: +622025550117"
+                                    target="_blank">
+                                    <svg class="icon contact-icon mr-1">
+                                        <use href="/webapp/dist/images/sprite.svg#call" />
+                                    </svg>+62 202 555 0117</a>
+                            </li>
+                            <li class="footer-sublist">
+                                <ul class="fs-0">
+                                    <li class="social-icons"><a href="javascript:void(0)" target="_blank"><svg
+                                                class="icon">
+                                                <use href="/webapp/dist/images/sprite.svg#twitter" />
+                                            </svg></a></li>
+                                    <li class="social-icons"><a href="javascript:void(0)" target="_blank"><svg
+                                                class="icon">
+                                                <use href="/webapp/dist/images/sprite.svg#linked-in" />
+                                            </svg></a></li>
+                                    <li class="social-icons"><a href="javascript:void(0)" target="_blank"><svg
+                                                class="icon">
+                                                <use href="/webapp/dist/images/sprite.svg#facebook" />
+                                            </svg></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="footer-list">
+                        <p class="footer-list__heading text-xs">COMPANY</p>
+                        <ul class="footer-sublist__container text-sm">
+                            <li class="footer-sublist"><a href="javascript:void(0)"
+                                    class="link-hover pos-rel">Resources</a></li>
+                            <li class="footer-sublist"><a href="javascript:void(0)"
+                                    class="link-hover pos-rel">Careers</a></li>
+                        </ul>
+                    </li>
+                    <li class="footer-list">
+                        <p class="footer-list__heading text-xs">LEGAL</p>
+                        <ul class="footer-sublist__container text-sm">
+                            <li class="footer-sublist"><a href="javascript:void(0)" class="link-hover pos-rel">NMLS
+                                    Consumer Access</a></li>
+                            <li class="footer-sublist"><a href="javascript:void(0)" class="link-hover pos-rel">Privacy
+                                    Policy</a></li>
+                            <li class="footer-sublist"><a href="javascript:void(0)" class="link-hover pos-rel">Terms
+                                    of Use</a></li>
+                            <li class="footer-sublist"><a href="javascript:void(0)"
+                                    class="link-hover pos-rel">Disclosures & Licensing</a></li>
+                        </ul>
+                    </li>
+                    <li class="footer-list">
+                        <ul class="footer-sublist__container">
+                            <li class="footer-sublist lh-reset mb-2"><a href="javascript:void(0)"
+                                    class="logo-container">
+                                    <img src="./dist/images/logo.png" alt="logo" class="site-logo" /></a></li>
+                            <li class="footer-sublist text-sm footer-content">Fusce dapibus, tellus ac cursus
+                                commodo, tortor mauris condimentum nibh, ut
+                                fermentum massa justo sit amet risus. Praesent commodo cursus magna.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="text-xs footer-text">© 2018 Deivas.io, Inc. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/webapp/dist/js/final.js"></script>
+    <script src="/node_modules/js-datepicker/dist/datepicker.min.js"></script>
+    <script>
+        const picker = datepicker('#datepicker', {
+            customDays: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+            position: 'br',
+            formatter: (input, date, instance) => {
+                input.value = date.toLocaleDateString()
+                console.log(input.value)
+            },
+        })
+    </script>
 </body>
+
 </html>

@@ -2,6 +2,7 @@
     border-radius: 2px;
     border: none;
     outline: none;
+    background: none;
     cursor: pointer;
     &.btn-primary {
         @include color-bg($primary-blue, $white);
@@ -9,6 +10,14 @@
         transition: 0.3s;
         &:hover {
             @include color-bg($white, $primary-blue);
+        }
+    }
+    &.btn-grey {
+        @include color-bg($light-blue-grey, $white);
+        border: 2px solid $light-blue-grey;
+        transition: 0.3s;
+        &:hover {
+            @include color-bg($white, $light-blue-grey);
         }
     }
     &.btn-default {
@@ -19,17 +28,18 @@
         }
     }
     &.btn-lg {
-        height: 60px;
-        width: 207px;
+        @include height-width(60px, 207px);
         font-size: 14px;
         @media (max-width: 640px) {
-            height: 48px;
-            width: 180px;
+            @include height-width(48px, 100px);
         }
     }
+    &.btn-md {
+        @include height-width(48px, 180px);
+        font-size: 14px;
+    }
     &.btn-sm {
-        height: 34px;
-        width: 110px;
+        @include height-width(34px, 114px);
         font-size: 13px;
     }
 }

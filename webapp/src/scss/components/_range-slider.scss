@@ -1,0 +1,32 @@
+.range-slider {
+    @include height-width(4px, 150px);
+    position: relative;
+    background: transparent;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    outline: 0;
+    z-index: 2;
+    cursor: pointer;
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        @include height-width(17px, 17px);
+        background: $white;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 1px solid rgba(35, 69, 97, 0.26);
+    }
+}
+
+.bar {
+    @include height-width(4px, 150px);
+    @include position(absolute, 16px, null, null, 0);
+    z-index: 1;
+    border-radius: 3px;
+    background: $light-blue-grey;
+    overflow: hidden;
+    .fill {
+        display: block;
+        @include height-width(4px, 0);
+        background-color: $primary-blue;
+    }
+}

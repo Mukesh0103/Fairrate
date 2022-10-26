@@ -1,4 +1,7 @@
 .ta {
+    &-left {
+        text-align: left;
+    }
     &-center {
         text-align: center;
     }
@@ -15,18 +18,40 @@
     line-height: 0;
 }
 
-@include margin-padding(10);
-
-.icon {
-    height: 100%;
-    width: 100%;
+.fs-0 {
+    font-size: 0;
 }
 
-.contact-icon {
-    @include inline-block(middle);
-    height: 14px;
-    width: 14px;
-    margin-right: 8px;
+.fx-center {
+    display: flex;
+    align-items: center;
+}
+
+.img-circle {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@include margin-padding(10);
+
+.ml-a {
+    margin-left: auto;
+}
+
+.mr-a {
+    margin-right: auto;
+}
+
+.divider-line {
+    border: 1px solid $pale-blue;
+}
+
+.icon {
+    @include height-width(100%, 100%);
+}
+
+.active-screen {
+    display: block;
 }
 
 .link-hover {
@@ -49,4 +74,68 @@
         width: 100%;
         left: 0;
     }
+}
+
+.green {
+    background: #00cfc0;
+    border-color: #00cfc0;
+    &::-webkit-progress-value {
+        @extend .green;
+    }
+    &:checked + .mini-checkbox__label::before {
+        @extend .green;
+    }
+}
+.primary-blue {
+    background: $primary-blue;
+    border-color: $primary-blue;
+    &::-webkit-progress-value {
+        @extend .primary-blue;
+    }
+    &:checked + .mini-checkbox__label::before {
+        @extend .primary-blue;
+    }
+}
+.dark-blue {
+    background: $dark-blue;
+    border-color: $dark-blue;
+    &::-webkit-progress-value {
+        @extend .dark-blue;
+    }
+    &:checked + .mini-checkbox__label::before {
+        @extend .dark-blue;
+    }
+}
+.iris {
+    background: #5c6ac4;
+    border-color: #5c6ac4;
+    &::-webkit-progress-value {
+        @extend .iris;
+    }
+    &:checked + .mini-checkbox__label::before {
+        @extend .iris;
+    }
+}
+.purple {
+    background: #9c6ade;
+    border-color: #9c6ade;
+    &::-webkit-progress-value {
+        @extend .purple;
+    }
+    &:checked + .mini-checkbox__label::before {
+        @extend .purple;
+    }
+}
+.pink {
+    background: #de6a93;
+    border-color: #de6a93;
+    &::-webkit-progress-value {
+        @extend .pink;
+    }
+    &:checked + .mini-checkbox__label::before {
+        @extend .pink;
+    }
+}
+.grey {
+    background: $light-grey;
 }
