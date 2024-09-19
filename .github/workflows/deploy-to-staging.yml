@@ -1,0 +1,46 @@
+name: Deploy to Staging
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_branch:
+        description: "Base branch to create release/staging from"
+        required: true
+        default: "main"
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Fetch all branches
+        run: git fetch --all
+
+      - name: Delete release/staging branch if exists
+        run: |
+          if git show-ref --verify --quiet refs/heads/release/staging; then
+            git push origin --delete release/staging
+          fi
+
+      - name: Create and push release/staging branch
+        run: |
+          # Get the branch to base staging on from the workflow input
+          BASE_BRANCH=${{ github.event.inputs.base_branch }}
+
+          # Checkout the base branch (default: main) and update it
+          git checkout $BASE_BRANCH
+          git pull origin $BASE_BRANCH
+
+          # Create release/staging branch from base branch
+          git checkout -b release/staging
+
+          # Push the release/staging branch to the repository
+          git push origin release/staging
